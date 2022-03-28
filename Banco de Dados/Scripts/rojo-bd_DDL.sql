@@ -60,10 +60,21 @@ CREATE TABLE Evento
 		IDEmpresa INT FOREIGN KEY REFERENCES Empresa(IDEmpresa),
 		IDUsuario INT FOREIGN KEY REFERENCES Usuario (IDUsuario),
 		NomeEvento VARCHAR (50) NOT NULL,
-		Comentario VARCHAR (500) UNIQUE NOT NULL,
+		Palestrante VARCHAR (200) NOT NULL,
 		DataEventoIncio DATETIME UNIQUE NOT NULL,
 		DataEventoFim DATETIME UNIQUE NOT NULL,
 
 );
 GO
 
+CREATE TABLE Comentario
+(
+		IDComentario INT PRIMARY KEY IDENTITY,
+		IDEvento INT FOREIGN KEY REFERENCES Evento (IDEvento),
+		CadastrarComentario VARCHAR (2300) NOT NULL
+);
+GO
+
+
+
+DROP TABLE Evento; 

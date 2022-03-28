@@ -16,7 +16,16 @@ namespace RojoAPI.Repositories
 
         public void Atualizar(int id, Usuario UsuarioAtualizado)
         {
-            throw new NotImplementedException();
+            Usuario UsuarioBuscado = ctx.Usuarios.Find(id);
+
+            if (UsuarioAtualizado.Email != null)
+            {
+                UsuarioBuscado.Email = UsuarioAtualizado.Email;
+
+                ctx.Usuarios.Update(UsuarioBuscado);
+
+                ctx.SaveChanges();
+            }
         }
 
         public Usuario BuscarPorId(int id)

@@ -15,6 +15,16 @@ INSERT INTO Usuario (IDTipoUsuario, IDEmpresa, Email,Senha,NomeUsu )
 VALUES (2, 2, 'matheusmarthis@drogasil.com', '123456789', 'Matheus Martins');
 GO
 
-INSERT INTO Evento (IDEmpresa, IDUsuario, NomeEvento, Palestrante, Comentario, DataEventoIncio, DataEventoFim)
-VALUES (2, 2, 'Como se tornar um bom vendedor', 'Matheus Novais', 'muito boa palestra', '2022-03-21 13:30:00.000', '2022-03-21 17:00:00:000')
+INSERT INTO Evento (IDEmpresa, IDUsuario, NomeEvento, Palestrante, DataEventoIncio, DataEventoFim)
+VALUES (2, 2, 'Como se tornar um bom vendedor', 'Matheus Novais', '2022-03-21 13:30:00.000', '2022-03-21 17:00:00:000')
+GO
+
+INSERT INTO Comentario (IDEvento, CadastrarComentario)
+VALUES (1, 'Foi Muito Bom Man, a drogasil sempre me ajuda')
+GO
+
+SELECT  * FROM tipoUsuario
+SELECT  * FROM Empresa
 SELECT  * FROM Usuario
+SELECT  * FROM Evento
+SELECT  * FROM Comentario

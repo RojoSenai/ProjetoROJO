@@ -18,6 +18,7 @@ namespace RojoAPI.Contexts
         {
         }
 
+        public virtual DbSet<Comentario> Comentarios { get; set; }
         public virtual DbSet<Cor> Cors { get; set; }
         public virtual DbSet<Empresa> Empresas { get; set; }
         public virtual DbSet<EstilizacaoApp> EstilizacaoApps { get; set; }
@@ -38,6 +39,28 @@ namespace RojoAPI.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<Comentario>(entity =>
+            {
+                entity.HasKey(e => e.Idcomentario)
+                    .HasName("PK__Comentar__46E6637E0AB45A7B");
+
+                entity.ToTable("Comentario");
+
+                entity.Property(e => e.Idcomentario).HasColumnName("IDComentario");
+
+                entity.Property(e => e.CadastrarComentario)
+                    .IsRequired()
+                    .HasMaxLength(2300)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Idevento).HasColumnName("IDEvento");
+
+                entity.HasOne(d => d.IdeventoNavigation)
+                    .WithMany(p => p.Comentarios)
+                    .HasForeignKey(d => d.Idevento)
+                    .HasConstraintName("FK__Comentari__IDEve__114A936A");
+            });
 
             modelBuilder.Entity<Cor>(entity =>
             {
@@ -156,24 +179,17 @@ namespace RojoAPI.Contexts
             modelBuilder.Entity<Evento>(entity =>
             {
                 entity.HasKey(e => e.Idevento)
-                    .HasName("PK__Evento__E63053026E193BAA");
+                    .HasName("PK__Evento__E6305302A883A689");
 
                 entity.ToTable("Evento");
 
-                entity.HasIndex(e => e.DataEventoFim, "UQ__Evento__6B726C724470752F")
+                entity.HasIndex(e => e.DataEventoFim, "UQ__Evento__6B726C72EFE653F8")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Comentario, "UQ__Evento__7FF907B157542BFE")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.DataEventoIncio, "UQ__Evento__CA62D497161E8A9A")
+                entity.HasIndex(e => e.DataEventoIncio, "UQ__Evento__CA62D497D3A06A1A")
                     .IsUnique();
 
                 entity.Property(e => e.Idevento).HasColumnName("IDEvento");
-
-                entity.Property(e => e.Comentario)
-                    .HasMaxLength(500)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.DataEventoFim).HasColumnType("datetime");
 
@@ -189,18 +205,19 @@ namespace RojoAPI.Contexts
                     .IsUnicode(false);
 
                 entity.Property(e => e.Palestrante)
-                    .HasMaxLength(100)
+                    .IsRequired()
+                    .HasMaxLength(200)
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.IdempresaNavigation)
                     .WithMany(p => p.Eventos)
                     .HasForeignKey(d => d.Idempresa)
-                    .HasConstraintName("FK__Evento__IDEmpres__6D0D32F4");
+                    .HasConstraintName("FK__Evento__IDEmpres__0D7A0286");
 
                 entity.HasOne(d => d.IdusuarioNavigation)
                     .WithMany(p => p.Eventos)
                     .HasForeignKey(d => d.Idusuario)
-                    .HasConstraintName("FK__Evento__IDUsuari__6E01572D");
+                    .HasConstraintName("FK__Evento__IDUsuari__0E6E26BF");
             });
 
             modelBuilder.Entity<LogoBaner>(entity =>

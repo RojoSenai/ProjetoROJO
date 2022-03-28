@@ -13,23 +13,22 @@ namespace RojoAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class TipoUsuarioController : ControllerBase
     {
-        private IUsuarioRepository _UsuarioRepository { get; set; }
+        private ITipoUsuarioRepository _TipoUsuarioRepository { get; set; }
 
-        public UsuariosController()
+        public TipoUsuarioController()
         {
-            _UsuarioRepository = new UsuarioRepository();
+            _TipoUsuarioRepository = new TipoUsuarioRepository();
         }
-
         //CADASTRAR
         [HttpPost]
         [Authorize(Roles = "1 , 3")]
-        public IActionResult Post(Usuario NovaUsuario)
+        public IActionResult Post(TipoUsuario NovoTipoUsuario)
         {
             try
             {
-                _UsuarioRepository.Cadastrar(NovaUsuario);
+                _TipoUsuarioRepository.Cadastrar(NovoTipoUsuario);
 
                 return StatusCode(201);
             }
@@ -48,7 +47,7 @@ namespace RojoAPI.Controllers
             try
             {
                 // Faz a chamada para o método
-                _UsuarioRepository.Deletar(id);
+                _TipoUsuarioRepository.Deletar(id);
 
                 // Retorna um status code
                 return StatusCode(204);
@@ -67,7 +66,7 @@ namespace RojoAPI.Controllers
         {
             try
             {
-                List<Usuario> ListarTodos = _UsuarioRepository.Listar();
+                List<TipoUsuario> ListarTodos = _TipoUsuarioRepository.Listar();
 
                 return Ok(ListarTodos);
             }
@@ -85,30 +84,11 @@ namespace RojoAPI.Controllers
             try
             {
                 // Retora a resposta da requisição fazendo a chamada para o método
-                return Ok(_UsuarioRepository.BuscarPorId(id));
+                return Ok(_TipoUsuarioRepository.BuscarPorId(id));
             }
             catch (Exception erro)
             {
                 return BadRequest(erro);
-            }
-        }
-
-        //Atualizar Usuario
-        [HttpPut("{id}")]
-        [Authorize(Roles = "1, 2, 3")]
-        public IActionResult Put(int id, Usuario UsuarioAtualizado)
-        {
-            try
-            {
-                // Faz a chamada para o método
-                _UsuarioRepository.Atualizar(id, UsuarioAtualizado);
-
-                // Retorna um status code
-                return StatusCode(204);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex);
             }
         }
     }
