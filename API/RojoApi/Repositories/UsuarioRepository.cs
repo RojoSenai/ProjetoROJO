@@ -35,9 +35,11 @@ namespace RojoAPI.Repositories
 
         public void Cadastrar(Usuario novoUsuario)
         {
+            string senhaHash = Criptografia.gerarHash(novoUsuario.Senha);
+            novoUsuario.Senha = senhaHash;
             ctx.Usuarios.Add(novoUsuario);
-
             ctx.SaveChanges();
+
         }
 
         public void Deletar(int id)
@@ -69,7 +71,7 @@ namespace RojoAPI.Repositories
 
             if (usuario != null)
             {
-                if (usuario.Senha.Length != 60 && usuario.Senha[0].ToString() != "$")
+                if (usuario.Senha == senha)
                 {
                     string senhaHash = Criptografia.gerarHash(senha);
                     usuario.Senha = senhaHash;
