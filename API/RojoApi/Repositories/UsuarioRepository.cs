@@ -55,6 +55,7 @@ namespace RojoAPI.Repositories
            {
                Idusuario = x.Idusuario,
                IdempresaNavigation = x.IdempresaNavigation,
+               IdtipoUsuario = x.IdtipoUsuario,
                Email = x.Email,
                Senha = x.Senha,
                NomeUsu = x.NomeUsu,
@@ -65,7 +66,7 @@ namespace RojoAPI.Repositories
 
         public Usuario Login(string email, string senha)
         {
-            Usuario usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
+            var usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
 
             if (usuario != null)
             {

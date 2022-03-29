@@ -47,12 +47,13 @@ CREATE TABLE Usuario
 		IDUsuario INT PRIMARY KEY IDENTITY,
 		IDTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(IDTipoUsuario),
 		IDEmpresa INT FOREIGN KEY REFERENCES Empresa(IDEmpresa),
-		Email VARCHAR (100) UNIQUE NOT NULL,
-		Senha VARCHAR (50) NOT NULL,
+		Email VARCHAR (255) UNIQUE NOT NULL,
+		Senha VARCHAR (255) NOT NULL,
 		NomeUsu VARCHAR (50) NOT NULL,
 		ImagemUsuario VARCHAR (300) NOT NULL,
 );
 GO	
+ALTER TABLE Usuario ALTER COLUMN Email varchar(255) not null;
 
 CREATE TABLE Evento
 (
@@ -78,3 +79,5 @@ GO
 
 
 DROP TABLE Evento; 
+
+ALTER TABLE Usuario ALTER COLUMN Email varchar(255) not null;
