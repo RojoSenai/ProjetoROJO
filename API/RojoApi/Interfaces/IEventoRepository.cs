@@ -8,9 +8,9 @@ namespace RojoAPI.Interfaces
 {
     interface IEventoRepository
     {
-        void Cadastrar(Evento NovoTipoUsuario);
+        void Cadastrar(Evento NovoEvento);
         Evento BuscarPorId(int id);
-        void Atualizar(int id, Evento TipoUsuarioAtualizado);
+        void Atualizar(int id, Evento EventoAtualizado);
         void Deletar(int id);
         List<Evento> Listar();
     }
