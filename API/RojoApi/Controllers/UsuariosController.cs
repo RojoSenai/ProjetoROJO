@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace RojoAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
