@@ -63,7 +63,7 @@ namespace RojoAPI.Repositories
                NomeUsu = x.NomeUsu,
                ImagemUsuario = x.ImagemUsuario
            })
-           .ToList()
+           .ToList();
         }
 
         public Usuario Login(string email, string senha)
