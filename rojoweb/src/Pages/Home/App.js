@@ -8,6 +8,7 @@ export default function Login() {
   const [Senha, setSenha] = useState('');
   const [MensagemErro, setMensagemErro] = useState('');
   const [Islogind, setIslogind] = useState(false);
+<<<<<<< HEAD
   
   return (
     <div className="App">
@@ -19,3 +20,20 @@ export default function Login() {
     </div>
   );
 }
+=======
+
+
+
+  function App() {
+    return (
+      <div className="App">
+        <main>
+          <section className="app-header">
+            <h1>aaaa</h1>
+          </section>
+        </main>
+      </div>
+    )
+  }
+}
+>>>>>>> 4895d8fb32c2d85c5cb5415fa8753893cc1e135c
