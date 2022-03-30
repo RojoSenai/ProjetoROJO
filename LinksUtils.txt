@@ -1,3 +1,0 @@
-
-SQL ALTER TABLE
-https://www.1keydata.com/pt/sql/sql-alter-table.php
