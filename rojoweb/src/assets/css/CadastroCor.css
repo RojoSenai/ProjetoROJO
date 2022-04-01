@@ -1,0 +1,9 @@
+.Imput{
+    border: none;
+    width: 38%;
+    border-bottom: 3px solid #ffffff;
+    background: transparent;
+    font-size: 2em;
+    cursor: pointer;
+    color: #ffffff;
+}

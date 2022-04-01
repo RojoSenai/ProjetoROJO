@@ -1,7 +1,8 @@
 import React,{Component} from "react";
-import Rojologo from '../../assets/Rojo_imagem.png';
-import LetraRojo from '../../assets/letter.svg';
-import '../../assets/css/Logo.css'
+import Rojologo from '../../assets/img/Rojo_imagem.png';
+import LetraRojo from '../../assets/img/letter.svg';
+import '../../assets/css/Login.css';
+
 
 
 class Titulo extends Component{
