@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './Pages/Home/App';
+import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.Js'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <EmpresaCor />
   </React.StrictMode>,
   document.getElementById('root')
 );
