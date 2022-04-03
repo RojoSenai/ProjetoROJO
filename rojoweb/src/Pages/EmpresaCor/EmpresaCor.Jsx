@@ -1,7 +1,8 @@
 import '../../assets/css/CadastroCor.css';
 import Logo from '../../components/Logo/Logo.js'
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import Helmet from 'react-helmet';
+//import axios from 'axios';
 
 
 
@@ -11,12 +12,13 @@ export default function Login() {
   const [Cor2, setCor2] = useState('');
   const [Cor3, setCor3] = useState('');
   const [Logo_Imagem, setLogo] = useState('');
-  const [Baner, setBaner] = useState('');
+  const [Banner, setBanner] = useState('');
   const [Islogind, setIslogind] = useState(false);
 
 
   return (
     <div>
+      <Helmet title="Projeto Rojo - Cadastrat Cor" />
       <div>
         <div className="cima">
           <Logo />
@@ -54,9 +56,9 @@ export default function Login() {
 
           <input
             className="Imput"
-            placeholder="Baner"
+            placeholder="Banner"
             type="Image"
-            name="Baner"
+            name="Banner"
             id="Cadastro_cor3" />
 
         </form>
@@ -65,7 +67,4 @@ export default function Login() {
       </div>
     </div>
   );
-
-
-
 }
