@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Gk/CndEfEnHwKFFonJMNcnyzwKF+c0+AqddrPrTrFfNCH4/fmRVj9JbeBzCXf1di5pRTVE2iNCLYU6MCdd2LHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\48423428893.INFOSCS\\Desktop\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
+=======
+  "dgSpecHash": "CvNbkoY2j5R7XucM9NFQC5xVgYfyw/lBdpcSXoE1uS2qM9IR3vjD8XZzHnLK47Nj3u7EdwP1IKg2S0motw7q5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
+>>>>>>> 406d5b0082d57cf0fafc3b08433bccb401bccfcb
   "expectedPackageFiles": [
     "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
