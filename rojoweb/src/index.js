@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 //css
@@ -9,32 +9,26 @@ import './index.css';
 
 
 //Imports de paginas
-//import NotFound from './Pages/NotFound/NotFound';
+import NotFound from './Pages/NotFound/NotFound';
 import Home from './Pages/Home/App';
-// import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.Jsx'
+import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.jsx'
 import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.jsx'
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const routing = (
+  <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/CadastrarUserAdm" element={<CadastrarUserAdm />} />
+        <Route path="/EmpresaCor" element={<EmpresaCor />} />
+        <Route path="/notfound" element={<NotFound />} />
+        {/* <Navigate to="/" /> */}
+      </Routes>
+  </Router>
+)
 
 
-// const routing = (
-//   <Router>
-//     <div>
-//       <Switch>
-//         <Route exact path="/" component={Home} />
-//         <Route path="/Empresacor" component={EmpresaCor} />
-//         <Route path="/notfound" component={NotFound} />
-//         <Redirect to="/" />
-//       </Switch>
-//     </div>
-//   </Router>
-// )
+ReactDOM.render(routing, document.getElementById('root'));
 
 
 

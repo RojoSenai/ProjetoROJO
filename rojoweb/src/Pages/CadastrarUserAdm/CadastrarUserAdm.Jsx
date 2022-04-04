@@ -12,11 +12,11 @@ export default function Login() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
- // const [empresa, setEmpresa] = useState([]);
-//onst [MensagemErro, SetMensagemErro] = useState('');
+  const [IdEmpresa, setIdEmpresa] = useState([]);
+//const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
-  function FazerLogin(event) {
+  function FazerCadastro(event) {
 
     setIsLoding(true)
 
@@ -24,9 +24,19 @@ export default function Login() {
     event.preventDefault();
 
     //chamando api
-    axios.post('http://localhost:5000/api/Empresa', {
+    let UserAdm = {
+      nome : nome,
       email: email,
-      senha: senha
+      senha: senha,
+      IdEmpresa: IdEmpresa,
+    };
+    
+    
+    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+      
     })
 
       .then((resposta) => {
@@ -35,11 +45,12 @@ export default function Login() {
         if (resposta.status === 200) {
 
           //adicionando token no localStorage do navegador
-          localStorage.setItem('usuario-login', resposta.data.token);
-          setIsLoding(false);
-          console.log(parseJwt().role);
-
-
+          console.log('Usuario Cadastrado')
+          setNome('')
+          setEmail('')
+          setSenha('')
+          setIdEmpresa([])
+          setIsLoding(false)
           // // Redirecionamento conforme o tipo do usuário.
           // if(parseJwt().role === '1'){ // 1 é administrador geral
           //     navigate("/")
@@ -61,7 +72,7 @@ export default function Login() {
           <Logo />
         </div>
 
-        <form onSubmit={FazerLogin} action="" className="cadastrar_usu">
+        <form onSubmit={FazerCadastro} action="" className="cadastrar_usu">
 
           <input
             className="Name_Adm"
