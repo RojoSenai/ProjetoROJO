@@ -6,17 +6,14 @@ import Logo from '../../components/Logo/Logo.js';
 import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 
-
-
-
 export default function Login() {
 
   //States
   const [nome, setNome] = useState('');
-  const [email, setEmal] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [empresa, setEmpresa] = useState([]);
-  const [MensagemErro, SetMensagemErro] = useState('');
+ // const [empresa, setEmpresa] = useState([]);
+//onst [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
   function FazerLogin(event) {
@@ -64,19 +61,19 @@ export default function Login() {
           <Logo />
         </div>
 
-        <form onSubmit={FazerLogin} action="" className="login">
+        <form onSubmit={FazerLogin} action="" className="cadastrar_usu">
 
           <input
             className="Name_Adm"
-            placeholder="Name:"
+            placeholder="Nome:"
             type="text"
-            onChange={(event) => setName(event.target.value)}
-            name="Nome"
-            id="Adm__mome" />
+            onChange={(event) => setNome(event.target.value)}
+            name="nome"
+            id="Adm__nome" />
 
 
           <input
-            className="LOGIN_log"
+            className="Name_Adm"
             placeholder="Email:"
             type="text"
             onChange={(event) => setEmail(event.target.value)}
@@ -84,25 +81,25 @@ export default function Login() {
             id="login__email" />
 
           <input
-            className="LOGIN_log"
+            className="Name_Adm"
             placeholder="Senha:"
             type="password"
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
             id="login__senha" />
 
-          <select className="Empresas_abre"  value onChange name="IdEmpresa" id="">
+          <select className="Name_Adm"  value onChange name="IdEmpresa" id="">
             <option value="" disabled selected>Empresa</option>
             <option value="empr" >Drogasil</option>
           </select>
 
-        <button className='BotãoLogin' type="submit">Login</button>
+        <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
       </form>
-      <div className='Div_Matrix'>
+      {/* <div className='Div_Matrix'>
         <h2 className='CorAzul'>FAÇA SUA ESCOLHA</h2>
         <h2 className='CorVermelha'>, SAIA DA MATRIX</h2>
       </div>
-      <Pirulas />
+      <Pirulas /> */}
     </main>
     </div >
   );

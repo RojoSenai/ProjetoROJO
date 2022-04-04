@@ -10,14 +10,14 @@ import './index.css';
 
 //Imports de paginas
 //import NotFound from './Pages/NotFound/NotFound';
-//import Home from './Pages/Home/App';
+import Home from './Pages/Home/App';
 // import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.Jsx'
-import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.Jsx'
+import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.jsx'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <CadastrarUserAdm />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -35,13 +35,6 @@ ReactDOM.render(
 //     </div>
 //   </Router>
 // )
-
-
-
-
-
-
-
 
 
 
