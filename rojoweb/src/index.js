@@ -9,14 +9,15 @@ import './index.css';
 
 
 //Imports de paginas
-import NotFound from './Pages/NotFound/NotFound';
+//import NotFound from './Pages/NotFound/NotFound';
 //import Home from './Pages/Home/App';
 // import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.Jsx'
+import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.Jsx'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <NotFound />
+    <CadastrarUserAdm />
   </React.StrictMode>,
   document.getElementById('root')
 );
