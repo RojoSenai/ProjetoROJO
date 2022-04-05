@@ -20,9 +20,9 @@ import CadastrarEmpresa from './Pages/CadastrarEmpresa/CadastarEmpresa.jsx'
 const routing = (
   <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<CadastrarUserEmpresa />} />
         <Route path="/CadastrarUserAdm" element={<CadastrarUserAdm />} />
-        <Route path="/CadastrarUserEmpresa" element={<CadastrarUserEmpresa />} />
+        <Route path="/CadastrarUserEmpresa" element={<Home />} />
         <Route path="/EmpresaCor" element={<EmpresaCor />} />
         <Route path="/CadastrarEmpresa" element={<CadastrarEmpresa />} />
         <Route path="/notfound" element={<NotFound />} />

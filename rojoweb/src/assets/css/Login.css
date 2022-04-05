@@ -148,12 +148,12 @@ justify-content: center;
         background-color: #232323;
         display: flex;
         justify-content: center;
-        height: 20vw;
+        height: 17vw;
     }
     
     .Rojo{
         position: absolute;
-        margin-top: 99px;
+        margin-top: 76px;
         margin-left: 3px;
     }
     
@@ -185,8 +185,8 @@ justify-content: center;
     .Pirula{
         display: flex;
         justify-content: space-between;
-        width: 101vw;
-        height: 10vw;
+        width: 102vw;
+        height: 15vw;
     }
     
     

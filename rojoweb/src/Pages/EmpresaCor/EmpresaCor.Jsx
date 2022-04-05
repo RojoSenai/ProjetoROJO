@@ -1,6 +1,7 @@
 import '../../assets/css/CadastroCor.css';
 import Logo from '../../components/Logo/Logo.js'
 import { useState, useEffect } from 'react';
+import Cima from '../../components/Header/Header.jsx';
 import Helmet from 'react-helmet';
 //import axios from 'axios';
 
