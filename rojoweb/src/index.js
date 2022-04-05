@@ -13,6 +13,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import Home from './Pages/Home/App';
 import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.jsx'
 import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.jsx'
+import CadastrarUserEmpresa from './Pages/CadastrarUserEmpresa/CadastrarUserEmpresa.jsx'
+import CadastrarEmpresa from './Pages/CadastrarEmpresa/CadastarEmpresa.jsx'
 
 
 const routing = (
@@ -20,7 +22,9 @@ const routing = (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CadastrarUserAdm" element={<CadastrarUserAdm />} />
+        <Route path="/CadastrarUserEmpresa" element={<CadastrarUserEmpresa />} />
         <Route path="/EmpresaCor" element={<EmpresaCor />} />
+        <Route path="/CadastrarEmpresa" element={<CadastrarEmpresa />} />
         <Route path="/notfound" element={<NotFound />} />
         {/* <Navigate to="/" /> */}
       </Routes>
