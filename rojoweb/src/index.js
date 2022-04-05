@@ -10,18 +10,9 @@ import './index.css';
 
 //Imports de paginas
 import NotFound from './Pages/NotFound/NotFound';
-import Home from './Pages/Home/App.js';
-// import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.Jsx'
-import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.Jsx';
+import Home from './Pages/Home/App';
 import EmpresaCor from './Pages/EmpresaCor/EmpresaCor.jsx'
-
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <CadastrarUserAdm />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.jsx'
 
 
 const routing = (
@@ -29,6 +20,7 @@ const routing = (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CadastrarUserAdm" element={<CadastrarUserAdm />} />
+        <Route path="/EmpresaCor" element={<EmpresaCor />} />
         <Route path="/notfound" element={<NotFound />} />
         {/* <Navigate to="/" /> */}
       </Routes>
@@ -37,9 +29,6 @@ const routing = (
 
 
 ReactDOM.render(routing, document.getElementById('root'));
-
-
-
 
 
 

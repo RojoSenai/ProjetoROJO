@@ -62,8 +62,6 @@ export default function Login() {
             id="Cadastro_cor3" />
 
         </form>
-
-
       </div>
     </div>
   );
