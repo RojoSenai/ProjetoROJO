@@ -29,7 +29,7 @@
 }
 
 .Letra-logo {
-    height: 20vws;
+    height: 11vw;
     width: 14vw;
     pointer-events: none;
     /* animation-duration: 50s;
@@ -148,13 +148,14 @@ justify-content: center;
         background-color: #232323;
         display: flex;
         justify-content: center;
-        height: 17vw;
+        height: 11vw;
     }
     
     .Rojo{
         position: absolute;
-        margin-top: 76px;
+        margin-top: 34px;
         margin-left: 3px;
+        height: 102px;
     }
     
     .Letra-logo {

@@ -24,36 +24,6 @@
 }
 
 
-/* PARTE DO HEADER */
-
-.ContainerRojo{
-    display: flex;
-    justify-content: space-around;
-    height: 90px;
-    align-items: center;
-}
-
-.ContainerLetras{
-    width: 57%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.Rojinho{
-    height: 68px;
-}
-.Names_a{
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-
-
-
-
-
-
 
 
 /* PARTE DO LOGIN */
@@ -163,7 +133,7 @@ justify-content: center;
     } */
     
     
-    .Name_Adm{
+    .Name_Event{
         border: none;
         width: 38%;
         border-bottom: 3px solid #ffffff;
@@ -173,13 +143,13 @@ justify-content: center;
         color: #ffffff;
     }
     
-    .Name_Adm::placeholder {
+    .Name_Event::placeholder {
         color: #ffffff;
     }
     
-    .cadastrar_usu{
+    .cadastrar_evt{
         display: flex;
-        height: 35%;
+        height: 47%;
         align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
