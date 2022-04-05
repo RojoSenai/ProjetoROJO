@@ -12,6 +12,7 @@ export default function Login() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [Image, setImage] = useState('');
   const [IdEmpresa, setIdEmpresa] = useState([]);
  //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
@@ -115,14 +116,17 @@ export default function Login() {
             onChange={(event) => setSenha(event.target.value)}
             name="Fim_evento"
             id="login__senha" />
-
+          
+          <div>
+            <label className="event_file" for="Imagem">Escolha o arquivo:</label>
           <input
-            className="Name_Event"
+            className="Name_Event_img"
             placeholder="Imagem do Evento:"
             type="file"
-            onChange={(event) => setSenha(event.target.value)}
-            name="Senha"
-            id="login__senha"/>
+            onChange={(event) => setImage(event.target.value)}
+            name="imagem"
+            id="Imagem"/>
+            </div>
 
 
         <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>

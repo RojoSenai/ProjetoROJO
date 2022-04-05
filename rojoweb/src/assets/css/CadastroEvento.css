@@ -141,8 +141,34 @@ justify-content: center;
         font-size: 2em;
         cursor: pointer;
         color: #ffffff;
+        
     }
     
+    .Name_Event_img{
+        border: none;
+        width: 38%;
+        border-bottom: 3px solid #ffffff;
+        background: transparent;
+        font-size: 2em;
+        cursor: pointer;
+        color: #ffffff;
+        display: none;
+    }
+
+
+    .event_file{
+        color: #ffffff;
+        border: none;
+        width: 38%;
+        border-bottom: 3px solid #ffffff;
+        background: transparent;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+
+
+
     .Name_Event::placeholder {
         color: #ffffff;
     }
@@ -198,3 +224,5 @@ justify-content: center;
         cursor: pointer;
     }
 }
+
+/* .imput[type="file"] */
