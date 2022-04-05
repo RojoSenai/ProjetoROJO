@@ -29,7 +29,7 @@
 }
 
 .Letra-logo {
-    height: 20vws;
+    height: 20vw;
     width: 14vw;
     pointer-events: none;
     /* animation-duration: 50s;
@@ -116,12 +116,29 @@ justify-content: center;
     box-sizing: border-box;
     border-radius: 13px;
     width: 12%;
-    height: 30%;
-    background:transparent;
+    height: 24%;
+    background: transparent;
     color: #ffffff;
     font-style: normal;
     font-weight: 400;
     font-size: 2em;
+    cursor: pointer;
+    transition: border 1s;
+}
+
+.BotãoLogin:hover,
+.BotãoLogin:focus {
+    border: 3px solid #FF1B00;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 14%;
+    height: 26%;
+    background: transparent;
+    color: #FF1B00;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    cursor: pointer;
 }
 
 /* -----------------------------------------------1920----------------------------------------------------- */

@@ -1,5 +1,7 @@
 import '../../assets/css/CadastroCor.css';
 import Logo from '../../components/Logo/Logo.js'
+import Rojologo from '../../assets/img/Rojo_imagem.png';
+import LetraRojo from '../../assets/img/letter.svg';
 import { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 //import axios from 'axios';
@@ -19,50 +21,64 @@ export default function Login() {
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastrat Cor" />
-      <div>
-        <div className="cima">
-          <Logo />
+      <div className='container'>
+        <div className="ContainerLogo_">
+          <img className="Rojo_" src={Rojologo} alt="Logo da empresa" />
+          <img className="Letra-logo_" src={LetraRojo} alt="Letra giratoria em volta do logo" />
         </div>
 
-        <form action="" className="login">
+        <form action="" className='ConteinerForm'>
 
-          <input
-            className="Imput"
-            placeholder="Cor2:"
-            type="Color"
-            name="Cor1"
-            id="Cadastro_cor1" />
+          <div className='ImputCor'>
+            <label className='NomeCor' for="ImputCor">Cor1:</label>
+            <input
+              className="ImputCor"
+              type="Color"
+              name="Cor1"
+              id="Cadastro_cor1" />
+          </div>
 
-          <input
-            className="Imput"
-            placeholder="Cor2:"
-            type="Color"
-            name="Cor2"
-            id="Cadastro_cor2" />
+          <div>
+            <label className='NomeCor' for="ImputCor">Cor2:</label>
+            <input
+              className="ImputCor"
+              type="Color"
+              name="Cor2"
+              id="Cadastro_cor2" />
+          </div>
 
-          <input
-            className="Imput"
-            placeholder="Cor3:"
-            type="Color"
-            name="Cor3"
-            id="Cadastro_cor3" />
+          <div>
+            <label className='NomeCor' for="ImputCor">Fonte:</label>
+            <input
+              className="ImputCor"
+              type="Color"
+              name="Cor3"
+              id="Cadastro_cor3" />
+          </div>
 
+          <div>
+          <label className="ImputFile_" for="Logo">Logo:                                     </label>
           <input
-            className="Imput"
+            className="ImputFile"
             placeholder="Logo:"
-            type="Image"
+            type="file"
             name="Logo_Img"
-            id="Cadastro_cor3" />
+            id="Logo" />
+          </div>
 
+          <div>
+          <label className="ImputFile_" for="Banner">Banner:                                </label>
           <input
-            className="Imput"
+            className="ImputFile"
             placeholder="Banner"
-            type="Image"
+            type="file"
             name="Banner"
-            id="Cadastro_cor3" />
+            id="Banner" />
+          </div>
 
         </form>
+
       </div>
-    </div>
+    </div >
   );
 }

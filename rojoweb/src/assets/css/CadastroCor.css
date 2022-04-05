@@ -5,31 +5,28 @@
     overflow: hidden
 }
 
+.container{
+    background-color: #232323;
+    height: 90vw;
+}
+
+
 /* PARTE COMPOPNENTES LOGO */
-.mano{
-    background-color: #232323;
-    height: 1000px;
-}
-
-.Cima{
-    height: auto
-}
-
-.ContainerLogo{
-    background-color: #232323;
+.ContainerLogo_{
+    /* background-color: #232323; */
     display: flex;
     justify-content: center;
     height: 20vw;
 }
 
-.Rojo{
+.Rojo_{
     position: absolute;
-    margin-top: 137px;
+    margin-top: 86px;
     margin-left: 3px;
 }
 
-.Letra-logo {
-    height: 20vws;
+.Letra-logo_ {
+    height: 20vw;
     width: 14vw;
     pointer-events: none;
     /* animation-duration: 50s;
@@ -39,7 +36,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .Letra-logo {
+    .Letra-logo_ {
       animation: Letra-logo infinite 50s linear;
     }
   }
@@ -52,29 +49,14 @@
         transform: rotate(360deg);
     }
 }
-/* Parte components Pirulas */
-.Pirula{
+
+.ConteinerForm{
     display: flex;
+    height: 25%;
+    flex-direction: column;
     justify-content: space-between;
-    width: 101vw;
-    height: 10vw;
+    align-items: flex-start;
 }
-
-
-/* PARTE DO LOGIN */
-
-.usu_login{
-    text-transform: uppercase;
-    font-family: Sarabun;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 109px;
-    margin-top: 20px;
-    color: #232323;
-
-}
-
 
 .Imput{
     border: none;
@@ -86,29 +68,21 @@
     color: #ffffff;
 }
 
-
-.Imput::placeholder {
+.NomeCor{
     color: #ffffff;
+    font-size: 2em;
 }
 
-.login{
-    display: flex;
-    height: 38%;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-evenly;
+.ImputFile{
+    display: none;
 }
 
-.CorAzul{
-      color: #1C8FD0;
-}
-
-.CorVermelha{
-    color: #C00000;
-}
-
-.Div_Matrix{
-display: flex;
-justify-content: center;
+.ImputFile_{
+    height: 6%;
+    width: 15%;
+    border-bottom: 14px #ffff solid;
+    color: #ffff;
+    cursor: pointer;
+    font-size: 2em;
 }
 

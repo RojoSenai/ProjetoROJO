@@ -65,8 +65,8 @@ export default function Login() {
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastro Usuario Empresa" />
-      <main className='mano'>
-        <div className="cima">
+      <main className='CadastrarUsu_mano'>
+        <div className="CadastrarUsu_Cima">
           <Logo />
         </div>
 
