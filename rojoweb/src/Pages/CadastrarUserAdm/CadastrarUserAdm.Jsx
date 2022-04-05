@@ -1,8 +1,10 @@
 import '../../assets/css/CadastroUsuario.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Cima from '../../components/Header/Header.jsx';
 import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
+
 import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 
@@ -69,6 +71,7 @@ export default function Login() {
       <Helmet title="Projeto Rojo - Cadastro Usuario ADM" />
       <main className='mano'>
         <div className="cima">
+          <Cima />
           <Logo />
         </div>
 

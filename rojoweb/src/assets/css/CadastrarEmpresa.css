@@ -15,43 +15,6 @@
     height: auto
 }
 
-.ContainerLogo{
-    background-color: #232323;
-    display: flex;
-    justify-content: center;
-    height: 20vw;
-}
-
-.Rojo{
-    position: absolute;
-    margin-top: 99px;
-    margin-left: 3px;
-}
-
-.Letra-logo {
-    height: 20vws;
-    width: 14vw;
-    pointer-events: none;
-    /* animation-duration: 50s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-name: Letra-logo; */
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .Letra-logo {
-      animation: Letra-logo infinite 50s linear;
-    }
-  }
-
-@keyframes Letra-logo {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 /* Parte components Pirulas */
 .Pirula{
     display: flex;
@@ -144,43 +107,6 @@ justify-content: center;
         height: auto
     }
     
-    .ContainerLogo{
-        background-color: #232323;
-        display: flex;
-        justify-content: center;
-        height: 25vw;
-    }
-    
-    .Rojo{
-        position: absolute;
-        margin-top: 138px;
-        margin-left: 3px;
-    }
-    
-    .Letra-logo {
-        height: 20vws;
-        width: 14vw;
-        pointer-events: none;
-        /* animation-duration: 50s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-name: Letra-logo; */
-    }
-    
-    @media (prefers-reduced-motion: no-preference) {
-        .Letra-logo {
-          animation: Letra-logo infinite 50s linear;
-        }
-      }
-    
-    @keyframes Letra-logo {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
     /* Parte components Pirulas */
     .Pirula{
         display: flex;

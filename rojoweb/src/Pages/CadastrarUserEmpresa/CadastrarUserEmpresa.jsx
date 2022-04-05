@@ -1,8 +1,10 @@
 import '../../assets/css/CadastroUsuarioEmpresa.css';
 import { useState, useEffect } from 'react';
+import Cima from '../../components/Header/Header.jsx';
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
+
 
 export default function Login() {
 
@@ -65,8 +67,9 @@ export default function Login() {
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastro Usuario Empresa" />
-      <main className='CadastrarUsu_mano'>
-        <div className="CadastrarUsu_Cima">
+      <main className='mano'>
+        <div className="cima">
+          <Cima/>
           <Logo />
         </div>
 

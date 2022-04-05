@@ -3,6 +3,7 @@ import Logo from '../../components/Logo/Logo.js'
 import Rojologo from '../../assets/img/Rojo_imagem.png';
 import LetraRojo from '../../assets/img/letter.svg';
 import { useState, useEffect } from 'react';
+import Cima from '../../components/Header/Header.jsx';
 import Helmet from 'react-helmet';
 //import axios from 'axios';
 
