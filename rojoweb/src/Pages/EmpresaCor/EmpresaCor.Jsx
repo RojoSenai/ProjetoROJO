@@ -19,22 +19,24 @@ export default function Login() {
   const [Islogind, setIslogind] = useState(false);
 
   console.log('agora a cor é ' + Cor1);
-  // document.getElementById("box").style.backgroundcolor = Cor1.value;
-  // function Mudarcor(){
-  //           let colorPicker = document.getElementById("Cadastro_cor1");
-  //           let box = document.getElementById("box");
-  //           // let output = document.getElementById("output");
+  function Mudarcor(){
+    let colorPicker = document.getElementById("Cadastro_cor1");
+    let box = document.getElementById("box");
+    // let output = document.getElementById("output");
+  
+    box.style.backgroundColor = colorPicker.value;
+    setCor1(colorPicker.value)
 
-  //           box.style.backgroundColor = colorPicker.value;
+    colorPicker.addEventListener("input", function(event) {
+    box.style.borderColor = event.target.value;
+    }, false);
+  
+    
+    // colorPicker.addEventListener("change", function(event) {
+    // output.innerText = "Cor escolida " + colorPicker.value + ".";
+    // }, false);
+  }
 
-  //           colorPicker.addEventListener("input", function(event) {
-  //           box.style.borderColor = event.target.value;
-  //           }, false);
-
-  //           // colorPicker.addEventListener("change", function(event) {
-  //           // output.innerText = "Cor escolida " + colorPicker.value + ".";
-  //           // }, false);
-  //         }
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastrar Cor" />
@@ -47,7 +49,7 @@ export default function Login() {
             <div className='ImputCor'>
               <label className='NomeCor' for="ImputCor">Cor1:</label>
               <input
-                onChange={(event) => setCor1(event.target.value)}
+                onChange={(event) => Mudarcor()}
                 className="ImputCor"
                 type="Color"
                 name="Cor1"
@@ -105,7 +107,7 @@ export default function Login() {
             </div>
 
             <div className='PrototiposConteiner'>
-              <div className='PrototipoEsq'>
+              <div id="box" className='PrototipoEsq'>
                 <div className='HaderProt'>
                   <div className='ContHader'>
 
