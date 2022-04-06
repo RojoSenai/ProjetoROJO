@@ -52,9 +52,8 @@
 
 .ConteinerForm{
     display: flex;
-    height: 25%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
@@ -85,4 +84,133 @@
     cursor: pointer;
     font-size: 2em;
 }
+/* ----------------------------prototipos--------------------------------- */
+.ContFormProt{
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+}
 
+.PrototiposConteiner{
+    display: flex;
+    justify-content: space-around;
+    width: 621px;
+    height: 425px;
+    /* background-color: rgba(190, 157, 64, 0.986); */
+    border-radius: 13px;
+}
+
+.PrototipoEsq{
+    width: 245px;
+    height: 100%;
+    border-radius: 13px;
+    background-color: #B01425;
+}
+
+.HaderProt{
+    width: 100%;
+    height: 12%;
+    border-top-left-radius: 13px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.ContHader{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ContAmbur{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.Amburguer{
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #B01425;
+}
+
+.FotoPerfil{
+    width: 28px;
+    height: 28px;
+    border-radius: 100px;
+    background-color: #D0CFCF;
+}
+
+.BannerProt{
+    width: 100%;
+    height: 21%;
+    background-color: #D0CFCF;
+}
+
+.MenuCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 67%;
+    justify-content: space-evenly;
+}
+
+.BolinhaAlinhada{
+    display: flex;
+    width: 88%;
+    justify-content: space-around;
+}
+
+.Bolinha{
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: #D0CFCF;
+}
+
+.PrototipoDir{
+    width: 245px;
+    height: 100%;
+    border-radius: 13px;
+    background-color: #B01425;
+    display: flex;
+}
+
+.DentroMenuB{
+    height: 100%;
+    width: 50%;
+    background-color: #B01425;
+}
+
+.BorroCinza{
+    height: 100%;
+    width: 50%;
+    background-color: #c4c4c475;
+}
+
+.ContMenuDentro{
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #ffff;
+}
+
+.CimaMenu{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.BaixoMenu{
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
