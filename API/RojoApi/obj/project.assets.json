@@ -9120,27 +9120,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\": {}
+    "C:\\Users\\39220866838.INFOSCS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\48423428893.INFOSCS\\Desktop\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
-      "projectName": "RojoAPI",
-      "projectPath": "C:\\Users\\48423428893.INFOSCS\\Desktop\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
-      "packagesPath": "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48423428893.INFOSCS\\Desktop\\ProjetoROJO\\API\\RojoAPI\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
       "projectName": "RojoAPI",
       "projectPath": "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoROJO\\API\\RojoAPI\\RojoAPI.csproj",
       "packagesPath": "C:\\Users\\39220866838.INFOSCS\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoROJO\\API\\RojoAPI\\obj\\",
->>>>>>> 406d5b0082d57cf0fafc3b08433bccb401bccfcb
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\48423428893.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\39220866838.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9215,12 +9207,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.13, 5.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9229,8 +9215,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\39220866838.INFOSCS\\Documents\\ProjetoROJO\\API\\RojoAPI\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

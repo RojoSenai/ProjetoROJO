@@ -1,10 +1,12 @@
 import '../../assets/css/Login.css';
 import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
 import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
+import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx'
 
 
 
@@ -15,7 +17,8 @@ export default function Login() {
   const [email, setEmail] = useState('matheusmarthis@drogasil.com');
   const [senha, setSenha] = useState('123456789');
   const [MensagemErro, SetMensagemErro] = useState('');
-  const [isLoding, setIsLoding] = useState(false); 
+  const [isLoding, setIsLoding] = useState(false);
+  let navigate = useNavigate();
 
   function FazerLogin(event){
 
@@ -39,13 +42,9 @@ export default function Login() {
               localStorage.setItem('usuario-login', resposta.data.token);
               setIsLoding(false);
               console.log(parseJwt().role);
-              
+        
+                  navigate("/CadastroEvento")
 
-              // // Redirecionamento conforme o tipo do usuário.
-              // if(parseJwt().role === '1'){ // 1 é administrador geral
-              //     navigate("/")
-              // }else if (parseJwt().role === '3'){ //3 administrador empresa
-              //     navigate("/")
           }
 
       }
@@ -59,6 +58,7 @@ export default function Login() {
       <Helmet title="Projeto Rojo - Login" />
       <main className='mano'>
         <div className="cima">
+          <HeaderLogin />
           <Logo />
         </div>
 

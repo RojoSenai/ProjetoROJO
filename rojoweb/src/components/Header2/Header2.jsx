@@ -13,6 +13,7 @@ class Cabeca extends Component {
         localStorage.removeItem('usuario-login');
         console.log('Você saiu');
     }
+    
 
 
 

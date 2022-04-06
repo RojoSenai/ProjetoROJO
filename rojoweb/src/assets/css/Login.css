@@ -5,6 +5,36 @@
     overflow: hidden
 }
 
+
+/* PARTE DO HEADER */
+
+.ContainerRojo{
+    display: flex;
+    justify-content: space-evenly;
+    height: 133px;
+    align-items: center;
+}
+
+.ContainerLetras{
+    width: 57%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Rojinho{
+    height: 68px;
+}
+.Names_a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
 /* PARTE COMPOPNENTES LOGO */
 .mano{
     background-color: #232323;

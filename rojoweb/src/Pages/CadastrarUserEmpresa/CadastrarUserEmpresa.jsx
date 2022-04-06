@@ -1,6 +1,6 @@
 import '../../assets/css/CadastroUsuarioEmpresa.css';
 import { useState, useEffect } from 'react';
-import Cima2 from '../../components/Header/Header2.jsx';
+import Cima2 from '../../components/Header2/Header2.jsx';
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
