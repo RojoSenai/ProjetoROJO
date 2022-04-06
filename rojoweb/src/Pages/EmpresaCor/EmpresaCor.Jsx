@@ -75,7 +75,7 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="ImputFile_" for="Logo">Logo:</label>
+              <label className="ImputFile_" for="Logo">Logo::</label>
               <input
                 className="ImputFile"
                 placeholder="Logo:"
