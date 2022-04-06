@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/RojoSenai/projetorojo.github.io/static/css/main.297d0777.css",
+    "main.js": "/RojoSenai/projetorojo.github.io/static/js/main.1879ef5f.js",
+    "static/js/787.b606316a.chunk.js": "/RojoSenai/projetorojo.github.io/static/js/787.b606316a.chunk.js",
+    "static/media/letter.svg": "/RojoSenai/projetorojo.github.io/static/media/letter.3d54b46e87f7f1316066c31f7932c0c9.svg",
+    "index.html": "/RojoSenai/projetorojo.github.io/index.html",
+    "main.297d0777.css.map": "/RojoSenai/projetorojo.github.io/static/css/main.297d0777.css.map",
+    "main.1879ef5f.js.map": "/RojoSenai/projetorojo.github.io/static/js/main.1879ef5f.js.map",
+    "787.b606316a.chunk.js.map": "/RojoSenai/projetorojo.github.io/static/js/787.b606316a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.297d0777.css",
+    "static/js/main.1879ef5f.js"
+  ]
+}
