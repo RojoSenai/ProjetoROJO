@@ -16,18 +16,18 @@
     /* background-color: #232323; */
     display: flex;
     justify-content: center;
-    height: 20vw;
+    height: 13vw;
 }
 
 .Rojo_{
     position: absolute;
-    margin-top: 133px;
+    margin-top: 37px;
     margin-left: 3px;
 }
 
 .Letra-logo_ {
-    height: 20vw;
-    width: 14vw;
+    height: 12vw;
+    width: 12vw;
     pointer-events: none;
     /* animation-duration: 50s;
     animation-timing-function: linear;

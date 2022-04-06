@@ -1,5 +1,5 @@
 import '../../assets/css/CadastroCor.css';
-import Logo from '../../components/Logo/Logo.js'
+//import Logo from '../../components/Logo/Logo.js'
 import Rojologo from '../../assets/img/Rojo_imagem.png';
 import LetraRojo from '../../assets/img/letter.svg';
 import { useState, useEffect } from 'react';
@@ -37,7 +37,7 @@ export default function Login() {
   //         }
   return (
     <div>
-      <Helmet title="Projeto Rojo - Cadastrat Cor" />
+      <Helmet title="Projeto Rojo - Cadastrar Cor" />
       <div className='container'>
         <Cima />
 
