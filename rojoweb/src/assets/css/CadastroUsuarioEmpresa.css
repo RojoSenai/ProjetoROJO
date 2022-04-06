@@ -28,7 +28,7 @@
 
 .ContainerRojo{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 90px;
     align-items: center;
 }
@@ -218,8 +218,8 @@ justify-content: center;
         border: 3px solid #FF1B00;
         box-sizing: border-box;
         border-radius: 13px;
-        width: 14%;
-        height: 20%;
+        width: 12%;
+        height: 18%;;
         background: transparent;
         color: #FF1B00;
         font-style: normal;

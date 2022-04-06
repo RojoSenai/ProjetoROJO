@@ -24,7 +24,7 @@ class Cabeca extends Component {
                     <img className="Rojinho" src={Rojologo} alt="Logo da empresa" />
                 </div>
                 <div className='ContainerLetras'>
-                    <Link to="/"><a href="" className="Names_a">Eventos</a></Link>
+                    <Link to="/EmpresaCor"><a href="" className="Names_a">CadastrarCor</a></Link>
                     <Link to="/CadastrarUserAdm"><a href="" className="Names_a">Cadastrar  Usuario</a></Link>
                     <Link to="/CadastrarEmpresa"><a href="" className="Names_a">Cadastrar empresa</a></Link>
                     <Link to="/CadastroEvento"><a href="" className="Names_a">Cadastrar evento</a></Link>

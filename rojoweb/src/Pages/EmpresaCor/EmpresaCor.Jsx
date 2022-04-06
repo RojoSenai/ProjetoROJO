@@ -39,10 +39,7 @@ export default function Login() {
     <div>
       <Helmet title="Projeto Rojo - Cadastrat Cor" />
       <div className='container'>
-        <div className="ContainerLogo_">
-          <img className="Rojo_" src={Rojologo} alt="Logo da empresa" />
-          <img className="Letra-logo_" src={LetraRojo} alt="Letra giratoria em volta do logo" />
-        </div>
+        <Cima />
 
         <div className='ContFormProt'>
           <form action="" className='ConteinerForm'>
@@ -61,6 +58,7 @@ export default function Login() {
               <label className='NomeCor' for="ImputCor">Cor2:</label>
               <input
                 className="ImputCor"
+                onChange={(event) => setCor2(event.target.value)}
                 type="Color"
                 name="Cor2"
                 id="Cadastro_cor2" />
@@ -70,6 +68,7 @@ export default function Login() {
               <label className='NomeCor' for="ImputCor">Fonte:</label>
               <input
                 className="ImputCor"
+                onChange={(event) => setCor3(event.target.value)}
                 type="Color"
                 name="Cor3"
                 id="Cadastro_cor3" />
@@ -94,76 +93,84 @@ export default function Login() {
                 name="Banner"
                 id="Banner" />
             </div>
+
+            <button className='BotãoCor' type="submit">Login</button>
           </form>
 
-{/* ------------------------------------------------PROTOTIPOS----------------------------------------------------------------------- */}
-
-          <div className='PrototiposConteiner'>
-            <div className='PrototipoEsq'>
-              <div className='HaderProt'>
-                <div className='ContHader'>
-
-                  <div className='ContAmbur'>
-                    <div className='Amburguer' />
-                    <div className='Amburguer' />
-                    <div className='Amburguer' />
-                  </div>
-
-                  <div className='ContPer'>
-                    <div className='FotoPerfil' />
-                  </div>
-
-                </div>
-              </div>
-
-              <div className='BannerProt' />
-
-              <div className='MenuCont'>
-
-                <div className='BolinhaAlinhada'>
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                </div>
-
-                <div className='BolinhaAlinhada'>
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                </div>
-
-                <div className='BolinhaAlinhada'>
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                  <div className='Bolinha' />
-                </div>
-
-              </div>
-
+          {/* ------------------------------------------------PROTOTIPOS----------------------------------------------------------------------- */}
+          <div className='ContLogoProt'>
+            <div className="ContainerLogo_">
+              <img className="Rojo_" src={Rojologo} alt="Logo da empresa" />
+              <img className="Letra-logo_" src={LetraRojo} alt="Letra giratoria em volta do logo" />
             </div>
 
-{/* -----------------------------------------PROTOTIPO DA DIREITA----------------------------------------------------------------------------------------------- */}
+            <div className='PrototiposConteiner'>
+              <div className='PrototipoEsq'>
+                <div className='HaderProt'>
+                  <div className='ContHader'>
 
-            <div className='PrototipoDir'>
-              <div className='DentroMenuB'>
-                <div className='ContMenuDentro'>
+                    <div className='ContAmbur'>
+                      <div className='Amburguer' />
+                      <div className='Amburguer' />
+                      <div className='Amburguer' />
+                    </div>
 
-                  <div className='CimaMenu'>
-                    <p>Menu</p>
-                    <p>X</p>
+                    <div className='ContPer'>
+                      <div className='FotoPerfil' />
+                    </div>
+
+                  </div>
+                </div>
+
+                <div className='BannerProt' />
+
+                <div className='MenuCont'>
+
+                  <div className='BolinhaAlinhada'>
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
                   </div>
 
-                  <div className='BaixoMenu'>
-                    <p>Meus Eventos</p>
-                    <p>Agenda</p>
-                    <p>Documentos</p>
+                  <div className='BolinhaAlinhada'>
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
                   </div>
+
+                  <div className='BolinhaAlinhada'>
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
+                    <div className='Bolinha' />
+                  </div>
+
                 </div>
 
               </div>
 
-              <div className='BorroCinza' />
+              {/* -----------------------------------------PROTOTIPO DA DIREITA----------------------------------------------------------------------------------------------- */}
 
+              <div className='PrototipoDir'>
+                <div className='DentroMenuB'>
+                  <div className='ContMenuDentro'>
+
+                    <div className='CimaMenu'>
+                      <p>Menu</p>
+                      <p>X</p>
+                    </div>
+
+                    <div className='BaixoMenu'>
+                      <p>Meus Eventos</p>
+                      <p>Agenda</p>
+                      <p>Documentos</p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className='BorroCinza' />
+
+              </div>
             </div>
           </div>
         </div>

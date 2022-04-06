@@ -21,7 +21,7 @@
 
 .Rojo_{
     position: absolute;
-    margin-top: 86px;
+    margin-top: 133px;
     margin-left: 3px;
 }
 
@@ -55,6 +55,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    height: 50%;
+    width: 12%;
 }
 
 .Imput{
@@ -79,16 +81,54 @@
 .ImputFile_{
     height: 6%;
     width: 15%;
-    border-bottom: 14px #ffff solid;
     color: #ffff;
     cursor: pointer;
     font-size: 2em;
 }
+
+.BotãoCor{
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 98%;
+    height: 14%;
+    background: transparent;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    cursor: pointer;
+    transition: border 1s;
+}
+
+.BotãoCor:hover,
+.BotãoCor:focus {
+    border: 3px solid #FF1B00;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 98%;
+    height: 14%;
+    background: transparent;
+    color: #FF1B00;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    cursor: pointer;
+}
+
 /* ----------------------------prototipos--------------------------------- */
+
+.ContLogoProt{
+    display: flex;
+    flex-direction: column;
+}
+
 .ContFormProt{
     display: flex;
     width: 100vw;
     justify-content: space-around;
+    height: 44vw;
+    align-items: center;
 }
 
 .PrototiposConteiner{
