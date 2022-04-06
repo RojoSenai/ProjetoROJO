@@ -21,9 +21,9 @@ import CadastroEvento from './Pages/CadastarEvento/CadastarEvento.jsx'
 const routing = (
   <Router>
       <Routes>
-        <Route path="/" element={<CadastrarUserEmpresa />} />
+        <Route path="/" element={<Home />} />
         <Route path="/CadastrarUserAdm" element={<CadastrarUserAdm />} />
-        <Route path="/CadastrarUserEmpresa" element={<Home />} />
+        <Route path="/CadastrarUserEmpresa" element={<CadastrarUserEmpresa />} />
         <Route path="/EmpresaCor" element={<EmpresaCor />} />
         <Route path="/CadastroEvento" element={<CadastroEvento />} />
         <Route path="/CadastrarEmpresa" element={<CadastrarEmpresa />} />
