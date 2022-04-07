@@ -43,7 +43,7 @@ export default function Login() {
               setIsLoding(false);
               console.log(parseJwt().role);
         
-                  navigate("/CadastroEvento")
+                navigate("/CadastroEvento")
 
           }
 

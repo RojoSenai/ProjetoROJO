@@ -24,11 +24,11 @@ class Cabeca extends Component {
                     <img className="Rojinho" src={Rojologo} alt="Logo da empresa" />
                 </div>
                 <div className='ContainerLetras'>
-                    <Link to="/EmpresaCor"><a href="" className="Names_a">CadastrarCor</a></Link>
-                    <Link to="/CadastrarUserAdm"><a href="" className="Names_a">Cadastrar  Usuario</a></Link>
-                    <Link to="/CadastrarEmpresa"><a href="" className="Names_a">Cadastrar empresa</a></Link>
-                    <Link to="/CadastroEvento"><a href="" className="Names_a">Cadastrar evento</a></Link>
-                    <Link to="/"><a onClick={this.logout} className="Names_a">Sair</a></Link>
+                    <Link to="/EmpresaCor"className="Names_a">CadastrarCor</Link>
+                    <Link to="/CadastrarUserAdm" className="Names_a">Cadastrar  Usuario</Link>
+                    <Link to="/CadastrarEmpresa" className="Names_a">Cadastrar empresa</Link>
+                    <Link to="/CadastroEvento" className="Names_a">Cadastrar evento</Link>
+                    <Link to="/" className="Names_a" onClick={this.logout}>Sair</Link>
                 </div>
             </div>
         )

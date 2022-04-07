@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import { createRoot } from 'react-dom/client';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,14 +27,16 @@ const routing = (
         <Route path="/EmpresaCor" element={<EmpresaCor />} />
         <Route path="/CadastroEvento" element={<CadastroEvento />} />
         <Route path="/CadastrarEmpresa" element={<CadastrarEmpresa />} />
-        <Route path="/notfound" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
         {/* <Navigate to="/" /> */}
       </Routes>
   </Router>
 )
 
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-ReactDOM.render(routing, document.getElementById('root'));
+root.render(routing, document.getElementById('root'));
 
 
 

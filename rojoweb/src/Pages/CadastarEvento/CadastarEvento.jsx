@@ -14,7 +14,7 @@ export default function Login() {
   const [senha, setSenha] = useState('');
   const [Image, setImage] = useState('');
   const [IdEmpresa, setIdEmpresa] = useState([]);
- //const [MensagemErro, SetMensagemErro] = useState('');
+  //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
   function FazerCadastro(event) {
@@ -26,18 +26,18 @@ export default function Login() {
 
     //chamando api
     let UserAdm = {
-      nome : nome,
+      nome: nome,
       email: email,
       senha: senha,
       IdEmpresa: IdEmpresa,
     };
-    
-    
+
+
     axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
       }
-      
+
     })
 
       .then((resposta) => {
@@ -68,9 +68,9 @@ export default function Login() {
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastro Usuario Empresa" />
-     <main className='mano'>
+      <main className='mano'>
         <div className="cima">
-        <Cima />
+          <Cima />
           <Logo />
         </div>
 
@@ -100,8 +100,8 @@ export default function Login() {
             onChange={(event) => setSenha(event.target.value)}
             name="Nome_Palestrante"
             id="login__senha" />
-            
-            <input
+
+          <input
             className="Name_Event"
             placeholder="Incio do Evento:"
             type="date"
@@ -116,27 +116,29 @@ export default function Login() {
             onChange={(event) => setSenha(event.target.value)}
             name="Fim_evento"
             id="login__senha" />
-          
+
           <div>
-            <label className="event_file" for="Imagem">Escolha o arquivo:</label>
-          <input
-            className="Name_Event_img"
-            placeholder="Imagem do Evento:"
-            type="file"
-            onChange={(event) => setImage(event.target.value)}
-            name="imagem"
-            id="Imagem"/>
+            <div className="event">
+              <label className="event_file" for="Imagem">Escolha o arquivo:</label>
             </div>
+            <input
+              className="Name_Event_img"
+              placeholder="Imagem do Evento:"
+              type="file"
+              onChange={(event) => setImage(event.target.value)}
+              name="imagem"
+              id="Imagem" />
+          </div>
 
 
-        <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
-      </form>
-      {/* <div className='Div_Matrix'>
+          <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
+        </form>
+        {/* <div className='Div_Matrix'>
         <h2 className='CorAzul'>FAÇA SUA ESCOLHA</h2>
         <h2 className='CorVermelha'>, SAIA DA MATRIX</h2>
       </div>
       <Pirulas /> */}
-    </main>
+      </main>
     </div >
   );
 }

@@ -8,10 +8,10 @@
 
 /* PARTE DO HEADER */
 
-.ContainerRojo{
+.ContainerRojoDiv{
     display: flex;
     justify-content: space-evenly;
-    height: 133px;
+    height: 134px;
     align-items: center;
 }
 

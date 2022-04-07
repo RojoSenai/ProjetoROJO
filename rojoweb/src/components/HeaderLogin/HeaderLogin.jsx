@@ -20,7 +20,7 @@ class Cabeca extends Component {
     render() {
 
         return (
-            <div className="ContainerRojo">
+            <div className="ContainerRojoDiv">
                 <div>
                 </div>
             </div>

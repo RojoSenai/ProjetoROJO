@@ -79,11 +79,32 @@
 }
 
 .ImputFile_{
-    height: 6%;
-    width: 15%;
-    color: #ffff;
-    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    border-bottom: 3px solid #ffffff;
+    background: transparent;
     font-size: 2em;
+    cursor: pointer;
+    transition: background 0.75s;
+}
+
+.ImputFile_:hover,
+.ImputFile_:focus{
+        color: #ffffff;
+        border: none;
+        width: 100%;
+        border-bottom: 3px solid #ffffff;
+        background-color: rgba(255, 255, 255, 0.137);
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+.EventFile{
+    width: 18vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .BotãoCor{
@@ -151,7 +172,7 @@
     width: 100%;
     height: 12%;
     border-top-left-radius: 13px;
-    background-color: #ffffff;
+    background-color: #000;
     display: flex;
     justify-content: center;
 }

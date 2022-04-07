@@ -19,26 +19,44 @@ export default function Login() {
   const [Islogind, setIslogind] = useState(false);
 
   console.log('agora a cor é ' + Cor1);
-  function Mudarcor(){
+  function Mudarcor() {
     let colorPicker = document.getElementById("Cadastro_cor1");
     let box = document.getElementById("box");
     let burguer = document.getElementById("burguer")
     let burguer2 = document.getElementById("burguer2")
     let burguer3 = document.getElementById("burguer3")
+    let menub = document.getElementById("menub")
+    let borro = document.getElementById("borro")
+
     // let output = document.getElementById("output");
-    
+
     box.style.backgroundColor = colorPicker.value;
     burguer.style.backgroundColor = colorPicker.value;
     burguer2.style.backgroundColor = colorPicker.value;
     burguer3.style.backgroundColor = colorPicker.value;
+    menub.style.backgroundColor = colorPicker.value;
+    borro.style.backgroundColor = colorPicker.value
     setCor1(colorPicker.value)
-    
-    colorPicker.addEventListener("input", function(event) {
+
+    colorPicker.addEventListener("input", function (event) {
       box.style.backgroundColor = event.target.value;
       burguer2.style.backgroundColor = event.target.value;
       burguer3.style.backgroundColor = event.target.value;
-    }, false);  
-    
+      menub.style.backgroundColor = event.target.value;
+    }, false);
+
+    let colorPicker2 = document.getElementById("Cadastro_cor2");
+    let Header = document.getElementById("Header");
+
+    Header.style.backgroundColor = colorPicker2.value
+
+
+    let colorPickerFonte = document.getElementById("Cadastro_cor3");
+    let letras = document.getElementById("letras");
+
+    letras.style.color = colorPickerFonte.value
+
+
     // colorPicker.addEventListener("change", function(event) {
     // output.innerText = "Cor escolida " + colorPicker.value + ".";
     // }, false);
@@ -67,7 +85,7 @@ export default function Login() {
               <label className='NomeCor' for="ImputCor">Cor2:</label>
               <input
                 className="ImputCor"
-                onChange={(event) => setCor2(event.target.value)}
+                onChange={(event) => Mudarcor()}
                 type="Color"
                 name="Cor2"
                 id="Cadastro_cor2" />
@@ -77,14 +95,16 @@ export default function Login() {
               <label className='NomeCor' for="ImputCor">Fonte:</label>
               <input
                 className="ImputCor"
-                onChange={(event) => setCor3(event.target.value)}
+                onChange={(event) => Mudarcor()}
                 type="Color"
                 name="Cor3"
                 id="Cadastro_cor3" />
             </div>
 
             <div>
-              <label className="ImputFile_" for="Logo">Logo::</label>
+              <div className="EventFile">
+                <label className="ImputFile_" for="Logo">Logo:</label>
+              </div>
               <input
                 className="ImputFile"
                 placeholder="Logo:"
@@ -94,7 +114,9 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="ImputFile_" for="Banner">Banner:</label>
+              <div className="EventFile">
+                <label className="ImputFile_" for="Banner">Banner:</label>
+              </div>
               <input
                 className="ImputFile"
                 placeholder="Banner"
@@ -103,7 +125,7 @@ export default function Login() {
                 id="Banner" />
             </div>
 
-            <button className='BotãoCor' type="submit">Login</button>
+            <button className='BotãoCor' type="submit">Cadastrar</button>
           </form>
 
           {/* ------------------------------------------------PROTOTIPOS----------------------------------------------------------------------- */}
@@ -115,7 +137,7 @@ export default function Login() {
 
             <div className='PrototiposConteiner'>
               <div id="box" className='PrototipoEsq'>
-                <div className='HaderProt'>
+                <div id="Header" className='HaderProt'>
                   <div className='ContHader'>
 
                     <div className='ContAmbur'>
@@ -159,9 +181,9 @@ export default function Login() {
 
               {/* -----------------------------------------PROTOTIPO DA DIREITA----------------------------------------------------------------------------------------------- */}
 
-              <div className='PrototipoDir'>
-                <div className='DentroMenuB'>
-                  <div className='ContMenuDentro'>
+              <div id="borro" className='PrototipoDir'>
+                <div id="menub" className='DentroMenuB'>
+                  <div id="letras" className='ContMenuDentro'>
 
                     <div className='CimaMenu'>
                       <p>Menu</p>
