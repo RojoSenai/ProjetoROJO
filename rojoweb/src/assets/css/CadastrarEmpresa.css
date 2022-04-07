@@ -29,6 +29,12 @@
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color 0.75s;
+}
+.Names_a:hover, .Name_a:focus{
+    color: #b01425;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 
