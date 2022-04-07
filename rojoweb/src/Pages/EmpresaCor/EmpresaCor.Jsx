@@ -22,15 +22,22 @@ export default function Login() {
   function Mudarcor(){
     let colorPicker = document.getElementById("Cadastro_cor1");
     let box = document.getElementById("box");
+    let burguer = document.getElementById("burguer")
+    let burguer2 = document.getElementById("burguer2")
+    let burguer3 = document.getElementById("burguer3")
     // let output = document.getElementById("output");
-  
+    
     box.style.backgroundColor = colorPicker.value;
+    burguer.style.backgroundColor = colorPicker.value;
+    burguer2.style.backgroundColor = colorPicker.value;
+    burguer3.style.backgroundColor = colorPicker.value;
     setCor1(colorPicker.value)
-
+    
     colorPicker.addEventListener("input", function(event) {
-    box.style.borderColor = event.target.value;
-    }, false);
-  
+      box.style.backgroundColor = event.target.value;
+      burguer2.style.backgroundColor = event.target.value;
+      burguer3.style.backgroundColor = event.target.value;
+    }, false);  
     
     // colorPicker.addEventListener("change", function(event) {
     // output.innerText = "Cor escolida " + colorPicker.value + ".";
@@ -112,9 +119,9 @@ export default function Login() {
                   <div className='ContHader'>
 
                     <div className='ContAmbur'>
-                      <div className='Amburguer' />
-                      <div className='Amburguer' />
-                      <div className='Amburguer' />
+                      <div id="burguer" className='Amburguer' />
+                      <div id="burguer2" className='Amburguer' />
+                      <div id="burguer3" className='Amburguer' />
                     </div>
 
                     <div className='ContPer'>
