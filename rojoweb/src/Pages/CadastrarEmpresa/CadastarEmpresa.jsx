@@ -1,68 +1,69 @@
 import '../../assets/css/CadastrarEmpresa.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { parseJwt } from '../../Services/auth';
+//import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
 import Cima from '../../components/Header/Header.jsx';
-import Pirulas from '../../components/Pirulas/Pirulas.js';
+//import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 
 export default function Login() {
 
   //States
-  const [nome, setNome] = useState('');
-  const [email, setCnpj] = useState('');
+  const [cnpj, setCnpj] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [IdEmpresa, setIdEmpresa] = useState([]);
+  const [nomeFantasia, setNome] = useState('');
+  const [razaoSocial, setRazao] = useState('');
+  const [fundaçãoAniversario, setFundacao] = useState(new Date());
+  const [endereço, setEndereco] = useState('');
+  const [telefone, setTelefone] = useState('');
+  const [TotalFuncionarios, setTotalFuncionarios ] = useState('');
+ // const [IdEmpresa, setIdEmpresa] = useState([]);
 //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
-
-  function FazerCadastro(event) {
-
-    setIsLoding(true)
-
-    //tirando função padrão da página
-    event.preventDefault();
-
-    //chamando api
-    let UserAdm = {
-      nome : nome,
-      email: email,
-      senha: senha,
-      IdEmpresa: IdEmpresa,
-    };
     
-    
-    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-      }
-      
-    })
+    //Cadastrar empresa
+    function CadastrarEmpresa(event) {
+        event.preventDefault();
 
-      .then((resposta) => {
+        setIsLoding(true)
 
-        //adicionando token no local Storage
-        if (resposta.status === 200) {
+      //tirando função padrão da página
+      event.preventDefault();
 
-          //adicionando token no localStorage do navegador
-          console.log('Usuario Cadastrado')
-          setNome('')
-          setSenha('')
-          setIdEmpresa([])
-          setIsLoding(false)
-          // // Redirecionamento conforme o tipo do usuário.
-          // if(parseJwt().role === '1'){ // 1 é administrador geral
-          //     navigate("/")
-          // }else if (parseJwt().role === '3'){ //3 administrador empresa
-          //     navigate("/")
+      //chamando api
+        let empresa = {
+          cnpj : cnpj,
+          email: email,
+          senha: senha,
+          nomeFantasia : nomeFantasia,
+          razaoSocial :razaoSocial,
+          fundaçãoAniversario :fundaçãoAniversario,
+          endereço : endereço,
+          telefone : telefone,
+          TotalFuncionarios : TotalFuncionarios 
+        //  IdEmpresa: IdEmpresa,
         }
 
-      }
-      )
+        axios.post('http://localhost:5000/api/Empresa', empresa, {
 
-      .catch(erro => console.log(erro))
-  }
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+
+            .then((resposta) => {
+                if (resposta.status === 201) {
+                  setIsLoding(false)
+                    console.log('Empresa cadastrada')
+                }
+
+            })
+
+            .then(erro => console.log(erro))
+    }
+
 
   return (
     <div>
@@ -73,7 +74,16 @@ export default function Login() {
           <Logo />
         </div>
 
-        <form onSubmit={FazerCadastro} action="" className="cadastrar_usu">
+        <form onSubmit={CadastrarEmpresa} action="" className="cadastrar_usu">
+        
+        <input
+            className="Name_Adm"
+            placeholder="Cnpj:"
+            type="text"
+            onChange={(event) => setCnpj(event.target.value)}
+            name="nome"
+            id="cadastar__Nome" />
+
 
           <input
             className="Name_Adm"
@@ -86,9 +96,9 @@ export default function Login() {
 
           <input
             className="Name_Adm"
-            placeholder="CNPJ:"
-            type="text"
-            onChange={(event) => setCnpj(event.target.value)}
+            placeholder="Email:"
+            type="email"
+            onChange={(event) => setEmail(event.target.value)}
             name="Cnpj"
             id="cadastar__Cnpj" />
 
@@ -97,6 +107,47 @@ export default function Login() {
             placeholder="Senha:"
             type="password"
             onChange={(event) => setSenha(event.target.value)}
+            name="Senha"
+            id="cadastar__Senha" />
+
+          <input
+            className="Name_Adm"
+            placeholder="RazaoSocial:"
+            type="text"
+            onChange={(event) => setRazao(event.target.value)}
+            name="Senha"
+            id="cadastar__Senha" />
+
+
+          <input
+            className="Name_Adm"
+            placeholder="Fundação:"
+            type="date"
+            onChange={(event) => setFundacao(event.target.value)}
+            name="Senha"
+            id="cadastar__Senha" />
+
+          <input
+            className="Name_Adm"
+            placeholder="Endereço:"
+            type="text"
+            onChange={(event) => setEndereco(event.target.value)}
+            name="Senha"
+            id="cadastar__Senha" />
+
+          <input
+            className="Name_Adm"
+            placeholder="Telefone:"
+            type="tel"
+            onChange={(event) => setTelefone(event.target.value)}
+            name="Senha"
+            id="cadastar__Senha" />
+
+          <input
+            className="Name_Adm"
+            placeholder="Total De Funcionarios:"
+            type="number"
+            onChange={(event) => setTotalFuncionarios(event.target.value)}
             name="Senha"
             id="cadastar__Senha" />
 
