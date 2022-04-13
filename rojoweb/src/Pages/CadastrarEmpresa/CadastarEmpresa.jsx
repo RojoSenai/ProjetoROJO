@@ -56,8 +56,20 @@ export default function Login() {
             .then((resposta) => {
                 if (resposta.status === 201) {
                   setIsLoding(false)
-                    console.log('Empresa cadastrada')
+                    console.log('Empresa cadastrada');
+
+                    // setCnpj('');
+                    // setEmail('');
+                    // setSenha('');
+                    // setNome('');
+                    // setRazao('');
+                    // setFundacao();
+                    // setEndereco('');
+                    // setTelefone('');
+                    // setTotalFuncionarios('');
                 }
+
+                
 
             })
 

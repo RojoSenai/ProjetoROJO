@@ -4,100 +4,123 @@ import Cima from '../../components/Header/Header.jsx';
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
+import { parseJwt } from '../../Services/auth';
 
 
 export default function Login() {
 
   //States
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [Image, setImage] = useState('');
-  const [IdEmpresa, setIdEmpresa] = useState([]);
+  const [NomeEmpr, setNomeEmpresa] = useState([]);
+  const [NomeEvt, setNomeEvt] = useState('');
+// const [Descricao, setDescricao] = useState('');
+  const [NomePalestrante, setNomePalestrante] = useState('');
+  const [IncioEvnt, setIncioEvnt] = useState(new Date());
+  const [FimEvnt, setFimEvnt] = useState(new Date());
+  // const [Image, setImage] = useState('');
+  const [IdEmpresa, setIdEmpresa] = useState(0);
   //const [MensagemErro, SetMensagemErro] = useState('');
+  const [IdUsu, setIdUsu] = useState(0);
+  //console.log(IdUsu);
+
   const [isLoding, setIsLoding] = useState(false);
-
-  function FazerCadastro(event) {
-
+  function CadastrarEvento(event) {
+    event.preventDefault();
     setIsLoding(true)
 
     //tirando função padrão da página
     event.preventDefault();
 
     //chamando api
-    let UserAdm = {
-      nome: nome,
-      email: email,
-      senha: senha,
+    let evento = {
       IdEmpresa: IdEmpresa,
-    };
+      IdUsu: IdUsu,
+      NomeEvt: NomeEvt,
+      NomePalestrante: NomePalestrante,
+      IncioEvnt: IncioEvnt,
+      FimEvnt: FimEvnt,
+      // Descricao: Descricao,
+      //Image : Image 
+      //  IdEmpresa: IdEmpresa,
+    }
 
+    console.log('aquui');
+    axios.post('http://localhost:5000/api/Evento', evento, {
 
-    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-      }
-
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+        }
     })
-
+    
+    console.log(evento)
       .then((resposta) => {
-
-        //adicionando token no local Storage
-        if (resposta.status === 200) {
-
-          //adicionando token no localStorage do navegador
-          console.log('Usuario Cadastrado')
-          setNome('')
-          setEmail('')
-          setSenha('')
-          setIdEmpresa([])
-          setIsLoding(false)
-          // // Redirecionamento conforme o tipo do usuário.
-          // if(parseJwt().role === '1'){ // 1 é administrador geral
-          //     navigate("/")
-          // }else if (parseJwt().role === '3'){ //3 administrador empresa
-          //     navigate("/")
+        if (resposta.status === 201) {
+          console.log('Evento cadastrado FILHA DA PUTAAAAA');
         }
 
-      }
-      )
 
-      .catch(erro => console.log(erro))
+
+      })
+
+      .then(erro => console.log(erro))
   }
+
+  function BuscarEmpresa(){
+    axios.get('http://35.174.225.157/api/Empresa')
+      .then((resposta) => {
+        if(resposta.status = 200){
+          setNomeEmpresa(resposta.data)
+        }
+      })
+  } 
+
+  useEffect(() => {
+    BuscarEmpresa();
+    setIdUsu(parseJwt().role);
+  })
+
 
   return (
     <div>
-      <Helmet title="Projeto Rojo - Cadastro Usuario Empresa" />
+      <Helmet title="Projeto Rojo - Cadastro Usuario Evento" />
       <main className='mano'>
         <div className="cima">
           <Cima />
           <Logo />
         </div>
 
-        <form onSubmit={FazerCadastro} action="" className="cadastrar_evt">
+        <form onSubmit={CadastrarEvento} action="" className="cadastrar_evt">
+
+
+          <select className="Name_Event" name="IdEmpresa" value={IdEmpresa} onChange={(event => setIdEmpresa(event.target.value))}>
+            <option disabled selected value="0">Nome Empresa:</option>
+            {NomeEmpr.map((Empresas) => {
+              return (
+                <option key={Empresas.idempresa} value={Empresas.idempresa}> {Empresas.nomeFantasia} </option>
+              )
+            })}
+          </select>
 
           <input
             className="Name_Event"
             placeholder="Nome do Evento:"
             type="text"
-            onChange={(event) => setNome(event.target.value)}
+            onChange={(event) => setNomeEvt(event.target.value)}
             name="nome"
             id="Adm__nome" />
 
-
-          <input
+          {/* <input
             className="Name_Event"
             placeholder="Descrição:"
             type="text"
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setDescricao(event.target.value)}
             name="Decrição"
-            id="login__email" />
+            id="login__email" /> */}
 
           <input
             className="Name_Event"
             placeholder="Nome do Palestrante:"
             type="text"
-            onChange={(event) => setSenha(event.target.value)}
+            onChange={(event) => setNomePalestrante(event.target.value)}
             name="Nome_Palestrante"
             id="login__senha" />
 
@@ -105,7 +128,7 @@ export default function Login() {
             className="Name_Event"
             placeholder="Incio do Evento:"
             type="date"
-            onChange={(event) => setSenha(event.target.value)}
+            onChange={(event) => setIncioEvnt(event.target.value)}
             name="Comeco_evento"
             id="login__senha" />
 
@@ -113,11 +136,11 @@ export default function Login() {
             className="Name_Event"
             placeholder="Fim do Evento:"
             type="date"
-            onChange={(event) => setSenha(event.target.value)}
+            onChange={(event) => setFimEvnt(event.target.value)}
             name="Fim_evento"
             id="login__senha" />
 
-          <div>
+          {/* <div>
             <div className="event">
               <label className="event_file" for="Imagem">Escolha o arquivo:</label>
             </div>
@@ -128,7 +151,7 @@ export default function Login() {
               onChange={(event) => setImage(event.target.value)}
               name="imagem"
               id="Imagem" />
-          </div>
+          </div> */}
 
 
           <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>

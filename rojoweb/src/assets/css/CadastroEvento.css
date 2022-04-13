@@ -143,6 +143,11 @@ justify-content: center;
         color: #ffffff;
         transition: background 0.75s;
     }
+
+    .Name_Event option{
+        background-color: #000000;
+        color: #ffffff;
+    }
     
     .Name_Event:hover,
     .Name_Event:focus{

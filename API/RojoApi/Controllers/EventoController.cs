@@ -25,7 +25,7 @@ namespace RojoAPI.Controllers
 
         //CADASTRAR
         [HttpPost]
-        [Authorize(Roles = "3")]
+      //  [Authorize(Roles = "3")]
         public IActionResult Post(Evento NovaEvento)
         {
             try
@@ -43,7 +43,7 @@ namespace RojoAPI.Controllers
 
         //DELETAR
         [HttpDelete("{id}")]
-        [Authorize(Roles = "1, 3")]
+        //[Authorize(Roles = "1, 3")]
         public IActionResult Delete(int id)
         {
             try
@@ -63,7 +63,7 @@ namespace RojoAPI.Controllers
 
         //LISTAR TODOS
         [HttpGet]
-        [Authorize(Roles = "1, 3")]
+       // [Authorize(Roles = "1, 3")]
         public IActionResult GetAll()
         {
             try
@@ -80,7 +80,7 @@ namespace RojoAPI.Controllers
 
         //BUSCAR POR ID
         [HttpGet("{id}")]
-        [Authorize(Roles = "1, 3")]
+       // [Authorize(Roles = "1, 3")]
         public IActionResult GetById(int id)
         {
             try
@@ -96,7 +96,7 @@ namespace RojoAPI.Controllers
 
         //Atualizar Usuario
         [HttpPut("{id}")]
-        [Authorize(Roles = "1, 2, 3")]
+       // [Authorize(Roles = "1, 2, 3")]
         public IActionResult Put(int id, Evento EventoAtualizado)
         {
             try

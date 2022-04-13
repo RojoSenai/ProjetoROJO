@@ -28,7 +28,7 @@ export default function Login() {
       event.preventDefault();
 
       //chamando api
-      axios.post('http://localhost:5000/api/Login', {
+      axios.post('http://35.174.225.157/api/Login', {
           email: email,
           senha: senha
       })
