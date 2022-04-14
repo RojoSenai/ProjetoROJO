@@ -16,6 +16,7 @@ import CadastrarUserAdm from './Pages/CadastrarUserAdm/CadastrarUserAdm.jsx'
 import CadastrarUserEmpresa from './Pages/CadastrarUserEmpresa/CadastrarUserEmpresa.jsx'
 import CadastrarEmpresa from './Pages/CadastrarEmpresa/CadastarEmpresa.jsx'
 import CadastroEvento from './Pages/CadastarEvento/CadastarEvento.jsx'
+import Evento from './Pages/Eventos/Eventos.jsx'
 
 
 const routing = (
@@ -27,6 +28,7 @@ const routing = (
         <Route path="/EmpresaCor" element={<EmpresaCor />} />
         <Route path="/CadastroEvento" element={<CadastroEvento />} />
         <Route path="/CadastrarEmpresa" element={<CadastrarEmpresa />} />
+        <Route path="/Evento" element={<Evento />} />
         <Route path="*" element={<NotFound />} />
         {/* <Navigate to="/" /> */}
       </Routes>

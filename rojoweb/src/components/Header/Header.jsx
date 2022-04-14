@@ -28,6 +28,7 @@ class Cabeca extends Component {
                     <Link to="/CadastrarUserAdm" className="Names_a">Cadastrar  Usuario</Link>
                     <Link to="/CadastrarEmpresa" className="Names_a">Cadastrar empresa</Link>
                     <Link to="/CadastroEvento" className="Names_a">Cadastrar evento</Link>
+                    <Link to="/Evento" className="Names_a">Evento</Link>
                     <Link to="/" className="Names_a" onClick={this.logout}>Sair</Link>
                 </div>
             </div>
