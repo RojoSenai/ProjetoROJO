@@ -38,8 +38,8 @@ namespace RojoAPI
                 options.AddPolicy("CorsPolicy",
                                 builder =>
                                 {
-                                    builder.WithOrigins("http://3.226.84.5")
-                                    //builder.WithOrigins("http://localhost:3000")
+                                    //builder.WithOrigins("http://3.226.84.5")
+                                    builder.WithOrigins("http://localhost:3000")
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
                                 });
