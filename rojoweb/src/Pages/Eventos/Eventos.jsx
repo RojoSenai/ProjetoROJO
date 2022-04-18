@@ -18,7 +18,7 @@ export default function MeusEventos() {
 
         axios.get('http://localhost:5000/api/Evento', {
 
-            
+
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -27,6 +27,7 @@ export default function MeusEventos() {
             .then(resposta => {
                 if (resposta.status === 200) {
                     setlistaEventos(resposta.data)
+                    console.log(listaEventos)
                 }
 
             }
@@ -35,32 +36,34 @@ export default function MeusEventos() {
     }
 
     useEffect(BuscarMeusEventos, []);
-    
+
 
     return (
-       
+
         <div className="Container">
-            <Cima />    
-            {listaEventos.map((eventos) => {
+            <Cima />
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>
-                <div className="ContList">
-                    <div className="imagens">
-                        <img src={logo} alt="" />
-                    </div>
-                    <div className="tudo">
-                        <div>
-                            <h2 className="NomeEvento">NOME DO EVENTO</h2>
-                            <div className="barrinha"></div>
-                            <h3 className="NomePalestrante">Nome do palestrante</h3>
+                {listaEventos.map((eventos) => {
+                    return (
+                        <div key={eventos.idevento} className="ContList">
+                            <div className="imagens">
+                                <img src={logo} alt="" />
+                            </div>
+                            <div className="tudo">
+                                <div>
+                                    <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
+                                    <div className="barrinha"></div>
+                                    <h3 className="NomePalestrante"> Nome Palestrante {eventos.palestrante}</h3>
+                                </div>
+                                {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                            </div>
                         </div>
-                        <p className="Descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an </p>
-                    </div>
-                </div>
-         </section>
-         })}
+                    )
+                })}
+            </section>
         </div>
-        
+
     )
 } 
