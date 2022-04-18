@@ -20,4 +20,61 @@
 
 .ContList{
     display: flex;
+    width: 55vw;
+    height: 16vw;
+    align-items: center;
+    background-color: #3F3E3E;
+    box-shadow: 12px 14px 16px #000000;
+    border-radius: 13px;
+}
+
+
+.Seus_Eventos{
+    font-weight: 400;
+    font-size: 81px;
+    color: #FFFFFF;
+}
+
+.EssaBarra{
+    background-color: #FF1B00;
+    width: 41vw;
+    height: 0.1vw;
+}
+
+.imagens{
+    width: 15vw;
+    margin-left: 29px;
+}
+
+.tudo{
+    height: 218px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.NomeEvento{
+    font-weight: 400;
+    font-size: 45px;
+    color: #FFFFFF;
+}
+
+.barrinha{
+    background-color: #FF1B00;
+    width: 26vw;
+    height: 0.1vw;
+}
+
+.NomePalestrante{
+    font-weight: 400;
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
+.Descricao{
+    font-weight: 400;
+    font-size: 25px;
+    color: #FFFFFF;
+    width: 30vw;
+
 }

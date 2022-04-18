@@ -38,7 +38,12 @@ namespace RojoAPI
                 options.AddPolicy("CorsPolicy",
                                 builder =>
                                 {
+<<<<<<< HEAD
                                     //builder.WithOrigins("http://3.226.84.5")
+=======
+                                    //Ip = Nuvem = Redes
+                                    //builder.WithOrigins("http://3.226.84.5") 
+>>>>>>> 6a37ee52b05c9da57376fcb54c3820741bf1318f
                                     builder.WithOrigins("http://localhost:3000")
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
