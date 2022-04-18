@@ -53,7 +53,7 @@ CREATE TABLE Usuario
 		ImagemUsuario VARCHAR (300) NOT NULL,
 );
 GO	
-ALTER TABLE Usuario ALTER COLUMN Email varchar(255) not null;
+ALTER TABLE Usuario ALTER COLUMN ImagemUsuario VARCHAR (300);
 
 CREATE TABLE Evento
 (

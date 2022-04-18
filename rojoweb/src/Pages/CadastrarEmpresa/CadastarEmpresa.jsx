@@ -7,7 +7,7 @@ import Cima from '../../components/Header/Header.jsx';
 //import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 
-export default function Login() {
+export default function Empresa() {
 
   //States
   const [cnpj, setCnpj] = useState('');

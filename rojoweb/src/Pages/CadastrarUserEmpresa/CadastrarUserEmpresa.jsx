@@ -4,76 +4,75 @@ import Cima2 from '../../components/Header2/Header2.jsx';
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
+import { parseJwt } from '../../Services/auth';
 
-
-export default function Login() {
+export default function Empresa() {
 
   //States
-  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [IdEmpresa, setIdEmpresa] = useState([]);
- //const [MensagemErro, SetMensagemErro] = useState('');
+  const [Nome, setNome ] = useState('');
+  const [IdEmpresa, setIdEmpresa] = useState(0);
+  const [IdTipoUsuario, setIdTipoUsuario] = useState(0);
+//const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
-
-  function FazerCadastro(event) {
-
-    setIsLoding(true)
-
-    //tirando função padrão da página
-    event.preventDefault();
-
-    //chamando api
-    let UserAdm = {
-      nome : nome,
-      email: email,
-      senha: senha,
-      IdEmpresa: IdEmpresa,
-    };
     
-    
-    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-      }
-      
-    })
+    console.log(email);
 
-      .then((resposta) => {
 
-        //adicionando token no local Storage
-        if (resposta.status === 200) {
+    //Cadastrar User empresa
+    function CadastrarUserEmpresa(event) {
+        event.preventDefault();
 
-          //adicionando token no localStorage do navegador
-          console.log('Usuario Cadastrado')
-          setNome('')
-          setEmail('')
-          setSenha('')
-          setIdEmpresa([])
-          setIsLoding(false)
-          // // Redirecionamento conforme o tipo do usuário.
-          // if(parseJwt().role === '1'){ // 1 é administrador geral
-          //     navigate("/")
-          // }else if (parseJwt().role === '3'){ //3 administrador empresa
-          //     navigate("/")
+        setIsLoding(true)
+
+      //tirando função padrão da página
+      event.preventDefault();
+
+      //chamando api
+        let userEmpresa = {
+
+          idtipoUsuario : IdTipoUsuario,
+          idempresa : IdEmpresa,
+          email: email,
+          senha: senha,
+          nomeUsu: Nome
         }
 
-      }
-      )
+        axios.post('http://localhost:5000/api/Usuarios', userEmpresa, {
 
-      .catch(erro => console.log(erro))
-  }
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+
+            .then((resposta) => {
+                if (resposta.status === 201) {
+                  setIsLoding(false)
+                    console.log('Usuario cadastrado pela Empresa');
+
+                }
+
+            })
+
+            .then(erro => console.log(erro))
+    }
+
+    useEffect(() => {
+      setIdEmpresa(parseJwt().emp);
+      setIdTipoUsuario(parseJwt().role);
+    })
 
   return (
     <div>
-      <Helmet title="Projeto Rojo - Cadastro Usuario Empresa" />
+      <Helmet title="Projeto Rojo - Cadastro De Usuario Empresa" />
       <main className='mano'>
         <div className="cima">
           <Cima2/>
           <Logo />
         </div>
 
-        <form onSubmit={FazerCadastro} action="" className="cadastrar_usu">
+        <form onSubmit={CadastrarUserEmpresa} action="" className="cadastrar_usu">
 
           <input
             className="Name_Adm"

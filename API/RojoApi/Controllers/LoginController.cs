@@ -44,7 +44,8 @@ namespace RojoAPI.Controllers
                 new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.Idusuario.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
                 new Claim(ClaimTypes.Role, usuarioBuscado.IdtipoUsuario.ToString()),
-                new Claim("role", usuarioBuscado.IdtipoUsuario.ToString())
+                new Claim("role", usuarioBuscado.IdtipoUsuario.ToString()),
+                new Claim("emp", usuarioBuscado.Idempresa.ToString())
             };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("rojo-chave-autenticacao"));
