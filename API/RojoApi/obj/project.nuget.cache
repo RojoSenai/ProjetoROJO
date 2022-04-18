@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pVwJwT638VhUaFADCaicyDgxjTpJS9ao8MxKEiLW3ovMbuzOm4GFMGD1RcP2FRat2yp/eInywFp5zfeTpoX+tQ==",
+  "dgSpecHash": "chcM+6mjdDOxANjw3DJdl+O3+Svqlryi/rbSgRiqxn/d2JEPMSW7P6jPPm+s7YqbJdWWHBCEPu3NTzb251to/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\48423428893.INFOSCS\\Desktop\\projetorojo.github.io\\API\\RojoAPI\\RojoAPI.csproj",
   "expectedPackageFiles": [
@@ -173,8 +173,7 @@
     "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "C:\\Users\\48423428893.INFOSCS\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
