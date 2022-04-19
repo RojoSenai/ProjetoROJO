@@ -55,7 +55,7 @@ export default function MeusEventos() {
                                 <div>
                                     <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
                                     <div className="barrinha"></div>
-                                    <h3 className="NomePalestrante"> Nome Palestrante {eventos.palestrante}</h3>
+                                    <h3 className="NomePalestrante"> Nome Palestrante: {eventos.palestrante}</h3>
                                 </div>
                                 {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
                             </div>

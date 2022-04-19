@@ -35,6 +35,11 @@ CREATE TABLE Empresa
 );
 GO
 
+ALTER TABLE Usuario ALTER COLUMN Email varchar(255) not null;
+
+
+
+
 CREATE TABLE CorEmpresa
 (
 	IDEmpresa INT FOREIGN KEY REFERENCES Empresa(IDEmpresa),
@@ -67,6 +72,12 @@ CREATE TABLE Evento
 
 );
 GO
+
+Alter table Evento Add Comentario varchar (500);
+
+exec sp_rename 'Evento.[Comentario]', 'Descricao', 'column'
+
+
 
 CREATE TABLE Comentario
 (

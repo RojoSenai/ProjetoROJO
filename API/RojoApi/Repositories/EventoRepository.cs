@@ -58,7 +58,8 @@ namespace RojoAPI.Repositories
                NomeEvento = x.NomeEvento,
                Palestrante = x.Palestrante,
                DataEventoIncio = x.DataEventoIncio,
-               DataEventoFim = x.DataEventoFim
+               DataEventoFim = x.DataEventoFim,
+               Descricao = x.Descricao
            })
            .ToList();
         }

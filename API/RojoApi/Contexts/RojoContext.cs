@@ -31,6 +31,7 @@ namespace RojoAPI.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("server=db-rojo.c7jsdtpno5d7.us-east-1.rds.amazonaws.com; database=Rojo_App; user Id=rojoadmin; pwd=ESrQ5GLdVsYVBX6ivcEf;");
             }
         }
@@ -193,6 +194,10 @@ namespace RojoAPI.Contexts
                 entity.Property(e => e.DataEventoFim).HasColumnType("datetime");
 
                 entity.Property(e => e.DataEventoIncio).HasColumnType("datetime");
+
+                entity.Property(e => e.Descricao)
+                    .HasMaxLength(500)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Idempresa).HasColumnName("IDEmpresa");
 

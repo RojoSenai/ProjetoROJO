@@ -19,6 +19,7 @@ namespace RojoAPI.Domains
         public string Palestrante { get; set; }
         public DateTime DataEventoIncio { get; set; }
         public DateTime DataEventoFim { get; set; }
+        public string Descricao { get; set; }
 
         public virtual Empresa IdempresaNavigation { get; set; }
         public virtual Usuario IdusuarioNavigation { get; set; }
