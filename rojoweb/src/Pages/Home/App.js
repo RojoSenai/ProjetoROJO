@@ -20,33 +20,33 @@ export default function Login() {
   const [isLoding, setIsLoding] = useState(false);
   let navigate = useNavigate();
 
-  function FazerLogin(event){
+  function FazerLogin(event) {
 
     setIsLoding(true)
 
-      //tirando função padrão da página
-      event.preventDefault();
+    //tirando função padrão da página
+    event.preventDefault();
 
-      //chamando api
-     axios.post('http://localhost:5000/api/Login', {
-     //   axios.post('http://35.174.225.157/api/Login', {
-          email: email,
-          senha: senha
-      })
+    //chamando api
+    //axios.post('http://localhost:5000/api/Login', {
+    axios.post('http://35.174.225.157/api/Login', {
+      email: email,
+      senha: senha
+    })
 
-      .then( (resposta) => {
+      .then((resposta) => {
 
-          //adicionando token no local Storage
-          if(resposta.status === 200){
+        //adicionando token no local Storage
+        if (resposta.status === 200) {
 
-              //adicionando token no localStorage do navegador
-              localStorage.setItem('usuario-login', resposta.data.token);
-              setIsLoding(false);
-              console.log(parseJwt().role);
-        
-                navigate("/CadastroEvento")
+          //adicionando token no localStorage do navegador
+          localStorage.setItem('usuario-login', resposta.data.token);
+          setIsLoding(false);
+          console.log(parseJwt().role);
 
-          }
+          navigate("/CadastroEvento")
+
+        }
 
       }
       )
@@ -63,7 +63,7 @@ export default function Login() {
           <Logo />
         </div>
 
-        <form onSubmit = {FazerLogin} action="" className="login">
+        <form onSubmit={FazerLogin} action="" className="login">
 
           <input
             className="LOGIN_log"
@@ -81,13 +81,13 @@ export default function Login() {
             name="Senha"
             id="login__senha" />
 
-           <button className='BotãoLogin' type="submit">Login</button>
+          <button className='BotãoLogin' type="submit">Login</button>
         </form>
         <div className='Div_Matrix'>
           <h2 className='CorAzul'>FAÇA SUA ESCOLHA</h2>
           <h2 className='CorVermelha'>, SAIA DA MATRIX</h2>
         </div>
-          <Pirulas />
+        <Pirulas />
       </main>
     </div>
   );

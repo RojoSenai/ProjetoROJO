@@ -34,7 +34,7 @@ export default function Login() {
     };
     
     
-    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
+    axios.post('http://35.174.225.157/api/Usuarios', UserAdm, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
       }

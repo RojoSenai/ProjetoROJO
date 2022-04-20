@@ -44,7 +44,7 @@ export default function Login() {
     }
 
     console.log('aquui');
-    axios.post('http://localhost:5000/api/Evento', evento, {
+    axios.post('http://35.174.225.157/api/Evento', evento, {
 
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
@@ -65,7 +65,7 @@ export default function Login() {
   }
 
   function BuscarEmpresa(){
-    axios.get('http://localhost:5000/api/Empresa')
+    axios.get('http://35.174.225.157/api/Empresa')
       .then((resposta) => {
         if(resposta.status = 200){
           setNomeEmpresa(resposta.data)
