@@ -10,7 +10,6 @@ import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx'
 
 
 
-
 export default function Login() {
 
   //States
@@ -18,9 +17,27 @@ export default function Login() {
   const [senha, setSenha] = useState('123456789');
   const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
+  const [mostrar, setMostrar] = useState(false);
   let navigate = useNavigate();
 
+<<<<<<< HEAD
   function FazerLogin(event) {
+=======
+
+function MostrarSenha() {
+  var password = document.getElementById('senhazinha')
+   if (password.type == "password") {
+     password.type = "text";
+     setMostrar(true);
+   }else {
+     password.type = "password"
+     setMostrar(false)
+   }
+}
+
+
+  function FazerLogin(event){
+>>>>>>> edaef6a7ede5b20d484d35618cde6efb40ef5750
 
     setIsLoding(true)
 
@@ -54,6 +71,7 @@ export default function Login() {
       .catch(erro => console.log(erro))
   }
 
+  
   return (
     <div>
       <Helmet title="Projeto Rojo - Login" />
@@ -73,6 +91,9 @@ export default function Login() {
             name="Email"
             id="login__email" />
 
+
+
+
           <input
             className="LOGIN_log"
             placeholder="Senha:"
@@ -80,6 +101,7 @@ export default function Login() {
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
             id="login__senha" />
+          <span className="lnr lnr-eye"></span> 
 
           <button className='BotãoLogin' type="submit">Login</button>
         </form>

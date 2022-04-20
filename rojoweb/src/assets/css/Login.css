@@ -239,6 +239,13 @@ justify-content: center;
         height: 15vw;
     }
     
+    .lnr-eye {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+    }
+
     
     /* PARTE DO LOGIN */
     

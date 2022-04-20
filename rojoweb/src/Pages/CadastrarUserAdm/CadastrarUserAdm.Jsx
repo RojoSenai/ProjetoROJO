@@ -104,7 +104,6 @@ export default function Login() {
 
           <select className="Name_Adm"  value onChange name="IdEmpresa" id="">
             <option value="" disabled selected>Empresa</option>
-            <option value="empr" >Drogasil</option>
           </select>
 
         <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
