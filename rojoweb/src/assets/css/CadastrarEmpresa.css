@@ -7,6 +7,7 @@
 
 
 
+
 /* PARTE DO HEADER */
 
 .ContainerRojo{
@@ -14,6 +15,7 @@
     justify-content: space-evenly;
     height: 90px;
     align-items: center;
+    
 }
 
 .ContainerLetras{
@@ -63,6 +65,12 @@
 
 /* PARTE DO LOGIN */
 
+.all{
+    overflow: hidden;
+}
+
+
+
 .usu_login{
     text-transform: uppercase;
     font-family: Sarabun;
@@ -72,7 +80,7 @@
     line-height: 109px;
     margin-top: 20px;
     color: #232323;
-
+    overflow: hidden;
 }
 
 
@@ -169,23 +177,34 @@ justify-content: center;
     } */
     
     
-    .Name_Adm{
+    .Name_AdmE{
         border: none;
-        width: 38%;
+        width: 86%;
         border-bottom: 3px solid #ffffff;
         background: transparent;
         font-size: 2em;
         cursor: pointer;
         color: #ffffff;
+        transition: background 0.75s;
     }
-    
-    .Name_Adm::placeholder {
+
+    .Name_AdmE:hover,
+    .BotãoCadastrarUsu:focus{
+        border: none;
+        width: 86%;
+        border-bottom: 3px solid #ffffff;
+        background-color: rgba(255, 255, 255, 0.137);
+        font-size: 2em;
+        cursor: pointer;
         color: #ffffff;
     }
     
-    .cadastrar_usu{
+    .Name_AdmE::placeholder {
+        color: #ffffff;
+    }
+    .cadastrar_Ev{
         display: flex;
-        height: 35%;
+        height: 52%;
         align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
@@ -232,5 +251,30 @@ justify-content: center;
         font-weight: 400;
         font-size: 2em;
         cursor: pointer;
+    }
+
+    .div1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 34vw;
+        height: 15vw;
+    }
+
+    .div2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 35vw;
+    }
+
+    .divm{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        width: 80vw;
+        height: 16vw;
     }
 }

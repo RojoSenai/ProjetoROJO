@@ -65,7 +65,7 @@ export default function Login() {
   }
 
   function BuscarEmpresa(){
-    axios.get('http://35.174.225.157/api/Empresa')
+    axios.get('http://localhost:5000/api/Empresa')
       .then((resposta) => {
         if(resposta.status = 200){
           setNomeEmpresa(resposta.data)
