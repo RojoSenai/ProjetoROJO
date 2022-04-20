@@ -6,7 +6,8 @@ import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
 import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
-import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx'
+import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx';
+
 
 
 
@@ -97,7 +98,16 @@ function MostrarSenha() {
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
             id="login__senha" />
-          <span className="lnr lnr-eye"></span> 
+          {
+            mostrar === false && (
+              <AiIcons.AiFillEyeInvisible className = 'eyePass' onClick={MostrarSenha} />
+            )
+          }
+          {
+              mostrar === true &&(
+                <AiIcons.AiFillEye className = 'eyePass' onClick={MostrarSenha} />
+              )
+          }
 
            <button className='BotãoLogin' type="submit">Login</button>
         </form>
