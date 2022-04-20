@@ -23,10 +23,10 @@ export default function Empresa() {
   //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
-  function Overflow() {
-    let all = document.getElementById("all");
-     
-  }
+  // function Overflow() {
+  //   let all = document.getElementById("all");
+  //   all.style.all.Ove  
+  // }
 
   //Cadastrar empresa
   function CadastrarEmpresa(event) {

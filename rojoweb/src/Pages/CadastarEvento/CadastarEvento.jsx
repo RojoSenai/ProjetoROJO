@@ -54,7 +54,7 @@ export default function Login() {
     console.log(evento)
       .then((resposta) => {
         if (resposta.status === 201) {
-          console.log('Evento cadastrado FILHA DA PUTAAAAA');
+          console.log('Evento cadastrado');
         }
 
 
