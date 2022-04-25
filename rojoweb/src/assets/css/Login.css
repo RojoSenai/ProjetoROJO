@@ -113,7 +113,7 @@
     border-bottom: 3px solid #ffffff;
     background: transparent;
     font-size: 2em;
-    cursor: pointer;
+    /* cursor: pointer; */
     color: #ffffff;
 }
 
@@ -138,8 +138,8 @@
 }
 
 .Div_Matrix{
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .BotãoLogin{
@@ -268,7 +268,7 @@ justify-content: center;
         border-bottom: 3px solid #ffffff;
         background: transparent;
         font-size: 2em;
-        cursor: pointer;
+        /* cursor: pointer; */
         color: #ffffff;
     }
     

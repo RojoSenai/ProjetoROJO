@@ -103,12 +103,12 @@ function MostrarSenha() {
             id="password"/>
           {
             mostrar === false && (
-              <Aiicons.AiOutlineEyeInvisible style={{color: "white", width: "2em",  position: "absolute", margin: "0 17em", padding: "0px 0px 21px"}} onClick={MostrarSenha} />
+              <Aiicons.AiOutlineEyeInvisible style={{color: "white", width: "2em",  position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer"}} onClick={MostrarSenha} />
             )
           }
           {
               mostrar === true &&(
-                <Aiicons.AiOutlineEye style={{color: "red", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px"}} onClick={MostrarSenha} />
+                <Aiicons.AiOutlineEye style={{color: "red", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer"}} onClick={MostrarSenha} />
               )
           }
 
