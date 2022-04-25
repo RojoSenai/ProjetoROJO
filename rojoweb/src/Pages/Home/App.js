@@ -8,6 +8,9 @@ import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx';
 
+//icons:
+//import * as GIIcons from 'react-icons/gi'
+import * as Aiicons from 'react-icons/ai'
 
 
 
@@ -23,7 +26,7 @@ export default function Login() {
 
 
 function MostrarSenha() {
-  var password = document.getElementById('senhazinha')
+  var password = document.getElementById('password')
    if (password.type == "password") {
      password.type = "text";
      setMostrar(true);
@@ -97,17 +100,17 @@ function MostrarSenha() {
             type="password"
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
-            id="login__senha" />
-          {/* {
+            id="password"/>
+          {
             mostrar === false && (
-              <AiIcons.AiFillEyeInvisible className = 'eyePass' onClick={MostrarSenha} />
+              <Aiicons.AiOutlineEyeInvisible style={{color: "white", width: "2em",  position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer"}} onClick={MostrarSenha} />
             )
           }
           {
               mostrar === true &&(
-                <AiIcons.AiFillEye className = 'eyePass' onClick={MostrarSenha} />
+                <Aiicons.AiOutlineEye style={{color: "red", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer"}} onClick={MostrarSenha} />
               )
-          } */}
+          } 
 
           <button className='BotãoLogin' type="submit">Login</button>
         </form>
