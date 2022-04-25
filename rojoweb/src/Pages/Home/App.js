@@ -9,8 +9,9 @@ import Helmet from 'react-helmet';
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx';
 
 //icons:
-import * as AiIcons from 'react-icons/ai'
-import * as GrIcons from 'react-icons/gr'
+//import * as GIIcons from 'react-icons/gi'
+import * as Aiicons from 'react-icons/ai'
+
 
 
 export default function Login() {
@@ -102,12 +103,12 @@ function MostrarSenha() {
             id="password"/>
           {
             mostrar === false && (
-              <AiIcons.AiFillEyeInvisible className = 'eyePass' onClick={MostrarSenha} />
+              <Aiicons.AiOutlineEyeInvisible style={{color: "white", width: "2em",  position: "absolute", margin: "0 17em", padding: "0px 0px 21px"}} onClick={MostrarSenha} />
             )
           }
           {
               mostrar === true &&(
-                <AiIcons.AiFillEye className = 'eyePass' onClick={MostrarSenha} />
+                <Aiicons.AiOutlineEye style={{color: "red", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px"}} onClick={MostrarSenha} />
               )
           }
 
