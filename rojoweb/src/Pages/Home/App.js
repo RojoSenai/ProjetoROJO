@@ -8,7 +8,9 @@ import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 import HeaderLogin from '../../components/HeaderLogin/HeaderLogin.jsx';
 
-
+//icons:
+import * as AiIcons from 'react-icons/ai'
+import * as GrIcons from 'react-icons/gr'
 
 
 export default function Login() {
@@ -21,12 +23,9 @@ export default function Login() {
   const [mostrar, setMostrar] = useState(false);
   let navigate = useNavigate();
 
-<<<<<<< HEAD
-  function FazerLogin(event) {
-=======
 
 function MostrarSenha() {
-  var password = document.getElementById('senhazinha')
+  var password = document.getElementById('password')
    if (password.type == "password") {
      password.type = "text";
      setMostrar(true);
@@ -38,7 +37,6 @@ function MostrarSenha() {
 
 
   function FazerLogin(event){
->>>>>>> edaef6a7ede5b20d484d35618cde6efb40ef5750
 
     setIsLoding(true)
 
@@ -101,7 +99,7 @@ function MostrarSenha() {
             type="password"
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
-            id="login__senha" />
+            id="password"/>
           {
             mostrar === false && (
               <AiIcons.AiFillEyeInvisible className = 'eyePass' onClick={MostrarSenha} />
