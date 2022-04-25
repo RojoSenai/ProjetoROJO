@@ -21,9 +21,6 @@ export default function Login() {
   const [mostrar, setMostrar] = useState(false);
   let navigate = useNavigate();
 
-<<<<<<< HEAD
-  function FazerLogin(event) {
-=======
 
 function MostrarSenha() {
   var password = document.getElementById('senhazinha')
@@ -38,7 +35,6 @@ function MostrarSenha() {
 
 
   function FazerLogin(event){
->>>>>>> edaef6a7ede5b20d484d35618cde6efb40ef5750
 
     setIsLoding(true)
 
@@ -102,7 +98,7 @@ function MostrarSenha() {
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
             id="login__senha" />
-          {
+          {/* {
             mostrar === false && (
               <AiIcons.AiFillEyeInvisible className = 'eyePass' onClick={MostrarSenha} />
             )
@@ -111,7 +107,7 @@ function MostrarSenha() {
               mostrar === true &&(
                 <AiIcons.AiFillEye className = 'eyePass' onClick={MostrarSenha} />
               )
-          }
+          } */}
 
           <button className='BotãoLogin' type="submit">Login</button>
         </form>

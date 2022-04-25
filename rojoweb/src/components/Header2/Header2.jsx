@@ -26,7 +26,7 @@ class Cabeca extends Component {
                 </div>
                 <div className='ContainerLetras'>
                     <Link to="/EmpresaCor"><a href="" className="Names_a">Cor do App</a></Link>
-                    <Link to="/"><a href="" className="Names_a">Eventos</a></Link>
+                    <Link to="/Evento"><a href="" className="Names_a">Eventos</a></Link>
                     <Link to="/CadastrarUserEmpresa"><a href="" className="Names_a">Cadastrar  Usuario</a></Link>
                     <Link to="/"><a onClick={this.logout} className="Names_a">Sair</a></Link>
                 </div>

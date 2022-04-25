@@ -50,7 +50,7 @@ export default function MeusEventos() {
     function BuscarEvento() {
 
         let header = {
-            idevento: EventoID
+            idEvento: EventoID
         }
 
         axios.get('http://35.174.225.157/api/Evento/11', header, {
@@ -64,7 +64,7 @@ export default function MeusEventos() {
             .then(resposta => {
                 if (resposta.status === 200) {
                     setlistaEventosID(resposta.data)
-                    console.log(listaEventosID)
+                    //console.log(listaEventosID)
                 }
 
             }
@@ -85,23 +85,25 @@ export default function MeusEventos() {
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>
-                {listaEventos.map((eventos) => {
-                    return (
-                        <div onClick={handleShow} onClickCapture={(event) => setEventoID(eventos.idevento)} key={eventos.idevento} className="ContList">
-                            <div className="imagens">
-                                <img src={logo} alt="" />
-                            </div>
-                            <div className="tudo">
-                                <div>
-                                    <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
-                                    <div className="barrinha"></div>
-                                    <h3 className="NomePalestrante"> Nome Palestrante: {eventos.palestrante}</h3>
+                <div className='contl'>
+                    {listaEventos.map((eventos) => {
+                        return (
+                            <div onClick={handleShow} onClickCapture={(event) => setEventoID(eventos.idevento)} key={eventos.idevento} className="ContList">
+                                <div className="imagens">
+                                    <img src={logo} alt="" />
                                 </div>
-                                {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                                <div className="tudo">
+                                    <div>
+                                        <h2 className="NomeEvento">{eventos.nomeEvento}</h2>
+                                        <div className="barrinha"></div>
+                                        <h3 className="NomePalestrante">{eventos.palestrante}</h3>
+                                    </div>
+                                    {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </section>
 
             <ReactModal isOpen={show} onRequestClose={show}>

@@ -12,6 +12,12 @@
 .ContBody{
     display: flex;
     flex-direction: column;
+    align-items: center;    
+}
+
+.contl{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     height: 58vw;
     justify-content: space-around;
@@ -42,7 +48,7 @@
 }
 
 .imagens{
-    width: 15vw;
+    width: 10vw;
     margin-left: 29px;
 }
 
@@ -50,7 +56,7 @@
     height: 218px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     
 }
 
