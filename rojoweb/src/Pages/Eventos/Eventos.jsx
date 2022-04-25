@@ -4,6 +4,7 @@ import '../../assets/css/Evento.css'
 import logo from '../../assets/img/Rojo_imagem.png'
 import axios from 'axios';
 import ReactModal from 'react-modal';
+import * as RiIcons from 'react-icons/ri';
 //import { parseJwt } from '../../Services/auth';
 //import palestra from '../../assets/img/palestra_img.png'
 
@@ -97,6 +98,9 @@ export default function MeusEventos() {
                                         <h2 className="NomeEvento">{eventos.nomeEvento}</h2>
                                         <div className="barrinha"></div>
                                         <h3 className="NomePalestrante">{eventos.palestrante}</h3>
+                                        <div className='desc'>
+                                            <p className='Descricao'>{eventos.descricao}</p>
+                                        </div>
                                     </div>
                                     {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
                                 </div>
@@ -106,14 +110,13 @@ export default function MeusEventos() {
                 </div>
             </section>
 
-            <ReactModal isOpen={show} onRequestClose={show}>
-                {/* {listaEventosID.map((eventos) => {
-                    <div>
-                        <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
-                        <div className="barrinha"></div>
-                        <h3 className="NomePalestrante"> Nome Palestrante {eventos.palestrante}</h3>
-                    </div>
-                })} */}
+            <ReactModal isOpen={show} onRequestClose={show} className="mod">
+                <div>
+                    <RiIcons.RiCloseFill onClick={handleShow} style={{ cursor: 'pointer', color: 'red' }} />
+                </div>
+                <div>
+                    
+                </div>
             </ReactModal>
         </div>
 
