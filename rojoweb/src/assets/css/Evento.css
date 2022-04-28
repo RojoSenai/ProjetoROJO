@@ -12,9 +12,15 @@
 .ContBody{
     display: flex;
     flex-direction: column;
+    align-items: center;    
+}
+
+.contl{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     height: 58vw;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .ContList{
@@ -22,7 +28,7 @@
     width: 55vw;
     height: 16vw;
     align-items: center;
-    background-color: #3F3E3E;
+    background-color: rgb(63, 62, 62);
     box-shadow: 12px 14px 16px #000000;
     border-radius: 13px;
     margin-top: 35px;
@@ -42,7 +48,7 @@
 }
 
 .imagens{
-    width: 15vw;
+    width: 10vw;
     margin-left: 29px;
 }
 
@@ -50,19 +56,23 @@
     height: 218px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     
 }
 
 .NomeEvento{
     font-weight: 400;
     font-size: 45px;
+    width: 100%;    
     color: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
 
 .barrinha{
     background-color: #FF1B00;
-    width: 26vw;
+    width: 100%;
     height: 0.1vw;
 }
 
@@ -77,5 +87,25 @@
     font-size: 25px;
     color: #FFFFFF;
     width: 30vw;
+    overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
 
+.desc{
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    justify-content: flex-end;
+}
+
+.mod{
+    position: absolute;
+    inset: 95px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(63, 62, 62);
+    overflow: auto;
+    border-radius: 13px;
+    outline: none;
+    padding: 20px;
 }

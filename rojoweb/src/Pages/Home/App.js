@@ -110,7 +110,7 @@ function MostrarSenha() {
               mostrar === true &&(
                 <Aiicons.AiOutlineEye style={{color: "red", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer"}} onClick={MostrarSenha} />
               )
-          }
+          } 
 
           <button className='BotãoLogin' type="submit">Login</button>
         </form>

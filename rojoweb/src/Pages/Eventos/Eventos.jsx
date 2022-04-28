@@ -5,6 +5,7 @@ import logo from '../../assets/img/Rojo_imagem.png'
 import axios from 'axios';
 import Helmet from 'react-helmet';
 import ReactModal from 'react-modal';
+import * as RiIcons from 'react-icons/ri';
 //import { parseJwt } from '../../Services/auth';
 //import palestra from '../../assets/img/palestra_img.png'
 
@@ -51,7 +52,7 @@ export default function MeusEventos() {
     function BuscarEvento() {
 
         let header = {
-            idevento: EventoID
+            idEvento: EventoID
         }
 
         axios.get('http://35.174.225.157/api/Evento/15', header, {
@@ -65,7 +66,7 @@ export default function MeusEventos() {
             .then(resposta => {
                 if (resposta.status === 200) {
                     setlistaEventosID(resposta.data)
-                    console.log(listaEventosID)
+                    //console.log(listaEventosID)
                 }
 
             }
@@ -87,33 +88,37 @@ export default function MeusEventos() {
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>
-                {listaEventos.map((eventos) => {
-                    return (
-                        <div onClick={handleShow} onClickCapture={(event) => setEventoID(eventos.idevento)} key={eventos.idevento} className="ContList">
-                            <div className="imagens">
-                                <img src={logo} alt="" />
-                            </div>
-                            <div className="tudo">
-                                <div>
-                                    <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
-                                    <div className="barrinha"></div>
-                                    <h3 className="NomePalestrante"> Nome Palestrante: {eventos.palestrante}</h3>
+                <div className='contl'>
+                    {listaEventos.map((eventos) => {
+                        return (
+                            <div onClick={handleShow} onClickCapture={(event) => setEventoID(eventos.idevento)} key={eventos.idevento} className="ContList">
+                                <div className="imagens">
+                                    <img src={logo} alt="" />
                                 </div>
-                                {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                                <div className="tudo">
+                                    <div>
+                                        <h2 className="NomeEvento">{eventos.nomeEvento}</h2>
+                                        <div className="barrinha"></div>
+                                        <h3 className="NomePalestrante">{eventos.palestrante}</h3>
+                                        <div className='desc'>
+                                            <p className='Descricao'>{eventos.descricao}</p>
+                                        </div>
+                                    </div>
+                                    {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </section>
 
-            <ReactModal isOpen={show} onRequestClose={show}>
-                {/* {listaEventosID.map((eventos) => {
-                    <div>
-                        <h2 className="NomeEvento"> Nome Evento {eventos.nomeEvento}</h2>
-                        <div className="barrinha"></div>
-                        <h3 className="NomePalestrante"> Nome Palestrante {eventos.palestrante}</h3>
-                    </div>
-                })} */}
+            <ReactModal isOpen={show} onRequestClose={show} className="mod">
+                <div>
+                    <RiIcons.RiCloseFill onClick={handleShow} style={{ cursor: 'pointer', color: 'red' }} />
+                </div>
+                <div>
+                    
+                </div>
             </ReactModal>
         </div>
 
