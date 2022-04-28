@@ -3,6 +3,7 @@ import Cima from '../../components/Header2/Header2.jsx'
 import '../../assets/css/Evento.css'
 import logo from '../../assets/img/Rojo_imagem.png'
 import axios from 'axios';
+import Helmet from 'react-helmet';
 import ReactModal from 'react-modal';
 //import { parseJwt } from '../../Services/auth';
 //import palestra from '../../assets/img/palestra_img.png'
@@ -53,7 +54,7 @@ export default function MeusEventos() {
             idevento: EventoID
         }
 
-        axios.get('http://35.174.225.157/api/Evento/11', header, {
+        axios.get('http://35.174.225.157/api/Evento/15', header, {
 
 
             headers: {
@@ -81,6 +82,7 @@ export default function MeusEventos() {
     return (
 
         <div className="Container">
+             <Helmet title="Projeto Rojo - Eventos " />
             <Cima />
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
