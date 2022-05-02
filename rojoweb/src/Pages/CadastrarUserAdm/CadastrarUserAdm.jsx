@@ -67,7 +67,7 @@ export default function Login() {
   }
 
   function BuscarEmpresa() {
-    axios.get('http://35.174.225.157/api/Empresa')
+    axios.get('http://3.234.116.203/api/Empresa')
       .then((resposta) => {
         if (resposta.status = 200) {
           setNomeEmpresa(resposta.data)
@@ -76,7 +76,7 @@ export default function Login() {
   }
 
   function BuscarTipoUsu() {
-    axios.get('http://35.174.225.157/api/TipoUsuario')
+    axios.get('http://3.234.116.203/api/TipoUsuario')
       .then((resposta) => {
         if (resposta.status = 200) {
           setTipoUsu(resposta.data)

@@ -39,7 +39,7 @@ export default function Empresa() {
           nomeUsu: Nome
         }
 
-        axios.post('http://35.174.225.157/api/Usuarios', userEmpresa, {
+        axios.post('http://3.234.116.203/api/Usuarios', userEmpresa, {
 
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')

@@ -51,7 +51,7 @@ export default function Empresa() {
       //  IdEmpresa: IdEmpresa,
     }
 
-    axios.post('http://35.174.225.157/api/Empresa', empresa, {
+    axios.post('http://3.234.116.203/api/Empresa', empresa, {
 
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')

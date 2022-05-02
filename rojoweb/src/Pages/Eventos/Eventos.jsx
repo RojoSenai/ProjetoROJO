@@ -33,7 +33,7 @@ export default function MeusEventos() {
 
     function BuscarMeusEventos() {
 
-        axios.get('http://35.174.225.157/api/Evento', {
+        axios.get('http://3.234.116.203/api/Evento', {
 
 
             headers: {
@@ -58,7 +58,7 @@ export default function MeusEventos() {
         //     idEvento: EventoID
         // }
 
-        axios.get('http://35.174.225.157/api/Evento/' + EventoID, {
+        axios.get('http://3.234.116.203/api/Evento/' + EventoID, {
 
 
             headers: {
