@@ -17,7 +17,7 @@ export default function Empresa() {
 //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
     
-    console.log(email);
+    console.log(IdTipoUsuario);
 
 
     //Cadastrar User empresa

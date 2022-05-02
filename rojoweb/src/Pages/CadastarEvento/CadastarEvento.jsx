@@ -12,7 +12,7 @@ export default function Login() {
   //States
   const [NomeEmpr, setNomeEmpresa] = useState([]);
   const [NomeEvt, setNomeEvt] = useState('');
-// const [Descricao, setDescricao] = useState('');
+  const [Descricao, setDescricao] = useState('');
   const [NomePalestrante, setNomePalestrante] = useState('');
   const [IncioEvnt, setIncioEvnt] = useState(new Date());
   const [FimEvnt, setFimEvnt] = useState(new Date());
@@ -21,31 +21,28 @@ export default function Login() {
   //const [MensagemErro, SetMensagemErro] = useState('');
   const [IdUsu, setIdUsu] = useState(0);
   //console.log(IdUsu);
-  const [isLoding, setIsLoding] = useState(false);
+  //const [isLoding, setIsLoding] = useState(false);
   
   function CadastrarEvento(event) {
     event.preventDefault();
-    setIsLoding(true)
+    //setIsLoding(true)
 
     //tirando função padrão da página
     event.preventDefault();
 
     //chamando api
     let evento = {
-      IdEmpresa: IdEmpresa,
-      IdUsu: IdUsu,
-      NomeEvt: NomeEvt,
-      NomePalestrante: NomePalestrante,
-      IncioEvnt: IncioEvnt,
-      FimEvnt: FimEvnt,
-      // Descricao: Descricao,
-      //Image : Image 
-      //  IdEmpresa: IdEmpresa,
+      idempresa: IdEmpresa,
+      idusuario: IdUsu,
+      nomeEvento: NomeEvt,
+      palestrante: NomePalestrante,
+      dataEventoIncio: IncioEvnt,
+      dataEventoFim: FimEvnt,
+      descricao: Descricao,
     }
 
     console.log('aquui');
     axios.post('http://35.174.225.157/api/Evento', evento, {
-
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
         }
@@ -108,14 +105,6 @@ export default function Login() {
             name="nome"
             id="Adm__nome" />
 
-          {/* <input
-            className="Name_Event"
-            placeholder="Descrição:"
-            type="text"
-            onChange={(event) => setDescricao(event.target.value)}
-            name="Decrição"
-            id="login__email" /> */}
-
           <input
             className="Name_Event"
             placeholder="Nome do Palestrante:"
@@ -123,6 +112,14 @@ export default function Login() {
             onChange={(event) => setNomePalestrante(event.target.value)}
             name="Nome_Palestrante"
             id="login__senha" />
+
+          <input
+            className="Name_Event"
+            placeholder="Descrição:"
+            type="text"
+            onChange={(event) => setDescricao(event.target.value)}
+            name="Decrição"
+            id="login__email" />
 
           <input
             className="Name_Event"

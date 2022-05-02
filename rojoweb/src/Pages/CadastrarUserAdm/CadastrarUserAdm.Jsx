@@ -14,9 +14,18 @@ export default function Login() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [IdEmpresa, setIdEmpresa] = useState([]);
-//const [MensagemErro, SetMensagemErro] = useState('');
+  const [IdEmpresa, setIdEmpresa] = useState(0);
+  const [NomeEmpresa, setNomeEmpresa] = useState([]);
+  const [TipoUsu, setTipoUsu] = useState([]);
+  const [IdTipoUsu, setIdTipoUsu] = useState(0);
+  //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
+
+  console.log(IdTipoUsu);
+  console.log(IdEmpresa);
+  console.log(email);
+  console.log(nome);
+  console.log(senha);
 
   function FazerCadastro(event) {
 
@@ -27,18 +36,19 @@ export default function Login() {
 
     //chamando api
     let UserAdm = {
-      nome : nome,
+      idtipoUsuario: IdTipoUsu,
+      idempresa: IdEmpresa,
       email: email,
       senha: senha,
-      IdEmpresa: IdEmpresa,
+      nomeUsu: nome,
     };
-    
-    
+
+
     axios.post('http://35.174.225.157/api/Usuarios', UserAdm, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
       }
-      
+
     })
 
       .then((resposta) => {
@@ -48,23 +58,36 @@ export default function Login() {
 
           //adicionando token no localStorage do navegador
           console.log('Usuario Cadastrado')
-          setNome('')
-          setEmail('')
-          setSenha('')
-          setIdEmpresa([])
-          setIsLoding(false)
-          // // Redirecionamento conforme o tipo do usuário.
-          // if(parseJwt().role === '1'){ // 1 é administrador geral
-          //     navigate("/")
-          // }else if (parseJwt().role === '3'){ //3 administrador empresa
-          //     navigate("/")
+
         }
 
-      }
-      )
+      })
 
       .catch(erro => console.log(erro))
   }
+
+  function BuscarEmpresa() {
+    axios.get('http://35.174.225.157/api/Empresa')
+      .then((resposta) => {
+        if (resposta.status = 200) {
+          setNomeEmpresa(resposta.data)
+        }
+      })
+  }
+
+  function BuscarTipoUsu() {
+    axios.get('http://35.174.225.157/api/TipoUsuario')
+      .then((resposta) => {
+        if (resposta.status = 200) {
+          setTipoUsu(resposta.data)
+        }
+      })
+  }
+
+  useEffect(() => {
+    BuscarEmpresa();
+    BuscarTipoUsu();
+  })
 
   return (
     <div>
@@ -102,18 +125,32 @@ export default function Login() {
             name="Senha"
             id="login__senha" />
 
-          <select className="Name_Adm"  value onChange name="IdEmpresa" id="">
-            <option value="" disabled selected>Empresa</option>
+          <select className="Name_Event" name="IdEmpresa" value={IdEmpresa} onChange={(event => setIdEmpresa(event.target.value))}>
+            <option disabled selected value="0">Nome Empresa:</option>
+            {NomeEmpresa.map((Empresas) => {
+              return (
+                <option key={Empresas.idempresa} value={Empresas.idempresa}> {Empresas.nomeFantasia} </option>
+              )
+            })}
+          </select>
+          
+          <select className="Name_Event" name="IdEmpresa" value={IdTipoUsu} onChange={(event => setIdTipoUsu(event.target.value))}>
+            <option disabled selected value="0">Tipo Usuario:</option>
+            {TipoUsu.map((TipoUsu) => {
+              return (
+                <option key={TipoUsu.idtipoUsuario} value={TipoUsu.idtipoUsuario}> {TipoUsu.perfisDeUsuario} </option>
+              )
+            })}
           </select>
 
-        <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
-      </form>
-      {/* <div className='Div_Matrix'>
+          <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
+        </form>
+        {/* <div className='Div_Matrix'>
         <h2 className='CorAzul'>FAÇA SUA ESCOLHA</h2>
         <h2 className='CorVermelha'>, SAIA DA MATRIX</h2>
       </div>
       <Pirulas /> */}
-    </main>
+      </main>
     </div >
   );
 }

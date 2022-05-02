@@ -19,11 +19,14 @@ export default function MeusEventos() {
     const [EventoID, setEventoID] = useState(0);
     const [show, setShow] = useState(false);
 
+    console.log(EventoID)
+
     function handleShow() {
         if (show == false) {
             setShow(true);
         } else {
             setShow(false);
+            setEventoID(0);
         }
     }
 
@@ -51,11 +54,11 @@ export default function MeusEventos() {
 
     function BuscarEvento() {
 
-        let header = {
-            idEvento: EventoID
-        }
+        // let header = {
+        //     idEvento: EventoID
+        // }
 
-        axios.get('http://35.174.225.157/api/Evento/15', header, {
+        axios.get('http://35.174.225.157/api/Evento/' + EventoID, {
 
 
             headers: {
