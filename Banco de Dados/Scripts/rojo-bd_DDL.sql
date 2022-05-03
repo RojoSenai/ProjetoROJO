@@ -28,14 +28,14 @@ CREATE TABLE Empresa
 	Senha VARCHAR (50) NOT NULL,
 	NomeFantasia VARCHAR (50) UNIQUE NOT NULL,
 	RazaoSocial VARCHAR (50) UNIQUE NOT NULL,
-	FundaçãoAniversario Date UNIQUE NOT NULL,
+	FundaçãoAniversario Date  NOT NULL,
 	Endereço VARCHAR (50) UNIQUE NOT NULL,
 	Telefone VARCHAR (11) UNIQUE NOT NULL,
-	TotalFuncionarios INT UNIQUE NOT NULL
+	TotalFuncionarios INT NOT NULL
 );
 GO
 
-ALTER TABLE Usuario ALTER COLUMN Email varchar(255) not null;
+ALTER TABLE Empresa ALTER COLUMN Endereço varchar(505) not null;
 
 
 
@@ -53,7 +53,7 @@ CREATE TABLE Usuario
 		IDTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(IDTipoUsuario),
 		IDEmpresa INT FOREIGN KEY REFERENCES Empresa(IDEmpresa),
 		Email VARCHAR (255) UNIQUE NOT NULL,
-		Senha VARCHAR (255) NOT NULL,
+		Senha VARCHAR (60) NOT NULL,
 		NomeUsu VARCHAR (50) NOT NULL,
 		ImagemUsuario VARCHAR (300) NOT NULL,
 );
@@ -67,8 +67,8 @@ CREATE TABLE Evento
 		IDUsuario INT FOREIGN KEY REFERENCES Usuario (IDUsuario),
 		NomeEvento VARCHAR (50) NOT NULL,
 		Palestrante VARCHAR (200) NOT NULL,
-		DataEventoIncio DATETIME UNIQUE NOT NULL,
-		DataEventoFim DATETIME UNIQUE NOT NULL,
+		DataEventoIncio DATETIME  NOT NULL,
+		DataEventoFim DATETIME  NOT NULL,
 
 );
 GO

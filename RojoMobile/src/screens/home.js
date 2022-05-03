@@ -3,10 +3,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import React, { Component } from 'react';
-//import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity, Text } from 'react-native'
+import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity, Text } from 'react-native'
 import api from '../services/api';
 import jwtDecode from 'jwt-decode';
 
+//import Logo from '../../assets/letter.svg'; // import SVG
+//import {IconHome} from '../../assets/icon-home.svg'
 
 export default class Login extends Component {
   constructor(props) {
@@ -16,6 +18,8 @@ export default class Login extends Component {
       senha: '123456789',
     };
   }
+
+
 
   realizarLogin = async () => {
 
@@ -49,11 +53,13 @@ export default class Login extends Component {
     
             source={require('../../assets/Mobile_Login.png')}
             style={StyleSheet.absoluteFillObject}>
-    
-    
+  
+
             <View style={StyleSheet.absoluteFillObject}>
               <View style={styles.main}>
-    
+
+              {/* <IconHome color="#212121" width={70} height={70} /> */}
+
                 <TextInput
                   style={styles.inputLogin}
                   placeholder="E-mail"
@@ -76,6 +82,8 @@ export default class Login extends Component {
                   onPress={this.realizarLogin}>
                   <Text style={styles.btnLoginText}>LOGIN</Text>
                 </TouchableOpacity>
+
+                <Text style={styles.NameBottom}>Não tem Login? Faça Cadastro </Text>
     
               </View>
             </View>
@@ -103,7 +111,7 @@ export default class Login extends Component {
           height: 105,
           width: 110, 
           margin: 60, //espacamento em todos os lados,menos pra cima.
-          marginTop: 0, // tira espacamento pra cima
+          marginTop: 4, // tira espacamento pra cima
         },
       
         inputLogin: {
@@ -118,23 +126,33 @@ export default class Login extends Component {
         },
       
         btnLoginText: {
-          fontSize: 12, 
+          fontSize: 17, 
           fontFamily: 'Sarabun', 
           fontStyle: 'normal',
           fontWeight: 'bold',
-          color: '#000',
+          color: '#fff',
           letterSpacing: 1, //espacamento entre as letras
           textTransform: 'uppercase', //estilo maiusculo
         },
         btnLogin: {
           alignItems: 'center',
           justifyContent: 'center',
-          height: 30,
-          width: 100,
-          backgroundColor: '#3DC874',
-          borderColor: '#000',
-          borderWidth: 1,
-          borderRadius: 4,
+          height: 50,
+          width: 130,
+          backgroundColor: '#232323',
+          borderColor: '#fff',
+          borderWidth: 5,
+          borderRadius: 9,
           shadowOffset: { height: 1, width: 1 },
         },
+
+        NameBottom:{
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: 21,
+          width: 200,
+          color: '#fff',
+          backgroundColor: '#232323',
+        },
+
       });

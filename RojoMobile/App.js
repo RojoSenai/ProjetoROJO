@@ -9,9 +9,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 const AuthStack = createStackNavigator();
 
 import Home from './src/screens/home';
-import ListaEvento from './src/screens/listaEvento'
-import TelaPrincipalEmpresa from './src/screens/telaPrincipalEmpresa'
-import TelaUsuario from './src/screens/telaUsuario'
+
+
 
 export default function Stack() {
   return (
@@ -26,9 +25,6 @@ export default function Stack() {
           headerShown: false,
         }}>
         <AuthStack.Screen name="Home" component={Home} />
-        <AuthStack.Screen name="ListaEvento" component={ListaEvento} />
-        <AuthStack.Screen name="TelaPrincipalEmpresa" component={TelaPrincipalEmpresa} />
-        <AuthStack.Screen name="TelaUsuario" component={TelaUsuario} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
