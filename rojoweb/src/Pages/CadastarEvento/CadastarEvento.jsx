@@ -48,8 +48,8 @@ export default function Login() {
         }
     })
     
-    console.log(evento)
-      .then((resposta) => {
+    .then((resposta) => {
+        console.log(evento)
         if (resposta.status === 201) {
           console.log('Evento cadastrado');
         }

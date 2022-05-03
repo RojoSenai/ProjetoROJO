@@ -25,10 +25,10 @@ class Cabeca extends Component {
                     <img className="Rojinho" src={Rojologo} alt="Logo da empresa" />
                 </div>
                 <div className='ContainerLetras'>
-                    <Link to="/EmpresaCor"><a href="" className="Names_a">Cor do App</a></Link>
-                    <Link to="/Evento"><a href="" className="Names_a">Eventos</a></Link>
-                    <Link to="/CadastrarUserEmpresa"><a href="" className="Names_a">Cadastrar  Usuario</a></Link>
-                    <Link to="/"><a onClick={this.logout} className="Names_a">Sair</a></Link>
+                    <Link to="/EmpresaCor" className="Names_a">Cor do App</Link>
+                    <Link to="/Evento" className="Names_a">Eventos</Link>
+                    <Link to="/CadastrarUserEmpresa" className="Names_a">Cadastrar  Usuario</Link>
+                    <Link to="/" className="Names_a">Sair</Link>
                 </div>
             </div>
         )

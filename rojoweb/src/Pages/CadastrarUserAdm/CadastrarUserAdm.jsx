@@ -21,11 +21,11 @@ export default function Login() {
   //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
-  console.log(IdTipoUsu);
-  console.log(IdEmpresa);
-  console.log(email);
-  console.log(nome);
-  console.log(senha);
+  // console.log(IdTipoUsu);
+  // console.log(IdEmpresa);
+  // console.log(email);
+  // console.log(nome);
+  // console.log(senha);
 
   function FazerCadastro(event) {
 
@@ -43,21 +43,22 @@ export default function Login() {
       nomeUsu: nome,
     };
 
-
-    axios.post('http://35.174.225.157/api/Usuarios', UserAdm, {
+    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
       }
-
+      
     })
-
-      .then((resposta) => {
-
+    
+    .then((resposta) => {
+      
+      console.log("aqui")
         //adicionando token no local Storage
-        if (resposta.status === 200) {
-
+        if (resposta.status === 201) {
           //adicionando token no localStorage do navegador
           console.log('Usuario Cadastrado')
+          setEmail("");
+          setNome("");
 
         }
 
@@ -67,7 +68,12 @@ export default function Login() {
   }
 
   function BuscarEmpresa() {
-    axios.get('http://3.234.116.203/api/Empresa')
+
+    axios.get('http://localhost:5000/api/Empresa', {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
       .then((resposta) => {
         if (resposta.status = 200) {
           setNomeEmpresa(resposta.data)
@@ -76,7 +82,11 @@ export default function Login() {
   }
 
   function BuscarTipoUsu() {
-    axios.get('http://3.234.116.203/api/TipoUsuario')
+    axios.get('http://localhost:5000/api/TipoUsuario', {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
       .then((resposta) => {
         if (resposta.status = 200) {
           setTipoUsu(resposta.data)
@@ -87,7 +97,7 @@ export default function Login() {
   useEffect(() => {
     BuscarEmpresa();
     BuscarTipoUsu();
-  })
+  }, [])
 
   return (
     <div>
@@ -133,7 +143,7 @@ export default function Login() {
               )
             })}
           </select>
-          
+
           <select className="Name_Event" name="IdEmpresa" value={IdTipoUsu} onChange={(event => setIdTipoUsu(event.target.value))}>
             <option disabled selected value="0">Tipo Usuario:</option>
             {TipoUsu.map((TipoUsu) => {

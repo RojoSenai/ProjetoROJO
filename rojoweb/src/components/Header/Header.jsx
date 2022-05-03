@@ -23,7 +23,7 @@ class Cabeca extends Component {
                 <div>
                 <Link to="/" onClick={this.logout}><img className="Rojinho" src={Rojologo} alt="Logo da empresa" /></Link>
                 </div>
-                <div className='ContainerLetras'>
+                <div className='ContainerLetras1'>
                     <Link to="/EmpresaCor"className="Names_a">Cadastrar Cor</Link>
                     <Link to="/CadastrarUserAdm" className="Names_a">Cadastrar  Usuario</Link>
                     <Link to="/CadastrarEmpresa" className="Names_a">Cadastrar empresa</Link>
