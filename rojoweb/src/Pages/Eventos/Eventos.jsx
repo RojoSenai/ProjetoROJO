@@ -19,11 +19,13 @@ export default function MeusEventos() {
     const [EventoID, setEventoID] = useState(0);
     const [show, setShow] = useState(false);
 
-    console.log(EventoID)
+    console.log(listaEventosID);
+    console.log(EventoID);
 
     function handleShow() {
         if (show == false) {
             setShow(true);
+            BuscarEvento();
         } else {
             setShow(false);
             setEventoID(0);
@@ -57,7 +59,8 @@ export default function MeusEventos() {
         // let header = {
         //     idEvento: EventoID
         // }
-
+        console.log("aqui")
+        
         axios.get('http://3.234.116.203/api/Evento/' + EventoID, {
 
 
@@ -78,15 +81,15 @@ export default function MeusEventos() {
     }
 
     useEffect(() => {
-        BuscarEvento();
         BuscarMeusEventos();
-    });
+        console.log(listaEventos);
+    }, []);
 
 
     return (
 
         <div className="Container">
-             <Helmet title="Projeto Rojo - Eventos " />
+            <Helmet title="Projeto Rojo - Eventos " />
             <Cima />
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
@@ -119,11 +122,30 @@ export default function MeusEventos() {
                 <div>
                     <RiIcons.RiCloseFill onClick={handleShow} style={{ cursor: 'pointer', color: 'red' }} />
                 </div>
-                <div>
-                    
-                </div>
+                {
+                    listaEventosID.map((event) => {
+                        return (
+                            <div key={event.idevento}>
+                                <div><img src={logo} alt="" /></div>
+                                <div>
+                                    <div >
+                                        <h2>{event.nomeEvento}</h2>
+                                        <div></div>
+                                        <h3>{event.palestrante}</h3>
+                                        <div>
+                                            <p>{event.descricao}</p>
+                                        </div>
+                                    </div>
+                                    {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </ReactModal>
         </div>
+
+
 
     )
 } 

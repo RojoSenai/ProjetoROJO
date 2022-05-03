@@ -8,7 +8,7 @@
 /* PARTE COMPOPNENTES LOGO */
 .mano{
     background-color: #232323;
-    height: 1000px;
+    height: 100vh;
     overflow: hidden
 }
 
@@ -34,7 +34,7 @@
 }
 
 .ContainerLetras{
-    width: 57%;
+    width: 35%;
     display: flex;
     justify-content: space-around;
 }
