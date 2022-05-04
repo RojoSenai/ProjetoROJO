@@ -1,4 +1,8 @@
 {
   "name": "RojoMobile",
-  "displayName": "RojoMobile"
+  "displayName": "RojoMobile",
+  "packagerOpts": {
+    "config": "metro.config.js",
+    "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
+  }
 }

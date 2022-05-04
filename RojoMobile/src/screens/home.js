@@ -3,12 +3,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import React, { Component } from 'react';
-import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity, Text } from 'react-native'
+import { StyleSheet, ImageBackground, Image, View, TextInput, TouchableOpacity, Text, style } from 'react-native'
 import api from '../services/api';
 import jwtDecode from 'jwt-decode';
 
-//import Logo from '../../assets/letter.svg'; // import SVG
-//import {IconHome} from '../../assets/icon-home.svg'
 
 export default class Login extends Component {
   constructor(props) {
@@ -45,114 +43,135 @@ export default class Login extends Component {
 
       console.warn("chegou aqui" + tokenzinho)
 
-      }
     }
-    render() {
-        return (
-          <ImageBackground
-    
-            source={require('../../assets/Mobile_Login.png')}
-            style={StyleSheet.absoluteFillObject}>
-  
+  }
+  render() {
+    return (
+      <ImageBackground
 
-            <View style={StyleSheet.absoluteFillObject}>
-              <View style={styles.main}>
+        source={require('../../assets/Mobile_Login.png')}
+        style={StyleSheet.absoluteFillObject}>
 
-              {/* <IconHome color="#212121" width={70} height={70} /> */}
 
-                <TextInput
-                  style={styles.inputLogin}
-                  placeholder="E-mail"
-                  placeholderTextColor="#fff"
-                  keyboardType="email-address"
-                  onChangeText={email => this.setState({ email })}
-                />
-    
-                <TextInput
-                  style={styles.inputLogin}
-                  placeholder="Senha"
-                  placeholderTextColor="#fff"
-                  keyboardType="default"
-                  secureTextEntry={true}
-                  onChangeText={senha => this.setState({ senha })}
-                />
-    
-                <TouchableOpacity
-                  style={styles.btnLogin}
-                  onPress={this.realizarLogin}>
-                  <Text style={styles.btnLoginText}>LOGIN</Text>
-                </TouchableOpacity>
+        <View style={StyleSheet.absoluteFillObject}>
+          <View style={styles.main}>
 
-                <Text style={styles.NameBottom}>Não tem Login? Faça Cadastro </Text>
-    
-              </View>
+            <View style={styles.viewimg}>
+              <Image style={styles.LogoRojo} source={require('../../assets/RojoLogo.png')} />
+              <Image style={styles.Logoletra} source={require('../../assets/letras.png')} />
             </View>
-    
-          </ImageBackground>
-        )
-      }
-    };
 
-    const styles = StyleSheet.create({
+            <TextInput
+              style={styles.inputLogin}
+              placeholder="E-mail"
+              placeholderTextColor="#fff"
+              keyboardType="email-address"
+              onChangeText={email => this.setState({ email })}
+            />
 
-        overlay: {
-          ...StyleSheet.absoluteFillObject
-        },
-      
-        main: {
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          height: '100%',
-        },
-      
-        mainImgLogin: {
-          height: 105,
-          width: 110, 
-          margin: 60, //espacamento em todos os lados,menos pra cima.
-          marginTop: 4, // tira espacamento pra cima
-        },
-      
-        inputLogin: {
-          width: 230,
-          height: 40,
-          marginBottom: 40,
-          fontSize: 18,
-          color: '#000',
-          borderBottomColor: '#FFF',
-          borderBottomWidth: 2,
-          backgroundColor: '#FFF'
-        },
-      
-        btnLoginText: {
-          fontSize: 17, 
-          fontFamily: 'Sarabun', 
-          fontStyle: 'normal',
-          fontWeight: 'bold',
-          color: '#fff',
-          letterSpacing: 1, //espacamento entre as letras
-          textTransform: 'uppercase', //estilo maiusculo
-        },
-        btnLogin: {
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 50,
-          width: 130,
-          backgroundColor: '#232323',
-          borderColor: '#fff',
-          borderWidth: 5,
-          borderRadius: 9,
-          shadowOffset: { height: 1, width: 1 },
-        },
+            <TextInput
+              style={styles.inputLogin}
+              placeholder="Senha"
+              placeholderTextColor="#fff"
+              keyboardType="default"
+              secureTextEntry={true}
+              onChangeText={senha => this.setState({ senha })}
+            />
 
-        NameBottom:{
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 21,
-          width: 200,
-          color: '#fff',
-          backgroundColor: '#232323',
-        },
+            <TouchableOpacity
+              style={styles.btnLogin}
+              onPress={this.realizarLogin}>
+              <Text style={styles.btnLoginText}>LOGIN</Text>
+            </TouchableOpacity>
 
-      });
+            <Text style={styles.NameBottom}>Não tem Login? Faça Cadastro </Text>
+
+          </View>
+        </View>
+
+      </ImageBackground>
+    )
+  }
+};
+
+const styles = StyleSheet.create({
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject
+  },
+
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+
+  viewimg: {
+   // backgroundcolor: '232323',
+    //alignItems: 'center',
+    //justifycontent: 'center',
+    },
+
+  LogoRojo: {
+    //position: 'absolute',
+    top: 16,
+    //right: 10,
+  },
+
+  Logoletra: {
+    //position: 'relative',
+    height: 11,
+    width: 19,
+  },
+
+  mainImgLogin: {
+    height: 105,
+    width: 110,
+    margin: 60, //espacamento em todos os lados,menos pra cima.
+    marginTop: 4, // tira espacamento pra cima
+  },
+
+  inputLogin: {
+    width: 230,
+    height: 40,
+    marginBottom: 20,
+    fontSize: 18,
+    color: '#000',
+    borderBottomColor: '#FFF',
+    borderBottomWidth: 2,
+    backgroundColor: '#FFF'
+  },
+
+  btnLoginText: {
+    fontSize: 17,
+    fontFamily: 'Sarabun',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    color: '#fff',
+    letterSpacing: 1, //espacamento entre as letras
+    textTransform: 'uppercase', //estilo maiusculo
+  },
+  btnLogin: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50,
+    width: 130,
+    backgroundColor: '#232323',
+    borderColor: '#fff',
+    borderWidth: 5,
+    borderRadius: 9,
+    shadowOffset: { height: 1, width: 1 },
+  },
+
+  NameBottom: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 26,
+    width: 200,
+    color: '#fff',
+    backgroundColor: '#232323',
+  },
+
+});
