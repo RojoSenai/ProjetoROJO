@@ -20,7 +20,7 @@ export default function Login() {
   const [IdEmpresa, setIdEmpresa] = useState(0);
   //const [MensagemErro, SetMensagemErro] = useState('');
   const [IdUsu, setIdUsu] = useState(0);
-  //console.log(IdUsu);
+  console.log(IdUsu);
   //const [isLoding, setIsLoding] = useState(false);
   
   function CadastrarEvento(event) {
@@ -72,7 +72,7 @@ export default function Login() {
 
   useEffect(() => {
     BuscarEmpresa();
-    setIdUsu(parseJwt().role);
+    setIdUsu(parseJwt().jti);
   })
 
 

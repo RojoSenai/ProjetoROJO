@@ -1,6 +1,6 @@
 import '../../assets/css/CadastroUsuarioEmpresa.css';
 import { useState, useEffect } from 'react';
-import Cima2 from '../../components/Header2/Header2.jsx';
+import Cima from '../../components/Header/Header.jsx';
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
@@ -68,7 +68,7 @@ export default function Empresa() {
       <Helmet title="Projeto Rojo - Cadastro De Usuario Empresa" />
       <main className='mano'>
         <div className="cima">
-          <Cima2/>
+          <Cima/>
           <Logo />
         </div>
 

@@ -2,29 +2,30 @@
     margin: 0;
     padding: 0;
     font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
-    
+
 }
 
 
 /* PARTE DO HEADER */
 
-.ContainerRojoDiv{
+.ContainerRojoDiv {
     display: flex;
     justify-content: space-evenly;
     height: 134px;
     align-items: center;
 }
 
-.ContainerLetras{
+.ContainerLetras {
     width: 57%;
     display: flex;
     justify-content: space-around;
 }
 
-.Rojinho{
+.Rojinho {
     height: 68px;
 }
-.Names_a{
+
+.Names_a {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
@@ -36,24 +37,24 @@
 
 
 /* PARTE COMPOPNENTES LOGO */
-.mano{
+.mano {
     background-color: #232323;
     height: 1000px;
     overflow: hidden
 }
 
-.Cima{
+.Cima {
     height: auto
 }
 
-.ContainerLogo{
+.ContainerLogo {
     background-color: #232323;
     display: flex;
     justify-content: center;
     height: 20vw;
 }
 
-.Rojo{
+.Rojo {
     position: absolute;
     margin-top: 99px;
     margin-left: 3px;
@@ -71,20 +72,22 @@
 
 @media (prefers-reduced-motion: no-preference) {
     .Letra-logo {
-      animation: Letra-logo infinite 50s linear;
+        animation: Letra-logo infinite 50s linear;
     }
-  }
+}
 
 @keyframes Letra-logo {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
+
 /* Parte components Pirulas */
-.Pirula{
+.Pirula {
     display: flex;
     justify-content: space-between;
     width: 101vw;
@@ -94,7 +97,7 @@
 
 /* PARTE DO LOGIN */
 
-.usu_login{
+.usu_login {
     text-transform: uppercase;
     font-family: Sarabun;
     font-style: normal;
@@ -107,7 +110,7 @@
 }
 
 
-.LOGIN_log{
+.LOGIN_log {
     border: none;
     width: 38%;
     border-bottom: 3px solid #ffffff;
@@ -121,7 +124,7 @@
     color: #ffffff;
 }
 
-.login{
+.login {
     display: flex;
     height: 27%;
     align-items: center;
@@ -129,20 +132,20 @@
     justify-content: space-evenly;
 }
 
-.CorAzul{
-      color: #1C8FD0;
+.CorAzul {
+    color: #1C8FD0;
 }
 
-.CorVermelha{
+.CorVermelha {
     color: #C00000;
 }
 
-.Div_Matrix{
+.Div_Matrix {
     display: flex;
     justify-content: center;
 }
 
-.BotãoLogin{
+.BotãoLogin {
     border: 3px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 13px;
@@ -179,34 +182,34 @@
         margin: 0;
         padding: 0;
         font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
-        
+
     }
-    
+
     /* PARTE COMPOPNENTES LOGO */
-    .mano{
+    .mano {
         background-color: #232323;
         height: 1000px;
         overflow: hidden
     }
-    
-    .Cima{
+
+    .Cima {
         height: auto
     }
-    
-    .ContainerLogo{
+
+    .ContainerLogo {
         background-color: #232323;
         display: flex;
         justify-content: center;
         height: 11vw;
     }
-    
-    .Rojo{
+
+    .Rojo {
         position: absolute;
         margin-top: 34px;
         margin-left: 3px;
         height: 102px;
     }
-    
+
     .Letra-logo {
         height: 20vws;
         width: 14vw;
@@ -216,29 +219,31 @@
         animation-iteration-count: infinite;
         animation-name: Letra-logo; */
     }
-    
+
     @media (prefers-reduced-motion: no-preference) {
         .Letra-logo {
-          animation: Letra-logo infinite 50s linear;
+            animation: Letra-logo infinite 50s linear;
         }
-      }
-    
+    }
+
     @keyframes Letra-logo {
         from {
             transform: rotate(0deg);
         }
+
         to {
             transform: rotate(360deg);
         }
     }
+
     /* Parte components Pirulas */
-    .Pirula{
+    .Pirula {
         display: flex;
         justify-content: space-between;
         width: 102vw;
         height: 15vw;
     }
-    
+
     .lnr-eye {
         position: absolute;
         top: 5px;
@@ -246,10 +251,10 @@
         cursor: pointer;
     }
 
-    
+
     /* PARTE DO LOGIN */
-    
-    .usu_login{
+
+    .usu_login {
         text-transform: uppercase;
         font-family: Sarabun;
         font-style: normal;
@@ -258,11 +263,11 @@
         line-height: 109px;
         margin-top: 20px;
         color: #232323;
-    
+
     }
-    
-    
-    .LOGIN_log{
+
+
+    .LOGIN_log {
         border: none;
         width: 38%;
         border-bottom: 3px solid #ffffff;
@@ -271,33 +276,33 @@
         /* cursor: pointer; */
         color: #ffffff;
     }
-    
+
     .LOGIN_log::placeholder {
         color: #ffffff;
     }
-    
-    .login{
+
+    .login {
         display: flex;
         height: 27%;
         align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
     }
-    
-    .CorAzul{
-          color: #1C8FD0;
+
+    .CorAzul {
+        color: #1C8FD0;
     }
-    
-    .CorVermelha{
+
+    .CorVermelha {
         color: #C00000;
     }
-    
-    .Div_Matrix{
-    display: flex;
-    justify-content: center;
+
+    .Div_Matrix {
+        display: flex;
+        justify-content: center;
     }
-    
-    .BotãoLogin{
+
+    .BotãoLogin {
         border: 3px solid #FFFFFF;
         box-sizing: border-box;
         border-radius: 13px;
@@ -326,11 +331,14 @@
         font-size: 2em;
         cursor: pointer;
     }
+
+    .contperm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .permissao {
+        color: red;
+    }
 }
-
-
-
-
-
-
-

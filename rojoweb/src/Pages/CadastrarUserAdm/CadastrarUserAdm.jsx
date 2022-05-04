@@ -21,7 +21,7 @@ export default function Login() {
   //const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
-  // console.log(IdTipoUsu);
+  console.log("parseJwt" + parseJwt().role);
   // console.log(IdEmpresa);
   // console.log(email);
   // console.log(nome);
@@ -43,7 +43,7 @@ export default function Login() {
       nomeUsu: nome,
     };
 
-    axios.post('http://localhost:5000/api/Usuarios', UserAdm, {
+    axios.post('http://3.234.116.203/api/Usuarios', UserAdm, {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
       }
@@ -69,7 +69,7 @@ export default function Login() {
 
   function BuscarEmpresa() {
 
-    axios.get('http://localhost:5000/api/Empresa', {
+    axios.get('http://3.234.116.203/api/Empresa', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
       }
@@ -82,7 +82,7 @@ export default function Login() {
   }
 
   function BuscarTipoUsu() {
-    axios.get('http://localhost:5000/api/TipoUsuario', {
+    axios.get('http://3.234.116.203/api/TipoUsuario', {
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
       }
