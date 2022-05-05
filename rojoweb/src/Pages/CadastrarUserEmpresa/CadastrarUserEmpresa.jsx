@@ -11,64 +11,65 @@ export default function Empresa() {
   //States
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [Nome, setNome ] = useState('');
+  const [Nome, setNome] = useState('');
   const [IdEmpresa, setIdEmpresa] = useState(0);
   const [IdTipoUsuario, setIdTipoUsuario] = useState(0);
-//const [MensagemErro, SetMensagemErro] = useState('');
+  const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
-    
-    console.log(IdTipoUsuario);
+
+  console.log(IdTipoUsuario);
 
 
-    //Cadastrar User empresa
-    function CadastrarUserEmpresa(event) {
-        event.preventDefault();
+  //Cadastrar User empresa
+  function CadastrarUserEmpresa(event) {
+    event.preventDefault();
 
-        setIsLoding(true)
+    setIsLoding(true)
 
-      //tirando função padrão da página
-      event.preventDefault();
+    //tirando função padrão da página
+    event.preventDefault();
 
-      //chamando api
-        let userEmpresa = {
+    //chamando api
+    let userEmpresa = {
 
-          idtipoUsuario : IdTipoUsuario,
-          idempresa : IdEmpresa,
-          email: email,
-          senha: senha,
-          nomeUsu: Nome
-        }
-
-        axios.post('http://3.234.116.203/api/Usuarios', userEmpresa, {
-
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-
-            .then((resposta) => {
-                if (resposta.status === 201) {
-                  setIsLoding(false)
-                    console.log('Usuario cadastrado pela Empresa');
-
-                }
-
-            })
-
-            .then(erro => console.log(erro))
+      idtipoUsuario: IdTipoUsuario,
+      idempresa: IdEmpresa,
+      email: email,
+      senha: senha,
+      nomeUsu: Nome
     }
 
-    useEffect(() => {
-      setIdEmpresa(parseJwt().emp);
-      setIdTipoUsuario(parseJwt().role);
+    axios.post('http://3.234.116.203/api/Usuarios', userEmpresa, {
+
+      headers: {
+        Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+      }
     })
+
+      .then((resposta) => {
+        if (resposta.status === 201) {
+          setIsLoding(false)
+          console.log('Usuario cadastrado pela Empresa');
+          SetMensagemErro('Usuario cadastrado pela Empresa')
+
+        }
+
+      })
+
+      .then(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
+  }
+
+  useEffect(() => {
+    setIdEmpresa(parseJwt().emp);
+    setIdTipoUsuario(parseJwt().role);
+  })
 
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastro De Usuario Empresa" />
       <main className='mano'>
         <div className="cima">
-          <Cima/>
+          <Cima />
           <Logo />
         </div>
 
@@ -99,14 +100,18 @@ export default function Empresa() {
             name="Senha"
             id="login__senha" />
 
-        <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
-      </form>
-      {/* <div className='Div_Matrix'>
+          <div className="mensagem">
+            <p>{MensagemErro}</p>
+          </div>
+
+          <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
+        </form>
+        {/* <div className='Div_Matrix'>
         <h2 className='CorAzul'>FAÇA SUA ESCOLHA</h2>
         <h2 className='CorVermelha'>, SAIA DA MATRIX</h2>
       </div>
       <Pirulas /> */}
-    </main>
+      </main>
     </div >
   );
 }

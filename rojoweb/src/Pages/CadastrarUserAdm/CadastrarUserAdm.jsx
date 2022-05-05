@@ -18,7 +18,7 @@ export default function Login() {
   const [NomeEmpresa, setNomeEmpresa] = useState([]);
   const [TipoUsu, setTipoUsu] = useState([]);
   const [IdTipoUsu, setIdTipoUsu] = useState(0);
-  //const [MensagemErro, SetMensagemErro] = useState('');
+  const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
   console.log("parseJwt" + parseJwt().role);
@@ -47,24 +47,23 @@ export default function Login() {
       headers: {
         Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
       }
-      
+
     })
-    
-    .then((resposta) => {
-      
-      console.log("aqui")
+
+      .then((resposta) => {
+
+        console.log("aqui")
         //adicionando token no local Storage
         if (resposta.status === 201) {
           //adicionando token no localStorage do navegador
           console.log('Usuario Cadastrado')
-          setEmail("");
-          setNome("");
+          SetMensagemErro('Usuário Cadstrada com sucesso!')
 
         }
 
       })
 
-      .catch(erro => console.log(erro))
+      .catch(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
   }
 
   function BuscarEmpresa() {
@@ -152,6 +151,10 @@ export default function Login() {
               )
             })}
           </select>
+
+          <div className="mensagem">
+            <p>{MensagemErro}</p>
+          </div>
 
           <button className='BotãoCadastrarUsu' type="submit">Cadastrar</button>
         </form>

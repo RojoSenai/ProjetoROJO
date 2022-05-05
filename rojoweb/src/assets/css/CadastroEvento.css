@@ -74,12 +74,15 @@
     .Name_Event{
         border: none;
         width: 38%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
         background: transparent;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
+        height: 7%;
         color: #ffffff;
-        transition: background 0.75s;
+        transition: background, 0.75s;
+        margin-top: 15px;
+
     }
 
     .Name_Event option{
@@ -91,9 +94,10 @@
     .Name_Event:focus{
         border: none;
         width: 38%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ff0000;
         background-color: rgba(255, 255, 255, 0.137);
-        font-size: 2em;
+        font-size: 1em;
+        height: 7%;
         cursor: pointer;
         color: #ffffff;
         
@@ -102,9 +106,9 @@
     .Name_Event_img{
         border: none;
         width: 38%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
         background: transparent;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
         display: none;
@@ -150,10 +154,10 @@
     
     .cadastrar_evt{
         display: flex;
-        height: 47%;
+        height: 60%;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     
     .CorAzul{
@@ -170,32 +174,32 @@
     }
     
     .BotãoCadastrarUsu{
-        border: 3px solid #FFFFFF;
+        border: 2px solid #FFFFFF;
         box-sizing: border-box;
         border-radius: 13px;
         width: 12%;
-        height: 18%;
+        height: 12%;
         background: transparent;
         color: #ffffff;
         font-style: normal;
         font-weight: 400;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         transition: border 1s;
     }
 
     .BotãoCadastrarUsu:hover,
     .BotãoCadastrarUsu:focus {
-        border: 3px solid #FF1B00;
+        border: 2px solid #FF1B00;
         box-sizing: border-box;
         border-radius: 13px;
         width: 12%;
-        height: 18%;
+        height: 12%;
         background: transparent;
         color: #FF1B00;
         font-style: normal;
         font-weight: 400;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
     }
 }

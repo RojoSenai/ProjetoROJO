@@ -20,7 +20,7 @@ export default function Empresa() {
   const [telefone, setTelefone] = useState('');
   const [TotalFuncionarios, setTotalFuncionarios] = useState('');
   // const [IdEmpresa, setIdEmpresa] = useState([]);
-  //const [MensagemErro, SetMensagemErro] = useState('');
+  const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
 
   // function Overflow() {
@@ -62,6 +62,7 @@ export default function Empresa() {
         if (resposta.status === 201) {
           setIsLoding(false)
           console.log('Empresa cadastrada');
+          SetMensagemErro('Empresa Cadstrada com sucesso!')
 
           // setCnpj('');
           // setEmail('');
@@ -78,12 +79,12 @@ export default function Empresa() {
 
       })
 
-      .then(erro => console.log(erro))
+      .then(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
   }
 
 
   return (
-    <div id="all" className = "all">
+    <div id="all" className="all">
       <Helmet title="Projeto Rojo - Cadastro Usuario ADM" />
       <main className='mano'>
         <div className="cima">
@@ -100,7 +101,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setCnpj(event.target.value)}
                 name="nome"
-                id="cadastar__Nome" />
+                id="cadastar__Nome" 
+                required="required"/>
 
 
               <input
@@ -109,7 +111,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setNome(event.target.value)}
                 name="nome"
-                id="cadastar__Nome" />
+                id="cadastar__Nome" 
+                required="required"/>
 
 
               <input
@@ -118,7 +121,8 @@ export default function Empresa() {
                 type="email"
                 onChange={(event) => setEmail(event.target.value)}
                 name="Cnpj"
-                id="cadastar__Cnpj" />
+                id="cadastar__Cnpj" 
+                required="required"/>
 
               <input
                 className="Name_AdmE"
@@ -126,7 +130,8 @@ export default function Empresa() {
                 type="password"
                 onChange={(event) => setSenha(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
 
               <input
                 className="Name_AdmE"
@@ -134,7 +139,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setRazao(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
             </div>
 
             <div className="div2">
@@ -146,7 +152,8 @@ export default function Empresa() {
                 type="date"
                 onChange={(event) => setFundacao(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
 
               <input
                 className="Name_AdmE"
@@ -154,7 +161,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setEndereco(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
 
               <input
                 className="Name_AdmE"
@@ -162,7 +170,8 @@ export default function Empresa() {
                 type="tel"
                 onChange={(event) => setTelefone(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
 
               <input
                 className="Name_AdmE"
@@ -170,8 +179,12 @@ export default function Empresa() {
                 type="number"
                 onChange={(event) => setTotalFuncionarios(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" />
+                id="cadastar__Senha" 
+                required="required"/>
             </div>
+          </div>
+          <div className="mensagem">
+            <p>{MensagemErro}</p>
           </div>
           <button className='BotãoCadastrarEmpresa' type="submit">Cadastrar</button>
         </form>

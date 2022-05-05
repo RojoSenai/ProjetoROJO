@@ -209,4 +209,7 @@
         width: 80vw;
         height: 16vw;
     }
+    .mensagem{
+        color: red;
+    }
 }

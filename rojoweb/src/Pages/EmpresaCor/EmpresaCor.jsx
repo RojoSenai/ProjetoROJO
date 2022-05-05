@@ -17,6 +17,7 @@ export default function Login() {
   const [Logo_Imagem, setLogo] = useState('');
   const [Banner, setBanner] = useState('');
   const [Islogind, setIslogind] = useState(false);
+  //const [MensagemErro, SetMensagemErro] = useState('');
 
   console.log('agora a cor é ' + Cor1);
   function Mudarcor() {
@@ -69,65 +70,82 @@ export default function Login() {
         <Cima />
 
         <div className='ContFormProt'>
-          <form action="" className='ConteinerForm'>
-
-            <div className='ImputCor'>
-              <label className='NomeCor' for="ImputCor">Cor1:</label>
-              <input
-                onChange={(event) => Mudarcor()}
-                className="ImputCor"
-                type="Color"
-                name="Cor1"
-                id="Cadastro_cor1" />
+          <div className='contF'>
+            <div className='contTitulo'>
+              <h2 className="Cadastrar_Cor">Cadastrar Cor</h2>
+              <div className="EssaBarra1"></div>
             </div>
 
-            <div>
-              <label className='NomeCor' for="ImputCor">Cor2:</label>
-              <input
-                className="ImputCor"
-                onChange={(event) => Mudarcor()}
-                type="Color"
-                name="Cor2"
-                id="Cadastro_cor2" />
+            <div className='contFormulario'>
+              <form action="" className='ConteinerForm'>
+
+                <div className='ImputCor'>
+                  <label className='NomeCor' for="ImputCor">Cor1:</label>
+                  <input
+                    onChange={(event) => Mudarcor()}
+                    className="ImputCor"
+                    type="Color"
+                    name="Cor1"
+                    id="Cadastro_cor1"
+                    required="required" />
+                </div>
+
+                <div>
+                  <label className='NomeCor' for="ImputCor">Cor2:</label>
+                  <input
+                    className="ImputCor"
+                    onChange={(event) => Mudarcor()}
+                    type="Color"
+                    name="Cor2"
+                    id="Cadastro_cor2"
+                    required="required" />
+                </div>
+
+                <div>
+                  <label className='NomeCor' for="ImputCor">Fonte:</label>
+                  <input
+                    className="ImputCor"
+                    onChange={(event) => Mudarcor()}
+                    type="Color"
+                    name="Cor3"
+                    id="Cadastro_cor3"
+                    required="required" />
+                </div>
+
+                <div>
+                  <div className="EventFile">
+                    <label className="ImputFile_" for="Logo">Logo:</label>
+                  </div>
+                  <input
+                    className="ImputFile"
+                    placeholder="Logo:"
+                    type="file"
+                    name="Logo_Img"
+                    id="Logo"
+                    required="required" />
+                </div>
+
+                <div>
+                  <div className="EventFile">
+                    <label className="ImputFile_" for="Banner">Banner:</label>
+                  </div>
+                  <input
+                    className="ImputFile"
+                    placeholder="Banner"
+                    type="file"
+                    name="Banner"
+                    id="Banner"
+                    required="required" />
+                </div>
+
+                {/* <div className="mensagem">
+              <p>{MensagemErro}</p>
+            </div> */}
+
+                <button className='BotãoCor' type="submit">Cadastrar</button>
+              </form>
             </div>
-
-            <div>
-              <label className='NomeCor' for="ImputCor">Fonte:</label>
-              <input
-                className="ImputCor"
-                onChange={(event) => Mudarcor()}
-                type="Color"
-                name="Cor3"
-                id="Cadastro_cor3" />
-            </div>
-
-            <div>
-              <div className="EventFile">
-                <label className="ImputFile_" for="Logo">Logo:</label>
-              </div>
-              <input
-                className="ImputFile"
-                placeholder="Logo:"
-                type="file"
-                name="Logo_Img"
-                id="Logo" />
-            </div>
-
-            <div>
-              <div className="EventFile">
-                <label className="ImputFile_" for="Banner">Banner:</label>
-              </div>
-              <input
-                className="ImputFile"
-                placeholder="Banner"
-                type="file"
-                name="Banner"
-                id="Banner" />
-            </div>
-
-            <button className='BotãoCor' type="submit">Cadastrar</button>
-          </form>
-
+          </div>
           {/* ------------------------------------------------PROTOTIPOS----------------------------------------------------------------------- */}
           <div className='ContLogoProt'>
             <div className="ContainerLogo_">

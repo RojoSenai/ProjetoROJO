@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-
+import { parseJwt, usuarioAutenticado } from './Services/auth';
 //css
 import './index.css';
 
@@ -18,6 +18,32 @@ import CadastrarEmpresa from './Pages/CadastrarEmpresa/CadastarEmpresa.jsx'
 import CadastroEvento from './Pages/CadastarEvento/CadastarEvento.jsx'
 import Evento from './Pages/Eventos/Eventos.jsx'
 
+
+const PermissaoAdm = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJwt().role === '1' ? (
+        // operador spread
+        <Component {...props} />
+      ) : (
+        <Navigate to="login" />
+      )
+    }
+  />
+);
+
+const PermissaoAdmEmp = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      (usuarioAutenticado() && parseJwt().role === '3') ||  (usuarioAutenticado() && parseJwt().role === '1') ? (
+        // operador spread
+        <Component {...props} />
+      ) : (
+        <Navigate to="login" />
+      )
+    }
+  />
+);
 
 const routing = (
   <Router>
