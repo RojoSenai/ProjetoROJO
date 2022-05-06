@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
-    
+
 }
 
 
@@ -10,30 +10,33 @@
 
 /* PARTE DO HEADER */
 
-.ContainerRojo{
+.ContainerRojo {
     display: flex;
     justify-content: space-evenly;
     height: 90px;
     align-items: center;
-    
+
 }
 
-.ContainerLetras1{
+.ContainerLetras1 {
     width: 57%;
     display: flex;
     justify-content: space-around;
 }
 
-.Rojinho{
+.Rojinho {
     height: 68px;
 }
-.Names_a{
+
+.Names_a {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.75s;
 }
-.Names_a:hover, .Name_a:focus{
+
+.Names_a:hover,
+.Name_a:focus {
     color: #b01425;
     text-decoration: none;
     text-transform: uppercase;
@@ -44,18 +47,18 @@
 
 
 /* PARTE COMPOPNENTES LOGO */
-.mano{
+.mano {
     background-color: #232323;
     height: 100vh;
     overflow: hidden
 }
 
-.Cima{
+.Cima {
     height: auto
 }
 
 /* Parte components Pirulas */
-.Pirula{
+.Pirula {
     display: flex;
     justify-content: space-between;
     width: 101vw;
@@ -71,31 +74,31 @@
         margin: 0;
         padding: 0;
         font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
-        
+
     }
-    
+
     /* PARTE COMPOPNENTES LOGO */
-    .mano{
+    .mano {
         background-color: #232323;
         height: 1000px;
         overflow: hidden
     }
-    
-    .Cima{
+
+    .Cima {
         height: auto
     }
-    
+
     /* Parte components Pirulas */
-    .Pirula{
+    .Pirula {
         display: flex;
         justify-content: space-between;
         width: 101vw;
         height: 10vw;
     }
-    
-    
+
+
     /* PARTE DO LOGIN */
-    
+
     /* .usu_login{
         text-transform: uppercase;
         font-family: Sarabun;
@@ -107,109 +110,114 @@
         color: #232323;
     
     } */
-    
-    
-    .Name_AdmE{
+
+
+    .Name_AdmE {
         border: none;
         width: 86%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
         background: transparent;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
-        transition: background 0.75s;
+        height: 12%;
+        transition: background, 0.75s;
     }
 
     .Name_AdmE:hover,
-    .BotãoCadastrarUsu:focus{
+    .BotãoCadastrarUsu:focus {
         border: none;
         width: 86%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ff0000;
         background-color: rgba(255, 255, 255, 0.137);
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
     }
-    
+
     .Name_AdmE::placeholder {
         color: #ffffff;
     }
-    .cadastrar_Ev{
+
+    .cadastrar_Ev {
         display: flex;
         height: 52%;
+        margin-top: 4vw;
         align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
     }
-    
-    .CorAzul{
-          color: #1C8FD0;
+
+    .CorAzul {
+        color: #1C8FD0;
     }
-    
-    .CorVermelha{
+
+    .CorVermelha {
         color: #C00000;
     }
-    
-    .Div_Matrix{
-    display: flex;
-    justify-content: center;
+
+    .Div_Matrix {
+        display: flex;
+        justify-content: center;
     }
-    
-    .BotãoCadastrarEmpresa{
-        border: 3px solid #FFFFFF;
+
+    .BotãoCadastrarEmpresa {
+        border: 2px solid #FFFFFF;
         box-sizing: border-box;
         border-radius: 13px;
         width: 12%;
-        height: 18%;
+        height: 12%;
         background: transparent;
         color: #ffffff;
         font-style: normal;
         font-weight: 400;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         transition: border 1s;
     }
 
     .BotãoCadastrarEmpresa:hover,
     .BotãoCadastrarEmpresa:focus {
-        border: 3px solid #FF1B00;
+        border: 2px solid #FF1B00;
         box-sizing: border-box;
         border-radius: 13px;
         width: 12%;
-        height: 18%;
+        height: 12%;
         background: transparent;
         color: #FF1B00;
         font-style: normal;
         font-weight: 400;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
     }
 
-    .div1{
+    .div1 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 34vw;
-        height: 15vw;
+        height: 95%;
     }
 
-    .div2{
+    .div2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 35vw;
+        height: 95%;
     }
 
-    .divm{
+    .divm {
         display: flex;
         justify-content: space-around;
         flex-direction: row;
         width: 80vw;
-        height: 16vw;
+        height: 18vw;
     }
-    .mensagem{
+
+    .mensagem {
         color: red;
     }
 }

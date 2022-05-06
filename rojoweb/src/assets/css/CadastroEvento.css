@@ -78,7 +78,7 @@
         background: transparent;
         font-size: 1em;
         cursor: pointer;
-        height: 7%;
+        height: 12%;
         color: #ffffff;
         transition: background, 0.75s;
         margin-top: 15px;
@@ -97,7 +97,7 @@
         border-bottom: 2px solid #ff0000;
         background-color: rgba(255, 255, 255, 0.137);
         font-size: 1em;
-        height: 7%;
+        height: 12%;
         cursor: pointer;
         color: #ffffff;
         
@@ -154,7 +154,7 @@
     
     .cadastrar_evt{
         display: flex;
-        height: 60%;
+        height: 62%;
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
@@ -183,6 +183,7 @@
         color: #ffffff;
         font-style: normal;
         font-weight: 400;
+        margin-top: 35px;
         font-size: 1em;
         cursor: pointer;
         transition: border 1s;
@@ -199,6 +200,7 @@
         color: #FF1B00;
         font-style: normal;
         font-weight: 400;
+        margin-top: 35px;
         font-size: 1em;
         cursor: pointer;
     }

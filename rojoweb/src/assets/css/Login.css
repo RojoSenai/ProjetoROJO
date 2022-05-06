@@ -56,13 +56,14 @@
 
 .Rojo {
     position: absolute;
-    margin-top: 99px;
-    margin-left: 3px;
+    margin-top: 60px;
+    margin-left: 1px;
+    height: 76px;
 }
 
 .Letra-logo {
     height: 11vw;
-    width: 14vw;
+    width: 9vw;
     pointer-events: none;
     /* animation-duration: 50s;
     animation-timing-function: linear;
@@ -205,14 +206,14 @@
 
     .Rojo {
         position: absolute;
-        margin-top: 34px;
-        margin-left: 3px;
-        height: 102px;
+        margin-top: 60px;
+        margin-left: 1px;
+        height: 76px;
     }
 
     .Letra-logo {
         height: 20vws;
-        width: 14vw;
+        width: 9vw;
         pointer-events: none;
         /* animation-duration: 50s;
         animation-timing-function: linear;

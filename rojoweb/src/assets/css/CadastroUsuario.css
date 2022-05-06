@@ -74,21 +74,23 @@
     .Name_Adm{
         border: none;
         width: 38%;
-        border-bottom: 3px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        height: 12%;
         background: transparent;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
-        transition: background 0.75s;
+        transition: background, 0.75s;
     }
 
     .Name_Adm:hover,
     .BotãoCadastrarUsu:focus{
         border: none;
         width: 38%;
-        border-bottom: 3px solid #ffffff;
+        height: 12%;
+        border-bottom: 2px solid #ff0000;
         background-color: rgba(255, 255, 255, 0.137);
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
     }
@@ -99,10 +101,10 @@
     
     .cadastrar_usu{
         display: flex;
-        height: 35%;
+        height: 60%;
         align-items: center;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
     
     .CorAzul{

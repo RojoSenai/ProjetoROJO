@@ -18,7 +18,7 @@ export default function Empresa() {
   const [fundaçãoAniversario, setFundacao] = useState(new Date());
   const [endereço, setEndereco] = useState('');
   const [telefone, setTelefone] = useState('');
-  const [TotalFuncionarios, setTotalFuncionarios] = useState('');
+  const [TotalFuncionarios, setTotalFuncionarios] = useState(0);
   // const [IdEmpresa, setIdEmpresa] = useState([]);
   const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
@@ -47,7 +47,7 @@ export default function Empresa() {
       fundaçãoAniversario: fundaçãoAniversario,
       endereço: endereço,
       telefone: telefone,
-      TotalFuncionarios: TotalFuncionarios
+      TotalFuncionarios: TotalFuncionarios.toString()
       //  IdEmpresa: IdEmpresa,
     }
 
@@ -64,17 +64,7 @@ export default function Empresa() {
           console.log('Empresa cadastrada');
           SetMensagemErro('Empresa Cadstrada com sucesso!')
 
-          // setCnpj('');
-          // setEmail('');
-          // setSenha('');
-          // setNome('');
-          // setRazao('');
-          // setFundacao();
-          // setEndereco('');
-          // setTelefone('');
-          // setTotalFuncionarios('');
         }
-
 
 
       })
@@ -101,8 +91,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setCnpj(event.target.value)}
                 name="nome"
-                id="cadastar__Nome" 
-                required="required"/>
+                id="cadastar__Nome"
+                required="required" />
 
 
               <input
@@ -111,8 +101,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setNome(event.target.value)}
                 name="nome"
-                id="cadastar__Nome" 
-                required="required"/>
+                id="cadastar__Nome"
+                required="required" />
 
 
               <input
@@ -121,8 +111,8 @@ export default function Empresa() {
                 type="email"
                 onChange={(event) => setEmail(event.target.value)}
                 name="Cnpj"
-                id="cadastar__Cnpj" 
-                required="required"/>
+                id="cadastar__Cnpj"
+                required="required" />
 
               <input
                 className="Name_AdmE"
@@ -130,8 +120,8 @@ export default function Empresa() {
                 type="password"
                 onChange={(event) => setSenha(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
 
               <input
                 className="Name_AdmE"
@@ -139,8 +129,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setRazao(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
             </div>
 
             <div className="div2">
@@ -152,8 +142,8 @@ export default function Empresa() {
                 type="date"
                 onChange={(event) => setFundacao(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
 
               <input
                 className="Name_AdmE"
@@ -161,8 +151,8 @@ export default function Empresa() {
                 type="text"
                 onChange={(event) => setEndereco(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
 
               <input
                 className="Name_AdmE"
@@ -170,17 +160,18 @@ export default function Empresa() {
                 type="tel"
                 onChange={(event) => setTelefone(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
 
               <input
                 className="Name_AdmE"
                 placeholder="Total De Funcionarios:"
                 type="number"
+                min="1"
                 onChange={(event) => setTotalFuncionarios(event.target.value)}
                 name="Senha"
-                id="cadastar__Senha" 
-                required="required"/>
+                id="cadastar__Senha"
+                required="required" />
             </div>
           </div>
           <div className="mensagem">

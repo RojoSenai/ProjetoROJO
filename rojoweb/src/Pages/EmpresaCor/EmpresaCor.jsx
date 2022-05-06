@@ -23,12 +23,15 @@ export default function Login() {
   function Mudarcor() {
     let colorPicker = document.getElementById("Cadastro_cor1");
     let box = document.getElementById("box");
-    let burguer = document.getElementById("burguer")
-    let burguer2 = document.getElementById("burguer2")
-    let burguer3 = document.getElementById("burguer3")
-    let menub = document.getElementById("menub")
-    let borro = document.getElementById("borro")
+    let burguer = document.getElementById("burguer");
+    let burguer2 = document.getElementById("burguer2");
+    let burguer3 = document.getElementById("burguer3");
+    let menub = document.getElementById("menub");
+    let borro = document.getElementById("borro");
 
+    let label = document.getElementById("label");
+
+    label.style.backgroundColor = colorPicker.value;
     // let output = document.getElementById("output");
 
     box.style.backgroundColor = colorPicker.value;
@@ -36,8 +39,9 @@ export default function Login() {
     burguer2.style.backgroundColor = colorPicker.value;
     burguer3.style.backgroundColor = colorPicker.value;
     menub.style.backgroundColor = colorPicker.value;
-    borro.style.backgroundColor = colorPicker.value
-    setCor1(colorPicker.value)
+    borro.style.backgroundColor = colorPicker.value;
+    setCor1(colorPicker.value);
+
 
     colorPicker.addEventListener("input", function (event) {
       box.style.backgroundColor = event.target.value;
@@ -49,14 +53,22 @@ export default function Login() {
     let colorPicker2 = document.getElementById("Cadastro_cor2");
     let Header = document.getElementById("Header");
 
-    Header.style.backgroundColor = colorPicker2.value
+    let label2 = document.getElementById("label2");
 
+    label2.style.backgroundColor = colorPicker2.value;
+
+    Header.style.backgroundColor = colorPicker2.value;
+    setCor2(colorPicker2.value);
 
     let colorPickerFonte = document.getElementById("Cadastro_cor3");
     let letras = document.getElementById("letras");
 
-    letras.style.color = colorPickerFonte.value
+    let label3 = document.getElementById("label3");
 
+    label3.style.backgroundColor = colorPickerFonte.value;
+
+    letras.style.color = colorPickerFonte.value;
+    setCor3(colorPickerFonte.value);
 
     // colorPicker.addEventListener("change", function(event) {
     // output.innerText = "Cor escolida " + colorPicker.value + ".";
@@ -79,8 +91,11 @@ export default function Login() {
             <div className='contFormulario'>
               <form action="" className='ConteinerForm'>
 
-                <div className='ImputCor'>
-                  <label className='NomeCor' for="ImputCor">Cor1:</label>
+                <div>
+                  <div className='contA'>
+                    <label id="label" className='NomeCor' for="Cadastro_cor1"></label>
+                    <label id="label3" className='a' for="Cadastro_cor3">{Cor1}</label>
+                  </div>
                   <input
                     onChange={(event) => Mudarcor()}
                     className="ImputCor"
@@ -91,7 +106,10 @@ export default function Login() {
                 </div>
 
                 <div>
-                  <label className='NomeCor' for="ImputCor">Cor2:</label>
+                  <div className='contA'>
+                    <label id="label2" className='NomeCor' for="Cadastro_cor2"></label>
+                    <label id="label3" className='a' for="Cadastro_cor3">{Cor2}</label>
+                  </div>
                   <input
                     className="ImputCor"
                     onChange={(event) => Mudarcor()}
@@ -102,7 +120,10 @@ export default function Login() {
                 </div>
 
                 <div>
-                  <label className='NomeCor' for="ImputCor">Fonte:</label>
+                  <div className='contA'>
+                    <label id="label3" className='NomeCor' for="Cadastro_cor3"></label>
+                    <label id="label3" className='a' for="Cadastro_cor3">{Cor3}</label>
+                  </div>
                   <input
                     className="ImputCor"
                     onChange={(event) => Mudarcor()}
