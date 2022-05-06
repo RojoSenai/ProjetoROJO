@@ -75,6 +75,13 @@ export default function Login() {
     // }, false);
   }
 
+  useEffect(() => {
+    setCor1("#000000");
+    setCor2("#000000");
+    setCor3("#000000");
+}, []);
+
+
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastrar Cor" />
@@ -94,7 +101,7 @@ export default function Login() {
                 <div>
                   <div className='contA'>
                     <label id="label" className='NomeCor' for="Cadastro_cor1"></label>
-                    <label id="label3" className='a' for="Cadastro_cor3">{Cor1}</label>
+                    <label id="label1" className='a' for="Cadastro_cor3">{Cor1}</label>
                   </div>
                   <input
                     onChange={(event) => Mudarcor()}
@@ -108,7 +115,7 @@ export default function Login() {
                 <div>
                   <div className='contA'>
                     <label id="label2" className='NomeCor' for="Cadastro_cor2"></label>
-                    <label id="label3" className='a' for="Cadastro_cor3">{Cor2}</label>
+                    <label id="label2" className='a' for="Cadastro_cor3">{Cor2}</label>
                   </div>
                   <input
                     className="ImputCor"

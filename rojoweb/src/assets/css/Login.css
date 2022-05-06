@@ -315,7 +315,7 @@
         font-weight: 400;
         font-size: 2em;
         cursor: pointer;
-        transition: border 1s;
+        transition: border, 1s;
     }
 
     .BotãoLogin:hover,

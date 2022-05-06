@@ -62,14 +62,16 @@ export default function Empresa() {
         if (resposta.status === 201) {
           setIsLoding(false)
           console.log('Empresa cadastrada');
-          SetMensagemErro('Empresa Cadstrada com sucesso!')
+          SetMensagemErro('Empresa Cadastrada com sucesso!')
 
         }
+        else
+        SetMensagemErro('Oops! algo deu errado :(')
 
 
       })
 
-      .then(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
+      .then(erro => console.log(erro))
   }
 
 

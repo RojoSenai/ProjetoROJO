@@ -49,14 +49,16 @@ export default function Empresa() {
       .then((resposta) => {
         if (resposta.status === 201) {
           setIsLoding(false)
-          console.log('Usuario cadastrado pela Empresa');
-          SetMensagemErro('Usuario cadastrado pela Empresa')
+          console.log('Usuario cadastrado');
+          SetMensagemErro('Usuario cadastrado')
 
         }
+        else
+        SetMensagemErro('Oops! algo deu errado :(')
 
       })
 
-      .then(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
+      .then(erro => console.log(erro))
   }
 
   useEffect(() => {

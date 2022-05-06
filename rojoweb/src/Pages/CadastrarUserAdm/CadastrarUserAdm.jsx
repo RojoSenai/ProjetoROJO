@@ -57,13 +57,15 @@ export default function Login() {
         if (resposta.status === 201) {
           //adicionando token no localStorage do navegador
           console.log('Usuario Cadastrado')
-          SetMensagemErro('Usuário Cadstrada com sucesso!')
+          SetMensagemErro('Usuário Cadastrado com sucesso!')
 
         }
+        else
+        SetMensagemErro('Oops! algo deu errado :(')
 
       })
 
-      .catch(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
+      .catch(erro => console.log(erro))
   }
 
   function BuscarEmpresa() {

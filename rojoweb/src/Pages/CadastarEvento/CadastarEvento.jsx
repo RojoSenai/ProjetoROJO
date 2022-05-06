@@ -52,14 +52,16 @@ export default function Login() {
         console.log(evento)
         if (resposta.status === 201) {
           console.log('Evento cadastrado');
-          SetMensagemErro('Evento Cadstrada com sucesso!')
+          SetMensagemErro('Evento Cadastrado com sucesso!')
         }
+        else
+        SetMensagemErro('Oops! algo deu errado :(')
 
 
 
       })
 
-      .then(erro => console.log(erro), SetMensagemErro('Oops! algo deu errado :('))
+      .then(erro => console.log(erro))
   }
 
   function BuscarEmpresa() {

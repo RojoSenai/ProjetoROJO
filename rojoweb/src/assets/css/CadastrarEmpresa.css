@@ -173,7 +173,7 @@
         font-weight: 400;
         font-size: 1em;
         cursor: pointer;
-        transition: border 1s;
+        transition: border, 1s;
     }
 
     .BotãoCadastrarEmpresa:hover,

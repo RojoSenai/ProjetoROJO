@@ -64,13 +64,15 @@ export default function Login() {
             SetMensagem("você não tem premissão para isso!")
             navigate("/")
           }
-          else
+          else {
+            SetMensagem("email ou senha invalidos!")
             navigate("/CadastroEvento")
+          }
         }
 
       })
 
-      .catch(erro => console.log(erro), SetMensagem("email ou senha invalidos!"))
+      .catch(erro => console.log(erro))
   }
 
 
@@ -91,8 +93,8 @@ export default function Login() {
             type="text"
             onChange={(event) => setEmail(event.target.value)}
             name="Email"
-            id="login__email" 
-            required="required"/>
+            id="login__email"
+            required="required" />
 
 
 
@@ -103,8 +105,8 @@ export default function Login() {
             type="password"
             onChange={(event) => setSenha(event.target.value)}
             name="Senha"
-            id="password" 
-            required="required"/>
+            id="password"
+            required="required" />
           {
             mostrar === false && (
               <Aiicons.AiOutlineEyeInvisible style={{ color: "white", width: "2em", position: "absolute", margin: "0 17em", padding: "0px 0px 21px", cursor: "pointer" }} onClick={MostrarSenha} />
