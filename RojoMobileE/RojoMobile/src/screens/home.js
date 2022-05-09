@@ -47,7 +47,7 @@ export default class Login extends Component {
     return (
       <ImageBackground
 
-        source={require('../../assets/Mobile_Login.png')}
+        source={require('../../assets/Mobile_Login_De_Usuario.png')}
         style={StyleSheet.absoluteFillObject}>
 
 
@@ -107,21 +107,24 @@ const styles = StyleSheet.create({
   },
 
   viewimg: {
-   // backgroundcolor: '232323',
-    //alignItems: 'center',
-    //justifycontent: 'center',
+    //backgroundColor: '#FFF',
+    alignItems: 'center',
+    justifyContent: 'center',
     },
 
   LogoRojo: {
     //position: 'absolute',
-    top: 16,
+    top: 40,
     //right: 10,
+    height: 111,
+    width: 99,
   },
 
   Logoletra: {
     //position: 'relative',
-    height: 11,
-    width: 19,
+    height: 180,
+    width: 180,
+    bottom: 110,
   },
 
   mainImgLogin: {
@@ -134,17 +137,18 @@ const styles = StyleSheet.create({
   inputLogin: {
     width: 230,
     height: 40,
-    marginBottom: 20,
+    marginBottom: 10,
+    bottom:90,
     fontSize: 18,
     color: '#000',
     borderBottomColor: '#FFF',
     borderBottomWidth: 2,
-    backgroundColor: '#FFF'
+    backgroundColor: '#232323'
   },
 
   btnLoginText: {
     fontSize: 17,
-    fontFamily: 'Sarabun',
+    //fontFamily: 'Sarabun',
     fontStyle: 'normal',
     fontWeight: 'bold',
     color: '#fff',
@@ -160,6 +164,7 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     borderWidth: 5,
     borderRadius: 9,
+    bottom: 80,
     shadowOffset: { height: 1, width: 1 },
   },
 
@@ -169,7 +174,9 @@ const styles = StyleSheet.create({
     height: 26,
     width: 200,
     color: '#fff',
-    backgroundColor: '#232323',
+    marginTop: 4,
+    bottom:70,
+    //backgroundColor: '#232323',
   },
 
 });
