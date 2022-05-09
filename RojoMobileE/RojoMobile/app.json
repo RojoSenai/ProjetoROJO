@@ -4,11 +4,11 @@
     "slug": "RojoMobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Logo_App.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Home.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#232323"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/Logo_App_remove.png",
         "backgroundColor": "#FFFFFF"
       }
     },

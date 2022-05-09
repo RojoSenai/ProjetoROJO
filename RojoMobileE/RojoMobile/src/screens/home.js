@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 import { StyleSheet, ImageBackground, Image, View, TextInput, TouchableOpacity, Text, style } from 'react-native'
 import api from '../services/api';
 import jwtDecode from 'jwt-decode';
+import { useNavigation } from "@react-navigation/native";
+
+//import  { useSharedValue } from 'react-native-reanimated'; PARA FAZER GIRAR
 
 
 export default class Login extends Component {
@@ -35,11 +38,11 @@ export default class Login extends Component {
       console.warn('Login foi Realizado');
       //this.props.navigation.navigate('');
 
-      console.warn(jwtDecode(token).role);
-
       var tokenzinho = jwtDecode(token).role
 
-      console.warn("chegou aqui" + tokenzinho)
+      console.warn("chegou aqui " + tokenzinho)
+
+      this.props.navigation.navigate('ListarEvt');
 
     }
   }
@@ -82,7 +85,7 @@ export default class Login extends Component {
               <Text style={styles.btnLoginText}>LOGIN</Text>
             </TouchableOpacity>
 
-            <Text style={styles.NameBottom}>Não tem Login? Faça Cadastro </Text>
+            {/* <Text style={styles.NameBottom}>Não tem Login? Faça Cadastro </Text> */}
 
           </View>
         </View>
