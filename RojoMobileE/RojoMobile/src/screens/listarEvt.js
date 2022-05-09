@@ -90,12 +90,12 @@ const styles = StyleSheet.create({
     },
     flatItem: {
         borderBottomWidth: 1,
-        borderBottomColor: '#000',
+        borderBottomColor: '#FFFFFF',
         marginTop: 40,
     },
     flatItemInfo: {
         fontSize: 14,
-        color: '#000',
+        color: '#DF1A30',
         lineHeight: 24,
        // fontFamily: 'TitilliumWeb-Regular',
     }

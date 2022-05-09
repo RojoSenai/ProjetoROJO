@@ -38,11 +38,9 @@ export default class Login extends Component {
       console.warn('Login foi Realizado');
       //this.props.navigation.navigate('');
 
-      console.warn(jwtDecode(token).role);
-
       var tokenzinho = jwtDecode(token).role
 
-      console.warn("chegou aqui" + tokenzinho)
+      console.warn("chegou aqui " + tokenzinho)
 
       this.props.navigation.navigate('ListarEvt');
 
