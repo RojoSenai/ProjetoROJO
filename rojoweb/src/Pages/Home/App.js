@@ -60,17 +60,20 @@ export default function Login() {
           localStorage.setItem('usuario-login', resposta.data.token);
           setIsLoding(false);
           console.log(parseJwt().role);
+
           if (parseJwt().role == 2) {
             SetMensagem("você não tem premissão para isso!")
             navigate("/")
           }
           else {
-            SetMensagem("email ou senha invalidos!")
             navigate("/CadastroEvento")
           }
+
         }
 
       })
+
+
 
       .catch(erro => console.log(erro))
   }
@@ -90,7 +93,7 @@ export default function Login() {
           <input
             className="LOGIN_log"
             placeholder="Email:"
-            type="text"
+            type="Email"
             onChange={(event) => setEmail(event.target.value)}
             name="Email"
             id="login__email"

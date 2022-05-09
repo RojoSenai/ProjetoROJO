@@ -26,7 +26,7 @@ const PermissaoAdm = ({ component: Component }) => (
         // operador spread
         <Component {...props} />
       ) : (
-        <Navigate to="login" />
+        <Navigate to="/" />
       )
     }
   />
@@ -39,7 +39,7 @@ const PermissaoAdmEmp = ({ component: Component }) => (
         // operador spread
         <Component {...props} />
       ) : (
-        <Navigate to="login" />
+        <Navigate to="/" />
       )
     }
   />
