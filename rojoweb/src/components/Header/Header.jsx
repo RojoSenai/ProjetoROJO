@@ -38,11 +38,12 @@ class Cabeca extends Component {
                     </div>
                     : parseJwt().role == 3 ?
                     <div className="ContainerRojo">
-                        <div>
-                            <img className="Rojinho" src={Rojologo} alt="Logo da empresa" />
+                        <div> 
+                        <Link to="/" onClick={this.logout}><img className="Rojinho" src={Rojologo} alt="Logo da empresa" /></Link>
                         </div>
                         <div className='ContainerLetras'>
                             <Link to="/EmpresaCor" className="Names_a">Cor do App</Link>
+                            <Link to="/CadastroEvento" className="Names_a">Cadastrar evento</Link>
                             <Link to="/Evento" className="Names_a">Eventos</Link>
                             <Link to="/CadastrarUserEmpresa" className="Names_a">Cadastrar  Usuario</Link>
                             <Link to="/" onClick={this.logout} className="Names_a">Sair</Link>

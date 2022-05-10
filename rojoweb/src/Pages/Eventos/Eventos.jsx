@@ -120,7 +120,7 @@ export default function MeusEventos() {
                     })}
                 </div>
             </section>
-            <Modall showModal={show} setShow={handleShow} EventoID={EventoID} evento={listaEventosID} />
+            <Modall showModal={show} setShow={handleShow} EventoID={EventoID} evento={[listaEventosID]} />
             {/* <ReactModal isOpen={show} onRequestClose={show} className="mod">
                 <div>
                     <RiIcons.RiCloseFill onClick={handleShow} style={{ cursor: 'pointer', color: 'red' }} />
