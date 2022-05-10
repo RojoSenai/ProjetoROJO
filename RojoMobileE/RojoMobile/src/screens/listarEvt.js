@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import {
     StyleSheet,
     Text,
+    Image,
     View,
     FlatList,
 } from 'react-native';
@@ -24,7 +25,7 @@ export default function Eventos() {
             }
         })
 
-        const dadosDaApi = resposta.data.listaEventos;
+        const dadosDaApi = resposta.data;
 
         setListaEventos(dadosDaApi)
     }
@@ -32,6 +33,7 @@ export default function Eventos() {
     useEffect(() => {
         BuscarEventos();
     }, [])
+
 
     return (
         <View style={styles.main}>
@@ -46,11 +48,16 @@ export default function Eventos() {
                     keyExtractor={item => item.idEvento}
                     renderItem={({ item }) => (
                         <View style={styles.flatItem}>
-                            <Text style={styles.flatItemInfo}>{"Nome Evento: " + (item.nomeEvento)}</Text>
-                            <Text style={styles.flatItemInfo}>{"Palestrante: " + (item.palestrante)}</Text>
-                            <Text style={styles.flatItemInfo}>{"descricao do evento: " + (item.descricao)}</Text>
+                            <View style={styles.Nome_Imagem}>
+                            <Text style={styles.Informa_Nome}>{"Evento: " + (item.nomeEvento)}</Text>
+                                <Image style={styles.LogoRojo} source={require('../../assets/RojoLogo.png')} />
+                            </View>
+                            <View style={styles.Descri_line_pale}>
+                                <Text style={styles.Informa_Descr}>{ (item.descricao)}</Text>
+                                <View style={styles.InformaLine}></View>
+                                <Text style={styles.Informa_Palest}>{"Palestrante: " + (item.palestrante)}</Text>
+                            </View>
                         </View>
-
                     )}
                 />
             </View>
@@ -61,7 +68,7 @@ export default function Eventos() {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
-        backgroundColor: '#B01425'
+        backgroundColor: '#9E0000'
     },
     mainHeader: {
         flex: 1,
@@ -84,19 +91,63 @@ const styles = StyleSheet.create({
         flex: 4,
     },
     mainBodyContent: {
-        paddingTop: 10,
-        paddingRight: 50,
-        paddingLeft: 50,
+        paddingTop: 5,
+        paddingRight: 80,
+        paddingLeft: 20,
     },
     flatItem: {
-        borderBottomWidth: 1,
-        borderBottomColor: '#FFFFFF',
+        borderRadius: 13,
+        backgroundColor: '#fff',
         marginTop: 40,
+        width: 320,
+        height:230,
+        flexDirection: "row",
+        paddingLeft:10,
+        paddingRight:10,
     },
-    flatItemInfo: {
+
+    Nome_Imagem: {
+        width: "50%",
+        display: "flex",
+        //backgroundColor: "blue"
+    },
+
+    Descri_line_pale: {
+        width: "50%",
+        display: "flex",
+       // backgroundColor: "green"
+    },
+
+    LogoRojo: {
+        marginRight: 90,
+        
+        
+    },
+
+    Informa_Nome: {
+        fontSize: 18,
+        color: '#9E0000',
+        lineHeight: 23,
+        // fontFamily: 'TitilliumWeb-Regular',
+    },
+    InformaLine: {
+        width: 150,
+        borderBottomColor: '#9E0000',
+        borderBottomWidth: 1,
+        top: 39
+    },
+    Informa_Palest: {
         fontSize: 14,
-        color: '#DF1A30',
+        color: '#000',
         lineHeight: 24,
-       // fontFamily: 'TitilliumWeb-Regular',
+        top:38
+        // fontFamily: 'TitilliumWeb-Regular',
+    },
+    Informa_Descr: {
+        fontSize: 14,
+        color: '#000',
+        lineHeight: 24,
+        top: 28
+        // fontFamily: 'TitilliumWeb-Regular',
     }
 })
