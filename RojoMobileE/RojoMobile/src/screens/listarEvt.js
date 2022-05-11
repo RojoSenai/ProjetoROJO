@@ -32,7 +32,7 @@ export default function Eventos() {
 
     useEffect(() => {
         BuscarEventos();
-    }, [])
+    },)
 
 
     return (
@@ -48,14 +48,18 @@ export default function Eventos() {
                     keyExtractor={item => item.idEvento}
                     renderItem={({ item }) => (
                         <View style={styles.flatItem}>
-                            <View style={styles.Nome_Imagem}>
-                            <Text style={styles.Informa_Nome}>{"Evento: " + (item.nomeEvento)}</Text>
-                                <Image style={styles.LogoRojo} source={require('../../assets/RojoLogo.png')} />
+                            <View style={styles.sotext}>
+                                <Text style={styles.Informa_Nome}>{"Evento: " + (item.nomeEvento)}</Text>
                             </View>
-                            <View style={styles.Descri_line_pale}>
-                                <Text style={styles.Informa_Descr}>{ (item.descricao)}</Text>
-                                <View style={styles.InformaLine}></View>
-                                <Text style={styles.Informa_Palest}>{"Palestrante: " + (item.palestrante)}</Text>
+                            <View style={styles.imagemnome}>
+                                <View style={styles.Nome_Imagem}>
+                                    <Image style={styles.LogoRojo} source={require('../../assets/RojoLogo.png')} />
+                                </View>
+                                <View style={styles.Descri_line_pale}>
+                                    <Text style={styles.Informa_Descr}>{(item.descricao)}</Text>
+                                    <View style={styles.InformaLine}></View>
+                                    <Text style={styles.Informa_Palest}>{"Palestrante: " + (item.palestrante)}</Text>
+                                </View>
                             </View>
                         </View>
                     )}
@@ -98,12 +102,13 @@ const styles = StyleSheet.create({
     flatItem: {
         borderRadius: 13,
         backgroundColor: '#fff',
-        marginTop: 40,
+        marginTop: 10,
+        marginBottom: 40,
         width: 320,
-        height:230,
-        flexDirection: "row",
-        paddingLeft:10,
-        paddingRight:10,
+        height: 230,
+        flexDirection: "column",
+        paddingLeft: 10,
+        paddingRight: 10,
     },
 
     Nome_Imagem: {
@@ -114,14 +119,20 @@ const styles = StyleSheet.create({
 
     Descri_line_pale: {
         width: "50%",
+        height: "100%",
         display: "flex",
-       // backgroundColor: "green"
+        flexDirection: "column",
+        justifyContent: "center",
+        // flexWrap: 'nowrap',
+        alignContent: "center",
+        // backgroundColor: "blue"
+        marginBottom:70
     },
 
     LogoRojo: {
         marginRight: 90,
-        
-        
+
+
     },
 
     Informa_Nome: {
@@ -140,7 +151,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#000',
         lineHeight: 24,
-        top:38
+        top: 38
         // fontFamily: 'TitilliumWeb-Regular',
     },
     Informa_Descr: {
@@ -149,5 +160,20 @@ const styles = StyleSheet.create({
         lineHeight: 24,
         top: 28
         // fontFamily: 'TitilliumWeb-Regular',
+    },
+    sotext: {
+        height: "20%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center"
+
+    },
+    imagemnome: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        height: "70%",
+       // backgroundColor: "green",
     }
 })
