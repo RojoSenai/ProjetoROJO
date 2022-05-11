@@ -86,14 +86,14 @@ export default function MeusEventos() {
     useEffect(() => {
         BuscarMeusEventos();
         console.log(listaEventos);
-    }, []);
+    },);
 
 
     return (
 
         <div className="Container">
             <Helmet title="Projeto Rojo - Eventos " />
-            <Cima />
+            <Cima/>
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>

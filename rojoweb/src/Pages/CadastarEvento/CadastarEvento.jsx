@@ -107,7 +107,8 @@ export default function Login() {
               onChange={(event) => setNomeEvt(event.target.value)}
               name="nome"
               id="Adm__nome"
-              required="required" />
+              required="required" 
+              maxlength="50"/>
 
             <input
               className="Name_Event"

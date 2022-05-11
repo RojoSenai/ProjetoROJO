@@ -35,7 +35,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID }) => {
             }
             
         })
-        await document.location.reload(true);
+        // await document.location.reload(true);
     }
 
 
@@ -59,7 +59,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID }) => {
                                         <div className="contNND">
                                             <div className='nomes'>
                                                 <h2>{event.nomeEvento}</h2>
-                                                <div className="barrinha"></div>
+                                                <div className="barrinha1"></div>
                                                 <h3>{event.palestrante}</h3>
                                             </div>
                                             <div className='descricao'>

@@ -8,28 +8,26 @@ import { parseJwt } from '../../Services/auth';
 
 
 
-class Cabeca extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            EmpresaCor: false,
-            CadastrarUserAdm: false,
-            CadastrarEmpresa: false,
-            CadastroEvento: false,
-            Evento: false,
-        };
-      }
+export default class Cabeca extends  Component {
+    // constructor(props) 
+    //     super(props);
+    //     this.state = {
+    //         EmpresaCor: false,
+    //         CadastrarUserAdm: false,
+    //         CadastrarEmpresa: false,
+    //         CadastroEvento: false,
+    //         Evento: false,
+    //     };
+    //   }
 
     //logout
     logout = () => {
         localStorage.removeItem('usuario-login');
         console.log('Você saiu');
     }
+    // Cor = () => {
 
-    Cor = () => {
-
-    }
-
+    // }
 
 
     render() {
@@ -51,18 +49,18 @@ class Cabeca extends Component {
                         </div>
                     </div>
                     : parseJwt().role == 3 ?
-                    <div className="ContainerRojo">
-                        <div> 
-                        <Link to="/" onClick={this.logout}><img className="Rojinho" src={Rojologo} alt="Logo da empresa" /></Link>
-                        </div>
-                        <div className='ContainerLetras'>
-                            <Link to="/EmpresaCor" className="Names_a">Cor do App</Link>
-                            <Link to="/CadastroEvento" className="Names_a">Cadastrar evento</Link>
-                            <Link to="/Evento" className="Names_a">Eventos</Link>
-                            <Link to="/CadastrarUserEmpresa" className="Names_a">Cadastrar  Usuario</Link>
-                            <Link to="/" onClick={this.logout} className="Names_a">Sair</Link>
-                        </div>
-                    </div> : null
+                        <div className="ContainerRojo">
+                            <div>
+                                <Link to="/" onClick={this.logout}><img className="Rojinho" src={Rojologo} alt="Logo da empresa" /></Link>
+                            </div>
+                            <div className='ContainerLetras'>
+                                <Link to="/EmpresaCor" className="Names_a">Cor do App</Link>
+                                <Link to="/CadastroEvento" className="Names_a">Cadastrar evento</Link>
+                                <Link to="/Evento" className="Names_a">Eventos</Link>
+                                <Link to="/CadastrarUserEmpresa" className="Names_a">Cadastrar  Usuario</Link>
+                                <Link to="/" onClick={this.logout} className="Names_a">Sair</Link>
+                            </div>
+                        </div> : null
                 }
 
 
@@ -72,5 +70,4 @@ class Cabeca extends Component {
     }
 }
 
-export default Cabeca
 
