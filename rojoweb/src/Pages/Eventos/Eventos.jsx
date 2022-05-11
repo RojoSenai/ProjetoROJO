@@ -20,8 +20,8 @@ export default function MeusEventos() {
     const [EventoID, setEventoID] = useState(0);
     const [show, setShow] = useState(false);
 
-    console.log(listaEventosID);
-    console.log(EventoID);
+    // console.log(listaEventosID);
+    // console.log(EventoID);
     // console.log('http://3.234.116.203/api/Evento/' + EventoID);
 
     function handleShow() {
@@ -74,7 +74,7 @@ export default function MeusEventos() {
             .then(resposta => {
                 if (resposta.status === 200) {
                     setlistaEventosID(resposta.data)
-                    //console.log(listaEventosID)
+                    console.log(listaEventosID)
                 }
 
             }

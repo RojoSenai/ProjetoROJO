@@ -5,34 +5,131 @@
 
 }
 
-.Contm{
+.Contm {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 96%;
 }
 
-.conteiner{
+.conteiner {
     width: 90%;
     height: 90%;
     display: flex;
 }
 
-.X{
+.X {
     display: flex;
     justify-content: flex-end;
     height: 4%;
 }
 
-.img{
+.img {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.contLetra{
+.img img {
+    height: 50%;
+}
+
+.contLetra {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 80%;
     width: 50%;
+}
+
+.contNND {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nomes {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: rgb(255, 255, 255);
+}
+
+.nomes h2 {
+    font-size: 2em;
+}
+
+.descricao {
+    height: 60%;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.botoes {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao {
+    border: 1px solid #ffffff;
+    background: transparent;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 35%;
+    height: 100%;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+    transition: border, 1s;
+}
+
+.botao:hover,
+.botao:focus {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 35%;
+    height: 100%;
+    color: #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.botao2 {
+    border: 1px solid #FFFFFF;
+    background-color: #FF1B00;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 35%;
+    height: 100%;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
+    transition: border, 1s;
+}
+
+.botao2:hover,
+.botao2:focus {
+    border: 1px solid #FF1B00;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 13px;
+    width: 35%;
+    height: 100%;
+    color: #FF1B00;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    cursor: pointer;
 }

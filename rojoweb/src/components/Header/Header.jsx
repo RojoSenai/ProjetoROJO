@@ -9,11 +9,25 @@ import { parseJwt } from '../../Services/auth';
 
 
 class Cabeca extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            EmpresaCor: false,
+            CadastrarUserAdm: false,
+            CadastrarEmpresa: false,
+            CadastroEvento: false,
+            Evento: false,
+        };
+      }
 
     //logout
     logout = () => {
         localStorage.removeItem('usuario-login');
         console.log('Você saiu');
+    }
+
+    Cor = () => {
+
     }
 
 

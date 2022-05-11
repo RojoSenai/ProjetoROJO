@@ -8,37 +8,35 @@ import ReactModal from 'react-modal';
 import * as RiIcons from 'react-icons/ri';
 
 
-export const Modall = ({ showModal, setShow, evento }) => {
+export const Modall = ({ showModal, setShow, evento, EventoID }) => {
 
     const [listaEventosID, setlistaEventosID] = useState([]);
 
     console.log(listaEventosID)
 
-    // function BuscarEvento() {
+    async function Excluir() {
+        
+        // let header = {
+        //     idEvento: EventoID
+        // }
+        console.log("aqui")
 
-    //     // let header = {
-    //     //     idEvento: EventoID
-    //     // }
-    //     console.log("aqui")
+        await axios.delete('http://3.234.116.203/api/Evento/' + EventoID, {
 
-    //     axios.get('http://3.234.116.203/api/Evento/' + EventoID, {
-
-
-    //         headers: {
-    //             'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-    //         }
-    //     })
-
-    //         .then(resposta => {
-    //             if (resposta.status === 200) {
-    //                 setlistaEventosID(resposta.data)
-
-    //             }
-
-    //         }
-    //         )
-
-    // }
+            
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+        .then(resposta => {
+            if (resposta.status === 200) {
+                console.log("Excluido com sucesso")
+                
+            }
+            
+        })
+        await document.location.reload(true);
+    }
 
 
     useEffect(() => {
@@ -59,15 +57,17 @@ export const Modall = ({ showModal, setShow, evento }) => {
                                     <div className="img"><img src={Palestra} alt="" /></div>
                                     <div className="contLetra">
                                         <div className="contNND">
-                                            <h2>{event.nomeEvento}</h2>
-                                            <div className="barrinha"></div>
-                                            <h3>{event.palestrante}</h3>
-                                            <div>
+                                            <div className='nomes'>
+                                                <h2>{event.nomeEvento}</h2>
+                                                <div className="barrinha"></div>
+                                                <h3>{event.palestrante}</h3>
+                                            </div>
+                                            <div className='descricao'>
                                                 <p>{event.descricao}</p>
                                             </div>
-                                            <div>
-                                                <button>Editar</button>
-                                                <button>Excluir</button>
+                                            <div className='botoes'>
+                                                <button className='botao'>Editar</button>
+                                                <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
                                             </div>
                                         </div>
                                         {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
