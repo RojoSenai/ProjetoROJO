@@ -26,7 +26,7 @@ export default function Stack() {
         screenOptions={{
           headerShown: false,
         }}>
-        <AuthStack.Screen name="Home" component={Home} />
+          <AuthStack.Screen name="Home" component={Home} />
         <AuthStack.Screen name="ListarEvt" component={ListarEvt} />
         <AuthStack.Screen name="Main" component={Main} />
       </AuthStack.Navigator>

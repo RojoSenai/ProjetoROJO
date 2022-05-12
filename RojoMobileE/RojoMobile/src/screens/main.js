@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import {
     StyleSheet,
@@ -12,6 +13,7 @@ import api from '../services/api'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { baseFontSize } from "native-base/lib/typescript/theme/tools";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function Eventos() {
     const [listaEventos, setListaEventos] = useState([]);
@@ -35,10 +37,30 @@ export default function Eventos() {
         BuscarEventos();
     }, [])
 
+    // const navegarEvt = () => {
+    //     navigation.navigate('ListarEvt');
+    // } onPress={navegarEvt}
+
 
     return (
         <View style={styles.main}>
-            <View style={styles.Headermain}></View>
+            <View style={styles.Headermain}>
+                <Image
+                    source={require('../../assets/Menu_De_Hamburger.png')}
+                    style={{ width: 50, height: 30,}}
+                    resizeMode="contain"
+                />
+                <Image
+                    source={require('../../assets/RojoLogo.png')}
+                    style={{ width: 60, height: 40, }}
+                    resizeMode="contain"
+                />
+                <Image
+                    source={require('../../assets/imagem_perfil.png')}
+                    style={{ width: 60, height: 50, }}
+                    resizeMode="contain"
+                />
+            </View>
             <View style={styles.mainBanner}>
             </View>
             <View style={styles.MenuCont}>
@@ -78,9 +100,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#B01425'
     },
     Headermain: {
-        width: '100%',
-        height: '10%',
+       // display: "flex",
         backgroundColor: '#fff',
+        borderBottomColor: '#FFF',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingRight: 10,
+        paddingLeft: 10,
+        borderBottomWidth: 6,
     },
 
     mainBanner: {
@@ -89,11 +117,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#D0CFCF',
     },
     MenuCont: {
-        //display: "flex",
-        //flexDirection: "row" ,
-        //alignItems: "center",
         height: '73%',
-        //justifyContent: "space-evenly"
         display: "flex",
         flexDirection: 'column'
     },
@@ -110,6 +134,7 @@ const styles = StyleSheet.create({
     Bolinha: {
         width: 70,
         height: 70,
+        shadowOffset: { height: 1, width: 1 },
         // flexDirection: "column"
         // borderRadius: 50,
         //backgroundColor: "#D0CFCF",
@@ -126,26 +151,26 @@ const styles = StyleSheet.create({
         width: "17%",
         marginLeft: 38,
         textTransform: 'uppercase',
-        color:"white"
+        color: "white"
     },
 
-    
+
     Texto2: {
         marginLeft: 24,
         textTransform: 'uppercase',
-        color:"white"
+        color: "white"
     },
 
-    
+
     Texto3: {
         marginLeft: 30,
         textTransform: 'uppercase',
-        color:"white"
+        color: "white"
     },
 
-    B:{
+    B: {
         width: "100%",
-        display:"flex",
+        display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
     },
