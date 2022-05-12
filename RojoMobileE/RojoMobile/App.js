@@ -11,6 +11,19 @@ const AuthStack = createStackNavigator();
 import Home from './src/screens/home';
 import Main from './src/screens/main';
 import ListarEvt from './src/screens/listarEvt'
+import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation-drawer';
+
+// const Routes = createAppContainer(
+//   createDrawerNavigator({
+//     Home,
+//     ListarEvt,
+//     Main}, {
+//       initialRouteName: 'Home',
+//       contentComponent: CustomDrawer
+// })
+
+// );  export default Routes
 
 
 
