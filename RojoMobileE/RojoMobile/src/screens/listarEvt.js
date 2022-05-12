@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
 
-import { StyleSheet, Text, Image, View, FlatList, ScrollView, Animated } from 'react-native';
+
+import { StyleSheet, Text, Image, View, FlatList, TouchableOpacity} from 'react-native';
 
 import api from '../services/api'
 
@@ -8,7 +10,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Eventos() {
     const [listaEventos, setListaEventos] = useState([]);
-    const [scrollY, setScrollY] = useState(new Animated.Value(0));
+    const navigation = useNavigation()
 
 
 
@@ -34,44 +36,26 @@ export default function Eventos() {
     return (
         <View style={styles.main}>
 
-            <Animated.View style={[
-                styles.Headermain,
-                {
-                    height: scrollY.interpolate({
-                        inputRange: [10, 120, 145],
-                        outputRange: [100, 10, 0],
-                        extrapolate: 'clamp'
-                    }),
-                    opacity: scrollY.interpolate({
-                        inputRange: [1, 80, 170],
-                        outputRange: [1, 0.5, 0],
-                        extrapolate: 'clamp'
-                    })
-                }
-            ]}>
+            <View style={styles.Headermain}>
+
                 <Image
                     source={require('../../assets/Menu_De_Hamburger.png')}
                     style={{ width: 50, height: 30, }}
                     resizeMode="contain"
                 />
-                <Animated.Image
+            <TouchableOpacity  onPress={() => navigation.navigate('Home')}>
+                <Image
                     source={require('../../assets/RojoLogo.png')}
-                    style={{
-                        width: scrollY.interpolate({
-                          inputRange:[0, 120],
-                          outputRange:[50, 90],
-                          extrapolate: 'clamp'
-                        }),
-                        height: 90
-                      }}
-                      resizeMode="contain"
-                />
+                    style={{ width: 60, height: 40, }}
+                    resizeMode="contain"
+                    />
+                    </TouchableOpacity>
                 <Image
                     source={require('../../assets/imagem_perfil.png')}
                     style={{ width: 60, height: 50, }}
                     resizeMode="contain"
                 />
-            </Animated.View>
+            </View>
             <View style={styles.mainHeader}>
                 <Text style={styles.mainHeaderText}>{'EVENTOS'}</Text>
                 <View style={styles.mainHeaderLine}></View>
@@ -82,16 +66,7 @@ export default function Eventos() {
                     data={listaEventos}
                     keyExtractor={item => item.idEvento}
                     renderItem={({ item }) => (
-                        <ScrollView
-                            style={styles.flatItem}
-                            scrollEventThrottle={16}
-                            onScroll={Animated.event([{
-                                nativeEvent: {
-                                    contentOffset: { y: scrollY }
-                                },
-                            }],
-                                { useNativeDriver: false })}>
-
+                        <View style={styles.flatItem}>
                             <View style={styles.sotext}>
                                 <Text style={styles.Informa_Nome}>{"Evento: " + (item.nomeEvento)}</Text>
                             </View>
@@ -105,7 +80,7 @@ export default function Eventos() {
                                     <Text style={styles.Informa_Palest}>{"Palestrante: " + (item.palestrante)}</Text>
                                 </View>
                             </View>
-                        </ScrollView>
+                        </View>
                     )}
                 />
             </View>

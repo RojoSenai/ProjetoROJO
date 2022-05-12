@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import {
-    StyleSheet,
-    Text,
-    Image,
-    View,
-    FlatList,
-} from 'react-native';
+import { StyleSheet,Text,Image,View,ImageBackground,TouchableOpacity} from 'react-native';
 
 import api from '../services/api'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { baseFontSize } from "native-base/lib/typescript/theme/tools";
-import { NavigationContainer } from "@react-navigation/native";
 
 export default function Eventos() {
     const [listaEventos, setListaEventos] = useState([]);
-
+    const navigation = useNavigation()
 
     async function BuscarEventos() {
         const token = await AsyncStorage.getItem('userToken');
@@ -37,9 +30,7 @@ export default function Eventos() {
         BuscarEventos();
     }, [])
 
-    // const navegarEvt = () => {
-    //     navigation.navigate('ListarEvt');
-    // } onPress={navegarEvt}
+
 
 
     return (
@@ -47,14 +38,16 @@ export default function Eventos() {
             <View style={styles.Headermain}>
                 <Image
                     source={require('../../assets/Menu_De_Hamburger.png')}
-                    style={{ width: 50, height: 30,}}
+                    style={{ width: 50, height: 30, }}
                     resizeMode="contain"
                 />
-                <Image
-                    source={require('../../assets/RojoLogo.png')}
-                    style={{ width: 60, height: 40, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity  onPress={() => navigation.navigate('Home')}>
+                    <Image
+                        source={require('../../assets/RojoLogo.png')}
+                        style={{ width: 60, height: 40, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
                 <Image
                     source={require('../../assets/imagem_perfil.png')}
                     style={{ width: 60, height: 50, }}
@@ -65,13 +58,20 @@ export default function Eventos() {
             </View>
             <View style={styles.MenuCont}>
                 <View style={styles.BolinhaAlinhada}>
-                    <View style={styles.B}>
-                        <Image style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
+                    <View style={styles.cobrindoima}>
+                        <TouchableOpacity onPress={() => navigation.navigate('ListarEvt')}>
+                            <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
+                        </TouchableOpacity>
                         <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
                         <Image style={styles.Bolinha} source={require('../../assets/Evento3.png')} />
                     </View>
                     <View style={styles.Nomes}>
-                        <Text style={styles.Texto1}>Evento</Text>
+
+                        <TouchableOpacity style={styles.Navigate1} onPress={() => navigation.navigate('ListarEvt')}>
+                            <Text style={styles.Texto1} >Evento</Text>
+                        </TouchableOpacity>
+
+
                         <Text style={styles.Texto2}>Agenda</Text>
                         <Text style={styles.Texto3}>Documentos</Text>
                     </View>
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#B01425'
     },
     Headermain: {
-       // display: "flex",
+        // display: "flex",
         backgroundColor: '#fff',
         borderBottomColor: '#FFF',
         flexDirection: 'row',
@@ -147,13 +147,18 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly"
     },
 
-    Texto1: {
+    Navigate1: {
         width: "17%",
-        marginLeft: 38,
-        textTransform: 'uppercase',
-        color: "white"
+        marginLeft: 39,
+        //backgroundColor: "#DF1A30"
+
     },
 
+    Texto1: {
+        textAlignVertical: "auto",
+        textTransform: 'uppercase',
+        color: "white",
+    },
 
     Texto2: {
         marginLeft: 24,
@@ -168,7 +173,7 @@ const styles = StyleSheet.create({
         color: "white"
     },
 
-    B: {
+    cobrindoima: {
         width: "100%",
         display: "flex",
         flexDirection: "row",

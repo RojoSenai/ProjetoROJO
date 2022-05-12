@@ -42,7 +42,7 @@ export default class Login extends Component {
 
       console.warn("chegou aqui " + tokenzinho)
 
-      this.props.navigation.navigate('ListarEvt');
+      this.props.navigation.navigate('Main');
 
     }
   }
