@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Cima from '../../components/Header/Header.jsx';
+import {Cabeca} from '../../components/Header/Header.jsx';
 import '../../assets/css/Evento.css';
 import logo from '../../assets/img/Rojo_imagem.png';
 import {Modall} from '../../components/Modal/Modal';
@@ -93,7 +93,7 @@ export default function MeusEventos() {
 
         <div className="Container">
             <Helmet title="Projeto Rojo - Eventos " />
-            <Cima/>
+            <Cabeca Cor='Evento'/>
             <section className="ContBody">
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>
