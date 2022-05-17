@@ -11,6 +11,7 @@ const AuthStack = createStackNavigator();
 import Home from './src/screens/home';
 import Main from './src/screens/main';
 import ListarEvt from './src/screens/listarEvt'
+import Calendario from './src/screens/calendario'
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
@@ -35,13 +36,14 @@ export default function Stack() {
       />
 
       <AuthStack.Navigator
-        initialRouteName="home"
+        initialRouteName="Calendario"
         screenOptions={{
           headerShown: false,
         }}>
           <AuthStack.Screen name="Home" component={Home} />
         <AuthStack.Screen name="ListarEvt" component={ListarEvt} />
         <AuthStack.Screen name="Main" component={Main} />
+        <AuthStack.Screen name="Calendario" component={Calendario} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );
