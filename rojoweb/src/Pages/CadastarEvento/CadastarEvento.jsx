@@ -1,6 +1,6 @@
 import '../../assets/css/CadastroEvento.css';
 import { useState, useEffect } from 'react';
-import Cima from '../../components/Header/Header.jsx'
+import {Cabeca} from '../../components/Header/Header.jsx'
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
@@ -20,6 +20,7 @@ export default function Login() {
   const [IdEmpresa, setIdEmpresa] = useState(0);
   const [MensagemErro, SetMensagemErro] = useState('');
   const [IdUsu, setIdUsu] = useState(0);
+  const [Cor, setCor] = useState('Cadastrar Evento');
   console.log(IdUsu);
   //const [isLoding, setIsLoding] = useState(false);
 
@@ -84,7 +85,7 @@ export default function Login() {
       <Helmet title="Projeto Rojo - Cadastro Usuario Evento" />
       <main className='mano'>
         <div className="cima">
-          <Cima />
+          <Cabeca Cor={Cor}/>
 
         </div>
           <Logo />

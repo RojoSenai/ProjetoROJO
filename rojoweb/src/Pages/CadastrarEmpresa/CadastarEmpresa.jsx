@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 //import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
-import Cima from '../../components/Header/Header.jsx';
+import {Cabeca} from '../../components/Header/Header.jsx'
 //import Pirulas from '../../components/Pirulas/Pirulas.js';
 import Helmet from 'react-helmet';
 
@@ -22,7 +22,6 @@ export default function Empresa() {
   // const [IdEmpresa, setIdEmpresa] = useState([]);
   const [MensagemErro, SetMensagemErro] = useState('');
   const [isLoding, setIsLoding] = useState(false);
-
   // function Overflow() {
   //   let all = document.getElementById("all");
   //   all.style.all.Ove  
@@ -80,7 +79,7 @@ export default function Empresa() {
       <Helmet title="Projeto Rojo - Cadastro Usuario ADM" />
       <main className='mano'>
         <div className="cima">
-          <Cima />
+          <Cabeca Cor={'Cadastrar Empresa'} />
           <Logo />
         </div>
 

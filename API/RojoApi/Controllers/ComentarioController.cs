@@ -11,26 +11,26 @@ using System.Threading.Tasks;
 
 namespace RojoAPI.Controllers
 {
-    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class CorController : ControllerBase
+    public class ComentarioController : ControllerBase
     {
-        private ICorRepository _CorRepository { get; set; }
 
-        public CorController()
+        private IComentarioRepository _ComentarioRepository { get; set; }
+
+        public ComentarioController()
         {
-            _CorRepository = new CorRepository();
+            _ComentarioRepository = new ComentarioRepository();
         }
 
         //CADASTRAR
         [HttpPost]
-        //[Authorize(Roles = "3")]
-        public IActionResult Post(Cor NovaCor)
+        //[Authorize(Roles = "1, 2, 3")]
+        public IActionResult Post(Comentario NovaComentario)
         {
             try
             {
-                _CorRepository.Cadastrar(NovaCor);
+                _ComentarioRepository.Cadastrar(NovaComentario);
 
                 return StatusCode(201);
             }
@@ -42,13 +42,13 @@ namespace RojoAPI.Controllers
 
         //DELETAR
         [HttpDelete("{id}")]
-        //[Authorize(Roles = "1, 3")]
+        //[Authorize(Roles = "1, 2, 3")]
         public IActionResult Delete(int id)
         {
             try
             {
                 // Faz a chamada para o método
-                _CorRepository.Deletar(id);
+                _ComentarioRepository.Deletar(id);
 
                 // Retorna um status code
                 return StatusCode(204);
@@ -62,12 +62,12 @@ namespace RojoAPI.Controllers
 
         //LISTAR TODOS
         [HttpGet]
-        //[Authorize(Roles = "1, 3")]
+        //[Authorize(Roles = "1, 2, 3")]
         public IActionResult GetAll()
         {
             try
             {
-                List<Cor> ListarTodos = _CorRepository.Listar();
+                List<Comentario> ListarTodos = _ComentarioRepository.Listar();
 
                 return Ok(ListarTodos);
             }
@@ -79,13 +79,13 @@ namespace RojoAPI.Controllers
 
         //BUSCAR POR ID
         [HttpGet("{id}")]
-        //[Authorize(Roles = "1, 3")]
+        //[Authorize(Roles = "1, 2, 3")]
         public IActionResult GetById(int id)
         {
             try
             {
                 // Retora a resposta da requisição fazendo a chamada para o método
-                return Ok(_CorRepository.BuscarPorId(id));
+                return Ok(_ComentarioRepository.BuscarPorId(id));
             }
             catch (Exception erro)
             {
@@ -96,12 +96,12 @@ namespace RojoAPI.Controllers
         //Atualizar Usuario
         [HttpPut("{id}")]
         //[Authorize(Roles = "1, 2, 3")]
-        public IActionResult Put(int id, Cor CorAtualizado)
+        public IActionResult Put(int id, Comentario ComentarioAtualizado)
         {
             try
             {
                 // Faz a chamada para o método
-                _CorRepository.Atualizar(id, CorAtualizado);
+                _ComentarioRepository.Atualizar(id, ComentarioAtualizado);
 
                 // Retorna um status code
                 return StatusCode(204);

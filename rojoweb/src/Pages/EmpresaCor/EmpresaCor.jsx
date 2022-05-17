@@ -3,7 +3,7 @@ import '../../assets/css/CadastroCor.css';
 import Rojologo from '../../assets/img/Rojo_imagem.png';
 import LetraRojo from '../../assets/img/letter.svg';
 import { useState, useEffect } from 'react';
-import Cima from '../../components/Header/Header.jsx';
+import {Cabeca} from '../../components/Header/Header.jsx';
 import Helmet from 'react-helmet';
 //import axios from 'axios';
 
@@ -86,7 +86,7 @@ export default function Login() {
     <div>
       <Helmet title="Projeto Rojo - Cadastrar Cor" />
       <div className='container'>
-        <Cima />
+        <Cabeca Cor={'Cadastro Cor'}/>
 
         <div className='ContFormProt'>
           <div className='contF'>

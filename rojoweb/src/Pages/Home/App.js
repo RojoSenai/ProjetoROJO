@@ -112,12 +112,12 @@ export default function Login() {
             required="required" />
           {
             mostrar === false && (
-              <Aiicons.AiOutlineEyeInvisible style={{ color: "white", width: "2em", position: "absolute", margin: "0px 8em", padding: "15px 0px 0px", cursor: "pointer" }} onClick={MostrarSenha} />
+              <Aiicons.AiOutlineEyeInvisible style={{ color: "white", width: "2em", position: "absolute", margin: "0px 11em", padding: "15px 0px 0px", cursor: "pointer" }} onClick={MostrarSenha} />
             )
           }
           {
             mostrar === true && (
-              <Aiicons.AiOutlineEye style={{ color: "red", width: "2em", position: "absolute", margin: "0 8em", padding: "15px 0px 0px", cursor: "pointer" }} onClick={MostrarSenha} />
+              <Aiicons.AiOutlineEye style={{ color: "red", width: "2em", position: "absolute", margin: "0 11em", padding: "15px 0px 0px", cursor: "pointer" }} onClick={MostrarSenha} />
             )
           }
 

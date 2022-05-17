@@ -1,7 +1,7 @@
 import '../../assets/css/CadastroUsuario.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Cima from '../../components/Header/Header.jsx';
+import {Cabeca} from '../../components/Header/Header.jsx';
 import { parseJwt } from '../../Services/auth';
 import Logo from '../../components/Logo/Logo.js';
 
@@ -105,7 +105,7 @@ export default function Login() {
       <Helmet title="Projeto Rojo - Cadastro Usuario ADM" />
       <main className='mano'>
         <div className="cima">
-          <Cima />
+          <Cabeca Cor={'Cadastrar User'}/>
           <Logo />
         </div>
 
