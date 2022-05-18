@@ -21,7 +21,7 @@ export default function Login() {
   const [Islogind, setIslogind] = useState(false);
   const [ListarCor, setLisarCor] = useState([]);
   const [IdEmpresa, setIdEmpresa] = useState(0);
-  //const [MensagemErro, SetMensagemErro] = useState('');
+  const [MensagemErro, SetMensagemErro] = useState('');
 
   // console.log('agora a cor é ' + Cor1);
   function Mudarcor() {
@@ -79,107 +79,137 @@ export default function Login() {
     // }, false);
   }
 
-  function FazerCadastro(event) {
-    // let index;
+  async function  FazerCadastro(event) {
     event.preventDefault();
     for (let index = 0; index < 3; index++) {
-      BuscarCor();
       
-      ListarCor.map((item) => {
-        switch (index) {
-          case 0:
-            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
-              console.log("aqui")
 
 
-              let Cor = {
-                nomeCor: Cor1
+      switch (index) {
+        case 0:
+          BuscarCor();
+          console.log(ListarCor);
+          let VerificaCor = 0;
+
+          ListarCor.map((item) => {
+
+            if (item.nomeCor == Cor1)
+              VerificaCor++;
+          })
+
+          if (VerificaCor === 0) {
+            console.log("aqui")
+
+
+            let Cor = {
+              nomeCor: Cor1
+            }
+
+            await axios.post('http://3.234.116.203/api/Cor', Cor, {
+              headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
               }
+            })
+              .then((resposta) => {
 
-              axios.post('http://3.234.116.203/api/Cor', Cor, {
-                headers: {
-                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                if (resposta.status === 201) {
+                  console.log('Cor1 Cadastrada');
                 }
+
               })
-                .then((resposta) => {
+            VerificaCor = 0;
+            setLisarCor([]);
+          }
+          else {
+            console.log('Cor1 ja existente!');
+            VerificaCor = 0;
+            setLisarCor([]);
+          }
 
-                  if (resposta.status === 201) {
-                    console.log('Cor1 Cadastrada')
-                  }
+          break;
+        case 1:
+          BuscarCor();
+          console.log(ListarCor);
+          let VerificaCor1 = 0;
+          ListarCor.map((item) => {
 
-                })
+            if (item.nomeCor == Cor2)
+            VerificaCor1++;
+          })
+
+          if (VerificaCor1 === 0 && Cor1 != Cor2 && Cor1 != Cor3) {
 
 
+            let Cor = {
+              nomeCor: Cor2
             }
-            else{
-              console.log('Cor1 Cadastrada')
-            }
 
-            break;
-          case 1:
-
-            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
-
-
-              let Cor = {
-                nomeCor: Cor2
+            await axios.post('http://3.234.116.203/api/Cor', Cor, {
+              headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
               }
+            })
+              .then((resposta) => {
 
-              axios.post('http://3.234.116.203/api/Cor', Cor, {
-                headers: {
-                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                if (resposta.status === 201) {
+                  console.log('Cor2 Cadastrada')
                 }
+
               })
-                .then((resposta) => {
+              VerificaCor1 = 0;
+              setLisarCor([]);
+          }
+          else {
+            console.log('Cor2 ja existente!')
+            VerificaCor1 = 0;
+            setLisarCor([]);
+          }
 
-                  if (resposta.status === 201) {
-                    console.log('Cor2 Cadastrada')
-                  }
+          break;
+        case 2:
+          BuscarCor();
+          console.log(ListarCor);
+          let VerificaCor2 = 0;
+          ListarCor.map((item) => {
 
-                })
+            if (item.nomeCor == Cor3)
+            VerificaCor2++;
+          })
+
+          if (VerificaCor2 === 0 && Cor1 != Cor2 && Cor1 != Cor3 && Cor2 != Cor3) {
 
 
+            let Cor = {
+              nomeCor: Cor3
             }
-            else{
-              console.log('Cor2 Cadastrada')
-            }
 
-            break;
-          case 2:
-
-            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
-
-
-              let Cor = {
-                nomeCor: Cor3
+            await axios.post('http://3.234.116.203/api/Cor', Cor, {
+              headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
               }
+            })
+              .then((resposta) => {
 
-              axios.post('http://3.234.116.203/api/Cor', Cor, {
-                headers: {
-                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                if (resposta.status === 201) {
+                  console.log('Cor3 Cadastrada')
                 }
+
               })
-                .then((resposta) => {
+              VerificaCor2 = 0;
+              setLisarCor([]);
+          }
+          else {
+            console.log('Cor3 ja existente!')
+            VerificaCor2 = 0;
+            setLisarCor([]);
+          }
 
-                  if (resposta.status === 201) {
-                    console.log('Cor3 Cadastrada')
-                  }
-
-                })
-
-
-            }
-            else{
-              console.log('Cor3 Cadastrada')
-            }
-
-            break;
-          default:
-            break;
-        }
-
-      })
+          break;
+        default:
+          break;
+      }
     }
+    
   }
 
   function BuscarCor() {

@@ -28,3 +28,6 @@ SELECT  * FROM Empresa
 SELECT  * FROM Usuario
 SELECT  * FROM Evento
 SELECT  * FROM Comentario
+SELECT  * FROM Cor
+
+DELETE from Cor
