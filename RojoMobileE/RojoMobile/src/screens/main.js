@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { StyleSheet,Text,Image,View,ImageBackground,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, Image, View, ImageBackground, TouchableOpacity } from 'react-native';
 
 import api from '../services/api'
 
@@ -41,7 +41,7 @@ export default function Eventos() {
                     style={{ width: 50, height: 30, }}
                     resizeMode="contain"
                 />
-                <TouchableOpacity  onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Image
                         source={require('../../assets/RojoLogo.png')}
                         style={{ width: 60, height: 40, }}
@@ -62,7 +62,11 @@ export default function Eventos() {
                         <TouchableOpacity onPress={() => navigation.navigate('ListarEvt')}>
                             <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
                         </TouchableOpacity>
-                        <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
+
+                        <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
+                            <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
+                        </TouchableOpacity>
+
                         <Image style={styles.Bolinha} source={require('../../assets/Evento3.png')} />
                     </View>
                     <View style={styles.Nomes}>
@@ -71,8 +75,10 @@ export default function Eventos() {
                             <Text style={styles.Texto1} >Evento</Text>
                         </TouchableOpacity>
 
+                        <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
+                            <Text style={styles.Texto2}>Agenda</Text>
+                        </TouchableOpacity>
 
-                        <Text style={styles.Texto2}>Agenda</Text>
                         <Text style={styles.Texto3}>Documentos</Text>
                     </View>
                 </View>

@@ -36,7 +36,7 @@ export default function Stack() {
       />
 
       <AuthStack.Navigator
-        initialRouteName="Calendario"
+        initialRouteName="Home"
         screenOptions={{
           headerShown: false,
         }}>

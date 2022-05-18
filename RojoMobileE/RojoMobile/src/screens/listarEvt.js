@@ -43,7 +43,7 @@ export default function Eventos() {
                     style={{ width: 50, height: 30, }}
                     resizeMode="contain"
                 />
-            <TouchableOpacity  onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity  onPress={() => navigation.navigate('Main')}>
                 <Image
                     source={require('../../assets/RojoLogo.png')}
                     style={{ width: 60, height: 40, }}
