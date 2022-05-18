@@ -3,8 +3,10 @@ import '../../assets/css/CadastroCor.css';
 import Rojologo from '../../assets/img/Rojo_imagem.png';
 import LetraRojo from '../../assets/img/letter.svg';
 import { useState, useEffect } from 'react';
-import {Cabeca} from '../../components/Header/Header.jsx';
+import { Cabeca } from '../../components/Header/Header.jsx';
 import Helmet from 'react-helmet';
+import axios from 'axios';
+import { parseJwt } from '../../Services/auth';
 //import axios from 'axios';
 
 
@@ -17,9 +19,11 @@ export default function Login() {
   const [Logo_Imagem, setLogo] = useState('');
   const [Banner, setBanner] = useState('');
   const [Islogind, setIslogind] = useState(false);
+  const [ListarCor, setLisarCor] = useState([]);
+  const [IdEmpresa, setIdEmpresa] = useState(0);
   //const [MensagemErro, SetMensagemErro] = useState('');
 
-  console.log('agora a cor é ' + Cor1);
+  // console.log('agora a cor é ' + Cor1);
   function Mudarcor() {
     let colorPicker = document.getElementById("Cadastro_cor1");
     let box = document.getElementById("box");
@@ -75,18 +79,137 @@ export default function Login() {
     // }, false);
   }
 
+  function FazerCadastro(event) {
+    // let index;
+    event.preventDefault();
+    for (let index = 0; index < 3; index++) {
+      BuscarCor();
+      
+      ListarCor.map((item) => {
+        switch (index) {
+          case 0:
+            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
+              console.log("aqui")
+
+
+              let Cor = {
+                nomeCor: Cor1
+              }
+
+              axios.post('http://3.234.116.203/api/Cor', Cor, {
+                headers: {
+                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                }
+              })
+                .then((resposta) => {
+
+                  if (resposta.status === 201) {
+                    console.log('Cor1 Cadastrada')
+                  }
+
+                })
+
+
+            }
+            else{
+              console.log('Cor1 Cadastrada')
+            }
+
+            break;
+          case 1:
+
+            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
+
+
+              let Cor = {
+                nomeCor: Cor2
+              }
+
+              axios.post('http://3.234.116.203/api/Cor', Cor, {
+                headers: {
+                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                }
+              })
+                .then((resposta) => {
+
+                  if (resposta.status === 201) {
+                    console.log('Cor2 Cadastrada')
+                  }
+
+                })
+
+
+            }
+            else{
+              console.log('Cor2 Cadastrada')
+            }
+
+            break;
+          case 2:
+
+            if (item.nomeCor != Cor1 && item.nomeCor != Cor2 && item.nomeCor != Cor3) {
+
+
+              let Cor = {
+                nomeCor: Cor3
+              }
+
+              axios.post('http://3.234.116.203/api/Cor', Cor, {
+                headers: {
+                  Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+                }
+              })
+                .then((resposta) => {
+
+                  if (resposta.status === 201) {
+                    console.log('Cor3 Cadastrada')
+                  }
+
+                })
+
+
+            }
+            else{
+              console.log('Cor3 Cadastrada')
+            }
+
+            break;
+          default:
+            break;
+        }
+
+      })
+    }
+  }
+
+  function BuscarCor() {
+
+    axios.get('http://3.234.116.203/api/Cor', {
+      headers: {
+        'Authirization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
+      .then((resposta) => {
+        if (resposta.status == 200)
+          setLisarCor(resposta.data)
+      })
+  }
+
+
+
   useEffect(() => {
+    setIdEmpresa(parseJwt().emp);
     setCor1("#000000");
     setCor2("#000000");
     setCor3("#000000");
-}, []);
+  }, []);
 
 
   return (
     <div>
       <Helmet title="Projeto Rojo - Cadastrar Cor" />
       <div className='container'>
-        <Cabeca Cor={'Cadastro Cor'}/>
+        <Cabeca Cor={'Cadastro Cor'} />
 
         <div className='ContFormProt'>
           <div className='contF'>
@@ -96,7 +219,7 @@ export default function Login() {
             </div>
 
             <div className='contFormulario'>
-              <form action="" className='ConteinerForm'>
+              <form onSubmit={FazerCadastro} action="" className='ConteinerForm'>
 
                 <div>
                   <div className='contA'>
@@ -140,7 +263,7 @@ export default function Login() {
                     required="required" />
                 </div>
 
-                <div>
+                {/* <div>
                   <div className="EventFile">
                     <label className="ImputFile_" for="Logo">Logo:</label>
                   </div>
@@ -151,9 +274,9 @@ export default function Login() {
                     name="Logo_Img"
                     id="Logo"
                     required="required" />
-                </div>
+                </div> */}
 
-                <div>
+                {/* <div>
                   <div className="EventFile">
                     <label className="ImputFile_" for="Banner">Banner:</label>
                   </div>
@@ -164,7 +287,7 @@ export default function Login() {
                     name="Banner"
                     id="Banner"
                     required="required" />
-                </div>
+                </div> */}
 
                 {/* <div className="mensagem">
               <p>{MensagemErro}</p>
