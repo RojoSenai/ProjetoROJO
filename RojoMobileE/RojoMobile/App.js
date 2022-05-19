@@ -12,6 +12,8 @@ import Home from './src/screens/home';
 import Main from './src/screens/main';
 import ListarEvt from './src/screens/listarEvt'
 import Calendario from './src/screens/calendario'
+import UsuTela from './src/screens/telaUsu'
+import Documento from './src/screens/documento'
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
@@ -44,6 +46,8 @@ export default function Stack() {
         <AuthStack.Screen name="ListarEvt" component={ListarEvt} />
         <AuthStack.Screen name="Main" component={Main} />
         <AuthStack.Screen name="Calendario" component={Calendario} />
+        <AuthStack.Screen name="UsuTela" component={UsuTela} />
+        <AuthStack.Screen name="Documento" component={Documento} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );

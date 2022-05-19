@@ -48,11 +48,13 @@ export default function Eventos() {
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <Image
-                    source={require('../../assets/imagem_perfil.png')}
-                    style={{ width: 60, height: 50, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('UsuTela')}>
+                    <Image
+                        source={require('../../assets/imagem_perfil.png')}
+                        style={{ width: 60, height: 50, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
             </View>
             <View style={styles.mainBanner}>
             </View>
@@ -67,7 +69,9 @@ export default function Eventos() {
                             <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
                         </TouchableOpacity>
 
-                        <Image style={styles.Bolinha} source={require('../../assets/Evento3.png')} />
+                        <TouchableOpacity  onPress={() => navigation.navigate('Documento')}>
+                            <Image style={styles.Bolinha} source={require('../../assets/Evento3.png')} />
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.Nomes}>
 
@@ -78,6 +82,7 @@ export default function Eventos() {
                         <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
                             <Text style={styles.Texto2}>Agenda</Text>
                         </TouchableOpacity>
+
 
                         <Text style={styles.Texto3}>Documentos</Text>
                     </View>
@@ -154,6 +159,13 @@ const styles = StyleSheet.create({
     },
 
     Navigate1: {
+        width: "17%",
+        marginLeft: 39,
+        //backgroundColor: "#DF1A30"
+
+    },
+
+    Navigate3: {
         width: "17%",
         marginLeft: 39,
         //backgroundColor: "#DF1A30"
