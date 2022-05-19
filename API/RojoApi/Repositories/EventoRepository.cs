@@ -16,9 +16,11 @@ namespace RojoAPI.Repositories
         {
             Evento EventoBuscada = ctx.Eventos.Find(id);
 
-            if (EventoAtualizado.NomeEvento != null)
+            if (EventoAtualizado.NomeEvento != null || EventoAtualizado.Descricao != null || EventoAtualizado.Palestrante != null)
             {
                 EventoBuscada.NomeEvento = EventoAtualizado.NomeEvento;
+                EventoBuscada.Descricao = EventoAtualizado.Descricao;
+                EventoBuscada.Palestrante = EventoAtualizado.Palestrante;
 
                 ctx.Eventos.Update(EventoBuscada);
 

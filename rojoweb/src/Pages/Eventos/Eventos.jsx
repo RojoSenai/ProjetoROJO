@@ -20,7 +20,7 @@ export default function MeusEventos() {
     const [EventoID, setEventoID] = useState(0);
     const [show, setShow] = useState(false);
 
-    // console.log(listaEventosID);
+    // console.log(BuscarMeusEventos());
     // console.log(EventoID);
     // console.log('http://3.234.116.203/api/Evento/' + EventoID);
 
@@ -51,8 +51,7 @@ export default function MeusEventos() {
                     //console.log(listaEventos)
                 }
 
-            }
-            )
+            })
 
     }
 
@@ -86,7 +85,7 @@ export default function MeusEventos() {
     useEffect(() => {
         BuscarMeusEventos();
         console.log(listaEventos);
-    },);
+    }, []);
 
 
     return (
@@ -120,7 +119,7 @@ export default function MeusEventos() {
                     })}
                 </div>
             </section>
-            <Modall showModal={show} setShow={handleShow} EventoID={EventoID} evento={[listaEventosID]} />
+            <Modall showModal={show} setShow={handleShow} EventoID={EventoID} evento={[listaEventosID]} setList={setlistaEventos}/>
             {/* <ReactModal isOpen={show} onRequestClose={show} className="mod">
                 <div>
                     <RiIcons.RiCloseFill onClick={handleShow} style={{ cursor: 'pointer', color: 'red' }} />

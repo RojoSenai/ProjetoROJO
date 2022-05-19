@@ -8,11 +8,26 @@ import ReactModal from 'react-modal';
 import * as RiIcons from 'react-icons/ri';
 
 
-export const Modall = ({ showModal, setShow, evento, EventoID }) => {
+export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
 
     const [listaEventosID, setlistaEventosID] = useState([]);
+    const [Atualizando, setAtualizando] = useState(false);
+    const [NomeEvt, setNomeEvt] = useState('');
+    const [Descricao, setDescricao] = useState('');
+    const [NomePalestrante, setNomePalestrante] = useState('');
+    // const [eventId, setEventId] = useState(0);
 
-    console.log(listaEventosID)
+    console.log(EventoID)
+
+    function AtualizandoE() {
+        if(Atualizando == false){
+            setAtualizando(true);
+        }
+        else{
+            
+            
+        }
+    }
 
     async function Excluir() {
         
@@ -29,14 +44,74 @@ export const Modall = ({ showModal, setShow, evento, EventoID }) => {
             }
         })
         .then(resposta => {
-            if (resposta.status === 200) {
+            if (resposta.status === 204) {
                 console.log("Excluido com sucesso")
-                
+                BuscarMeusEventos()
             }
             
         })
         // await document.location.reload(true);
     }
+
+
+    function BuscarMeusEventos() {
+
+        axios.get('http://3.234.116.203/api/Evento', {
+
+
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    setList(resposta.data)
+                    console.log("cheguei aqui")
+                    console.log(resposta.data)
+                }
+
+            })
+
+    }
+
+    function AtualizarEvento(event) {
+        event.preventDefault();
+        //setIsLoding(true)
+        // listaEventosID.map((event) => {setEventId(event.idevento)}
+        //tirando função padrão da página
+        // event.preventDefault();
+    
+        //chamando api
+        let evento = {
+          nomeEvento: NomeEvt,
+          palestrante: NomePalestrante,
+          descricao: Descricao,
+        }
+    
+        console.log('aquui');
+        axios.post('http://3.234.116.203/api/Evento'+ EventoID, evento, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+          }
+        })
+    
+          .then((resposta) => {
+            console.log(evento)
+            if (resposta.status === 201) {
+              console.log('Evento atualizado');
+              setAtualizando(false);
+            //   SetMensagemErro('Evento Cadastrado com sucesso!')
+            }
+            // else
+            // SetMensagemErro('Oops! algo deu errado :(')
+    
+    
+    
+          })
+    
+          .then(erro => console.log(erro))
+      }
 
 
     useEffect(() => {
@@ -58,15 +133,15 @@ export const Modall = ({ showModal, setShow, evento, EventoID }) => {
                                     <div className="contLetra">
                                         <div className="contNND">
                                             <div className='nomes'>
-                                                <h2>{event.nomeEvento}</h2>
+                                                {Atualizando == false? <h2>{event.nomeEvento}</h2> : <input type="text" onChange={(event) => setNomeEvt(event.target.value)} />}
                                                 <div className="barrinha1"></div>
-                                                <h3>{event.palestrante}</h3>
+                                                {Atualizando == false? <h3>{event.palestrante}</h3> : <input type="text" onChange={(event) => setNomePalestrante(event.target.value)} />}
                                             </div>
                                             <div className='descricao'>
-                                                <p>{event.descricao}</p>
+                                                {Atualizando == false? <p>{event.descricao}</p> : <input type="text" onChange={(event) => setDescricao(event.target.value)} />}
                                             </div>
                                             <div className='botoes'>
-                                                <button className='botao'>Editar</button>
+                                                {Atualizando == false ? <button className='botao' onClick={AtualizandoE}>Editar</button> : <button className='botao' onClick={AtualizarEvento}>Atualizar</button> }
                                                 <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
                                             </div>
                                         </div>
