@@ -133,7 +133,7 @@ export default function Login() {
             <input
               className="Name_Event"
               placeholder="Incio do Evento:"
-              type="date"
+              type="datetime-local"
               onChange={(event) => setIncioEvnt(event.target.value)}
               name="Comeco_evento"
               id="login__senha"
@@ -142,7 +142,7 @@ export default function Login() {
             <input
               className="Name_Event"
               placeholder="Fim do Evento:"
-              type="date"
+              type="datetime-local"
               onChange={(event) => setFimEvnt(event.target.value)}
               name="Fim_evento"
               id="login__senha"
