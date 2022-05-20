@@ -8,7 +8,7 @@ import ReactModal from 'react-modal';
 import * as RiIcons from 'react-icons/ri';
 
 
-export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
+export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEvento }) => {
 
     const [listaEventosID, setlistaEventosID] = useState([]);
     const [Atualizando, setAtualizando] = useState(false);
@@ -20,17 +20,17 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
     console.log(EventoID)
 
     function AtualizandoE() {
-        if(Atualizando == false){
+        if (Atualizando == false) {
             setAtualizando(true);
         }
-        else{
-            
-            
+        else {
+            setAtualizando(false);
+
         }
     }
 
     async function Excluir() {
-        
+
         // let header = {
         //     idEvento: EventoID
         // }
@@ -38,18 +38,18 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
 
         await axios.delete('http://3.234.116.203/api/Evento/' + EventoID, {
 
-            
+
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
         })
-        .then(resposta => {
-            if (resposta.status === 204) {
-                console.log("Excluido com sucesso")
-                BuscarMeusEventos()
-            }
-            
-        })
+            .then(resposta => {
+                if (resposta.status === 204) {
+                    console.log("Excluido com sucesso")
+                    BuscarMeusEventos()
+                }
+
+            })
         // await document.location.reload(true);
     }
 
@@ -81,37 +81,40 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
         // listaEventosID.map((event) => {setEventId(event.idevento)}
         //tirando função padrão da página
         // event.preventDefault();
-    
+
         //chamando api
         let evento = {
-          nomeEvento: NomeEvt,
-          palestrante: NomePalestrante,
-          descricao: Descricao,
+            nomeEvento: NomeEvt,
+            palestrante: NomePalestrante,
+            descricao: Descricao,
         }
-    
+
         console.log('aquui');
-        axios.post('http://3.234.116.203/api/Evento'+ EventoID, evento, {
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
-          }
-        })
-    
-          .then((resposta) => {
-            console.log(evento)
-            if (resposta.status === 201) {
-              console.log('Evento atualizado');
-              setAtualizando(false);
-            //   SetMensagemErro('Evento Cadastrado com sucesso!')
+        axios.put('http://3.234.116.203/api/Evento/' + EventoID, evento, {
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
-            // else
-            // SetMensagemErro('Oops! algo deu errado :(')
-    
-    
-    
-          })
-    
-          .then(erro => console.log(erro))
-      }
+        })
+
+            .then((resposta) => {
+                console.log(evento)
+                if (resposta.status === 204) {
+                    console.log('Evento atualizado');
+                    //   setAtualizando(false);
+                    // setlistaEventosID(evento);
+                    BuscarEvento()
+                    BuscarMeusEventos()
+                    //   SetMensagemErro('Evento Cadastrado com sucesso!')
+                }
+                // else
+                // SetMensagemErro('Oops! algo deu errado :(')
+
+
+
+            })
+
+            .catch(erro => console.log(erro))
+    }
 
 
     useEffect(() => {
@@ -133,15 +136,15 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList }) => {
                                     <div className="contLetra">
                                         <div className="contNND">
                                             <div className='nomes'>
-                                                {Atualizando == false? <h2>{event.nomeEvento}</h2> : <input type="text" onChange={(event) => setNomeEvt(event.target.value)} />}
+                                                {Atualizando == false ? <h2>{event.nomeEvento}</h2> : <input type="text" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />}
                                                 <div className="barrinha1"></div>
-                                                {Atualizando == false? <h3>{event.palestrante}</h3> : <input type="text" onChange={(event) => setNomePalestrante(event.target.value)} />}
+                                                {Atualizando == false ? <h3>{event.palestrante}</h3> : <input type="text" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />}
                                             </div>
                                             <div className='descricao'>
-                                                {Atualizando == false? <p>{event.descricao}</p> : <input type="text" onChange={(event) => setDescricao(event.target.value)} />}
+                                                {Atualizando == false ? <p>{event.descricao}</p> : <input type="text" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />}
                                             </div>
                                             <div className='botoes'>
-                                                {Atualizando == false ? <button className='botao' onClick={AtualizandoE}>Editar</button> : <button className='botao' onClick={AtualizarEvento}>Atualizar</button> }
+                                                {Atualizando == false ? <button className='botao' onClick={AtualizandoE}>Editar</button> : <button className='botao' onClick={AtualizandoE} onClickCapture={AtualizarEvento}>Atualizar</button>}
                                                 <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
                                             </div>
                                         </div>
