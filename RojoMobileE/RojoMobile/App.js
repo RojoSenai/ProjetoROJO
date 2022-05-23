@@ -10,10 +10,11 @@ const AuthStack = createStackNavigator();
 
 import Home from './src/screens/home';
 import Main from './src/screens/main';
-import ListarEvt from './src/screens/listarEvt'
-import Calendario from './src/screens/calendario'
-import UsuTela from './src/screens/telaUsu'
-import Documento from './src/screens/documento'
+import ListarEvt from './src/screens/listarEvt';
+import Calendario from './src/screens/calendario';
+import TelaUsuario from './src/screens/telaUsuario';
+import Documento from './src/screens/documento';
+import HeaderCabeca from './src/components/header';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
@@ -46,8 +47,9 @@ export default function Stack() {
         <AuthStack.Screen name="ListarEvt" component={ListarEvt} />
         <AuthStack.Screen name="Main" component={Main} />
         <AuthStack.Screen name="Calendario" component={Calendario} />
-        <AuthStack.Screen name="UsuTela" component={UsuTela} />
+        <AuthStack.Screen name="TelaUsuario" component={TelaUsuario} />
         <AuthStack.Screen name="Documento" component={Documento} />
+        <AuthStack.Screen name="HeaderCabeca" component={HeaderCabeca} />
       </AuthStack.Navigator>
     </NavigationContainer>
   );

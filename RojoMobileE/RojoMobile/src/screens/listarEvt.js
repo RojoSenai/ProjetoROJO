@@ -16,7 +16,6 @@ export default function Eventos() {
 
     async function BuscarEventos() {
         const token = await AsyncStorage.getItem('userToken');
-
         const resposta = await api.get('/Evento', {
             headers: {
                 'Authorization': 'Bearer ' + token
@@ -25,6 +24,7 @@ export default function Eventos() {
 
         const dadosDaApi = resposta.data;
 
+        
         setListaEventos(dadosDaApi)
     }
 

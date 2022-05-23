@@ -6,7 +6,7 @@ import { StyleSheet, Text, Image, View, ImageBackground, TouchableOpacity } from
 import api from '../services/api'
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { baseFontSize } from "native-base/lib/typescript/theme/tools";
+//import { baseFontSize } from "native-base/lib/typescript/theme/tools";
 
 export default function Eventos() {
     const [listaEventos, setListaEventos] = useState([]);
@@ -48,7 +48,7 @@ export default function Eventos() {
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('UsuTela')}>
+                <TouchableOpacity onPress={() => navigation.navigate('TelaUsuario')}>
                     <Image
                         source={require('../../assets/imagem_perfil.png')}
                         style={{ width: 60, height: 50, }}
@@ -65,7 +65,7 @@ export default function Eventos() {
                             <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Agenda')}>
                             <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
                         </TouchableOpacity>
 
