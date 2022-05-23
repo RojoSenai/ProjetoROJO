@@ -17,7 +17,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
     const [NomePalestrante, setNomePalestrante] = useState('');
     // const [eventId, setEventId] = useState(0);
 
-    console.log(EventoID)
+    console.log(evento.nomeEvento)
 
     function AtualizandoE() {
         if (Atualizando == false) {
@@ -27,6 +27,12 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
             setAtualizando(false);
 
         }
+    }
+
+    function SetarState() {
+        evento.map((event) => { setNomeEvt(event.nomeEvento) });
+        setDescricao(evento.map((event) => { setDescricao(event.descricao) }));
+        setNomePalestrante(evento.map((event) => { setNomePalestrante(event.NomePalestrante) }));
     }
 
     async function Excluir() {
@@ -75,6 +81,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
 
     }
 
+
     function AtualizarEvento(event) {
         event.preventDefault();
         //setIsLoding(true)
@@ -104,6 +111,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                     // setlistaEventosID(evento);
                     BuscarEvento()
                     BuscarMeusEventos()
+                    setAtualizando(false);
                     //   SetMensagemErro('Evento Cadastrado com sucesso!')
                 }
                 // else
@@ -118,8 +126,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
 
 
     useEffect(() => {
-        setlistaEventosID(evento);
-    });
+        BuscarEvento();
+    }, []);
 
     return (
         <div>
@@ -128,28 +136,44 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                     <RiIcons.RiCloseFill onClick={setShow} style={{ cursor: 'pointer', color: 'red' }} />
                 </div>
                 {
-                    listaEventosID.map((event) => {
+                    evento.map((event) => {
                         return (
                             <div className="Contm">
                                 <div className="conteiner" key={event.idevento}>
                                     <div className="img"><img src={Palestra} alt="" /></div>
-                                    <div className="contLetra">
+                                    {Atualizando == false ? <div className="contLetra">
                                         <div className="contNND">
                                             <div className='nomes'>
-                                                {Atualizando == false ? <h2>{event.nomeEvento}</h2> : <input type="text" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />}
+                                                <h2>{event.nomeEvento}</h2>
                                                 <div className="barrinha1"></div>
-                                                {Atualizando == false ? <h3>{event.palestrante}</h3> : <input type="text" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />}
+                                                <h3>{event.palestrante}</h3>
                                             </div>
                                             <div className='descricao'>
-                                                {Atualizando == false ? <p>{event.descricao}</p> : <input type="text" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />}
+                                                <p>{event.descricao}</p>
                                             </div>
                                             <div className='botoes'>
-                                                {Atualizando == false ? <button className='botao' onClick={AtualizandoE}>Editar</button> : <button className='botao' onClick={AtualizandoE} onClickCapture={AtualizarEvento}>Atualizar</button>}
+                                                <button className='botao' onClick={AtualizandoE}>Editar</button>
                                                 <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
                                             </div>
                                         </div>
                                         {/* <p className="Descricao"> Descrição: {eventos.descricao}</p> */}
-                                    </div>
+                                    </div> :
+                                        <form onSubmit={AtualizarEvento} className="contLetra">
+                                            <div className="contNND">
+                                                <div className='nomes'>
+                                                    <input type="text" required="required" maxlength="50" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />
+                                                    <div className="barrinha1"></div>
+                                                    <input type="text" required="required" maxlength="50" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />
+                                                </div>
+                                                <div className='descricao'>
+                                                    <input type="text" required="required" maxlength="500" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />
+                                                </div>
+                                                <div className='botoes'>
+                                                    <button className='botao' type="submit" >Atualizar</button>
+                                                    <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
+                                                </div>
+                                            </div>
+                                        </form>}
                                 </div>
                             </div>
                         )

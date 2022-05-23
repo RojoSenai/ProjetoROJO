@@ -1,6 +1,6 @@
 import '../../assets/css/CadastroEvento.css';
 import { useState, useEffect } from 'react';
-import {Cabeca} from '../../components/Header/Header.jsx'
+import { Cabeca } from '../../components/Header/Header.jsx'
 import axios from 'axios';
 import Logo from '../../components/Logo/Logo.js';
 import Helmet from 'react-helmet';
@@ -56,7 +56,7 @@ export default function Login() {
           SetMensagemErro('Evento Cadastrado com sucesso!')
         }
         else
-        SetMensagemErro('Oops! algo deu errado :(')
+          SetMensagemErro('Oops! algo deu errado :(')
 
 
 
@@ -85,8 +85,7 @@ export default function Login() {
       <Helmet title="Projeto Rojo - Cadastro Usuario Evento" />
       <main className='mano'>
         <div className="cima">
-          <Cabeca Cor={Cor}/>
-
+          <Cabeca Cor={Cor} />
         </div>
           <Logo />
           <form onSubmit={CadastrarEvento} action="" className="cadastrar_evt">
@@ -108,8 +107,8 @@ export default function Login() {
               onChange={(event) => setNomeEvt(event.target.value)}
               name="nome"
               id="Adm__nome"
-              required="required" 
-              maxlength="50"/>
+              required="required"
+              maxlength="50" />
 
             <input
               className="Name_Event"
