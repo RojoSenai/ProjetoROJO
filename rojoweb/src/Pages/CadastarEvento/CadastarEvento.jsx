@@ -108,7 +108,7 @@ export default function Login() {
               name="nome"
               id="Adm__nome"
               required="required"
-              maxlength="50" />
+              maxlength="31" />
 
             <input
               className="Name_Event"
@@ -117,7 +117,8 @@ export default function Login() {
               onChange={(event) => setNomePalestrante(event.target.value)}
               name="Nome_Palestrante"
               id="login__senha"
-              required="required" />
+              required="required" 
+              maxlength="50"/>
 
             <input
               className="Name_Event"

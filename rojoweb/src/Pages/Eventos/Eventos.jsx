@@ -106,8 +106,8 @@ export default function MeusEventos() {
                                 <div className="tudo">
                                     <div>
                                         <h2 className="NomeEvento">{eventos.nomeEvento}</h2>
-                                        <div className="barrinha"></div>
                                         <h3 className="NomePalestrante">{eventos.palestrante}</h3>
+                                        <div className="barrinha"></div>
                                         <div className='desc'>
                                             <p className='Descricao'>{eventos.descricao}</p>
                                         </div>

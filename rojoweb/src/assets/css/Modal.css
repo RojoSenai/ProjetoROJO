@@ -51,7 +51,7 @@
 }
 
 .nomes {
-    height: 15%;
+    height: 22%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -60,7 +60,16 @@
 
 .nomes h2 {
     font-size: 2em;
+    /* word-wrap: break-word; */
+    height: 30%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
 }
+
+/* .nomes h3 {
+    margin-top: 3px;
+} */
 
 .descricao {
     height: 60%;
@@ -138,4 +147,5 @@
     background-color: #FF1B00;
     width: 100%;
     height: 0.1vw;
+    margin: 5px 0 5px 0;
 }

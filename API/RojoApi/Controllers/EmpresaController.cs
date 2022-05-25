@@ -93,7 +93,7 @@ namespace RojoAPI.Controllers
         }
 
         //Atualizar Usuario
-        [HttpPatch("{id}")]
+        [HttpPut("{id}")]
       //  [Authorize(Roles = "1, 2, 3")]
         public IActionResult Put(int id, Empresa EmpresaAtualizada)
         {

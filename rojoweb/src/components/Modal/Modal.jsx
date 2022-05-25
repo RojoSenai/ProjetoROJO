@@ -145,8 +145,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                                         <div className="contNND">
                                             <div className='nomes'>
                                                 <h2>{event.nomeEvento}</h2>
-                                                <div className="barrinha1"></div>
                                                 <h3>{event.palestrante}</h3>
+                                                <div className="barrinha1"></div>
                                             </div>
                                             <div className='descricao'>
                                                 <p>{event.descricao}</p>
@@ -161,7 +161,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                                         <form onSubmit={AtualizarEvento} className="contLetra">
                                             <div className="contNND">
                                                 <div className='nomes'>
-                                                    <input type="text" required="required" maxlength="50" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />
+                                                    <input type="text" required="required" maxlength="31" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />
                                                     <div className="barrinha1"></div>
                                                     <input type="text" required="required" maxlength="50" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />
                                                 </div>
