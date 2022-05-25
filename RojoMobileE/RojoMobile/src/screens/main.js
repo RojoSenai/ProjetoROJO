@@ -65,7 +65,7 @@ export default function Eventos() {
                             <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
                         </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => navigation.navigate('Agenda')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
                             <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
                         </TouchableOpacity>
 
