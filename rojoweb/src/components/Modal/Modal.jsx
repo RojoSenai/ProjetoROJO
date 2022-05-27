@@ -6,7 +6,7 @@ import axios from 'axios';
 import Helmet from 'react-helmet';
 import ReactModal from 'react-modal';
 import * as RiIcons from 'react-icons/ri';
-
+import moment from 'moment';
 
 export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEvento }) => {
 
@@ -22,6 +22,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
     function AtualizandoE() {
         if (Atualizando == false) {
             setAtualizando(true);
+            SetarState();
+            console.log(NomeEvt);
         }
         else {
             setAtualizando(false);
@@ -31,8 +33,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
 
     function SetarState() {
         evento.map((event) => { setNomeEvt(event.nomeEvento) });
-        setDescricao(evento.map((event) => { setDescricao(event.descricao) }));
-        setNomePalestrante(evento.map((event) => { setNomePalestrante(event.NomePalestrante) }));
+        evento.map((event) => { setDescricao(event.descricao) });
+        evento.map((event) => { setNomePalestrante(event.palestrante) });
     }
 
     async function Excluir() {
@@ -72,7 +74,7 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
 
             .then(resposta => {
                 if (resposta.status === 200) {
-                    setList(resposta.data)
+                    setList(resposta.data.reverse())
                     console.log("cheguei aqui")
                     console.log(resposta.data)
                 }
@@ -124,6 +126,14 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
             .catch(erro => console.log(erro))
     }
 
+    // function data() {
+    //     const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
+    //     let data; 
+    //     evento.map((event) => { data = event.dataEventoIncio; })
+    //     let dataformat = ((data.getDate()))
+
+    // }
+
 
     useEffect(() => {
         BuscarEvento();
@@ -140,7 +150,15 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                         return (
                             <div className="Contm">
                                 <div className="conteiner" key={event.idevento}>
-                                    <div className="img"><img src={Palestra} alt="" /></div>
+                                    <div className="img">
+                                        <div className="tamanho">
+                                            <img src={Palestra} alt="" />
+                                        </div>
+                                        <div className="DataCont">
+                                            <p>{"Data de inicio: " + moment(event.dataEventoIncio).format('LLL') }</p>
+                                            <p>{"Termino do evento: " + event.dataEventoFim}</p>
+                                        </div>
+                                    </div>
                                     {Atualizando == false ? <div className="contLetra">
                                         <div className="contNND">
                                             <div className='nomes'>
@@ -169,8 +187,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                                                     <textarea placeholder="Descrição" className="Input" type="text" required="required" maxlength="500" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />
                                                 </div>
                                                 <div className='botoes'>
+                                                    <button className='botao2' onClickCapture={AtualizandoE} onClick={setShow}>Cancelar</button>
                                                     <button className='botao' type="submit" >Atualizar</button>
-                                                    <button className='botao2' onClickCapture={Excluir} onClick={setShow}>Excluir</button>
                                                 </div>
                                             </div>
                                         </form>}
