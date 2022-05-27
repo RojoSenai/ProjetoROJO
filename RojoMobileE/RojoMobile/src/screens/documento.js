@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import Constants from 'expo-constants';
+import { useNavigation } from "@react-navigation/native";
 
 
 
 export default function App() {
     const [result, setResult] = useState(null);
+    const navigation = useNavigation()
 
     const _handlePressButtonAsync = async () => {
         let result = await WebBrowser.openBrowserAsync('https://pdfteste.s3.amazonaws.com/Curr%C3%ADculo.pdf');
@@ -49,6 +51,42 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+    main: {
+        flex: 1,
+        backgroundColor: '#9E0000'
+    },
+    mainHeader: {
+        //flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: 10,
+    },
+    Headermain: {
+        // display: "flex",
+        backgroundColor: '#fff',
+        borderBottomColor: '#FFF',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingRight: 10,
+        paddingLeft: 10,
+        borderBottomWidth: 6,
+        // width: '100%',
+        // height: '30%',
+        // bottom: 70
+    },
+    mainHeaderText: {
+        //fontFamily: 'TitilliumWeb-Regular',
+        fontSize: 16,
+        color: '#fff',
+        letterSpacing: 5
+    },
+    mainHeaderLine: {
+        width: 220,
+        paddingTop: 10,
+        borderBottomColor: '#fff',
+        borderBottomWidth: 1,
+    },
     container: {
         flex: 1,
         alignItems: 'center',
