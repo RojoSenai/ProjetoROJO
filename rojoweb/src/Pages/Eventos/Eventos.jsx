@@ -97,7 +97,7 @@ export default function MeusEventos() {
                 <h2 className="Seus_Eventos">Seus eventos</h2>
                 <div className="EssaBarra"></div>
                 <div className='contl'>
-                    {listaEventos.map((eventos) => {
+                    {listaEventos.reverse().map((eventos) => {
                         return (
                             <div onClick={handleShow} onClickCapture={(event) => setEventoID(eventos.idevento)} key={eventos.idevento} className="ContList">
                                 <div className="imagens">

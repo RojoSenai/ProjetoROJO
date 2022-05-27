@@ -149,3 +149,44 @@
     height: 0.1vw;
     margin: 5px 0 5px 0;
 }
+
+.Input{
+    border: none;
+    width: 80%;
+    border: 2px solid #ffffff;
+    border-radius: 13px;
+    background: transparent;
+    font-size: 1em;
+    cursor: pointer;
+    height: 40%;
+    vertical-align: text-bottom;
+    color: #ffffff;
+    word-break: break-word;
+    transition: background, 0.75s;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.Input:hover,
+.Input:focus{
+    border: none;
+    width: 80%;
+    border: 2px solid #ff0000;
+    background-color: rgba(255, 255, 255, 0.137);
+    font-size: 1em;
+    height: 40%;
+    vertical-align: text-bottom;
+    cursor: pointer;
+    color: #ffffff;
+    word-break: break-word;
+    padding-left: 10px;
+}
+
+.Input::-webkit-scrollbar-thumb{
+    background-color: #707070; 
+    border-radius: 13px;    
+}
+
+.Input::-webkit-scrollbar{
+    width: 12px;
+}

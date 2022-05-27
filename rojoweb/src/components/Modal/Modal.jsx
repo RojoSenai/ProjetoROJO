@@ -161,12 +161,12 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                                         <form onSubmit={AtualizarEvento} className="contLetra">
                                             <div className="contNND">
                                                 <div className='nomes'>
-                                                    <input type="text" required="required" maxlength="31" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />
+                                                    <input placeholder="Nome do evento" className="Input" type="text" required="required" maxlength="31" onChange={(event) => setNomeEvt(event.target.value)} value={NomeEvt} />
                                                     <div className="barrinha1"></div>
-                                                    <input type="text" required="required" maxlength="50" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />
+                                                    <input placeholder="Nome do Palestrante" className="Input" type="text" required="required" maxlength="50" onChange={(event) => setNomePalestrante(event.target.value)} value={NomePalestrante} />
                                                 </div>
                                                 <div className='descricao'>
-                                                    <input type="text" required="required" maxlength="500" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />
+                                                    <textarea placeholder="Descrição" className="Input" type="text" required="required" maxlength="500" onChange={(e) => setDescricao(e.target.value)} name="Descricao" id="Descricao" value={Descricao} />
                                                 </div>
                                                 <div className='botoes'>
                                                     <button className='botao' type="submit" >Atualizar</button>
