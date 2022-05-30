@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { createDrawerNavigator } from 'react-navigation-drawer';
-// import {
-//     createDrawerNavigator,
-//     DrawerContentScrollView,
-//     DrawerItemList,
-//     DrawerItem,
-//   } from '@react-navigation/drawer';
 
 import { StyleSheet, Text, Image, View, ImageBackground, TouchableOpacity } from 'react-native';
-
 
 import api from '../services/api'
 
@@ -38,26 +30,19 @@ export default function Eventos() {
         BuscarEventos();
     }, [])
 
-    const Drawer = createDrawerNavigator();
 
-    function MyDrawer() {
-      return (
-        <Drawer.Navigator>
-          <Drawer.Screen name="Feed" component={Feed} />
-          <Drawer.Screen name="Notifications" component={Notifications} />
-        </Drawer.Navigator>
-      );
-    } 
 
 
     return (
         <View style={styles.main}>
             <View style={styles.Headermain}>
+            <TouchableOpacity onPress={() => navigation.openDrawer() }>
                 <Image
                     source={require('../../assets/Menu_De_Hamburger.png')}
                     style={{ width: 50, height: 30, }}
                     resizeMode="contain"
                 />
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Image
                         source={require('../../assets/RojoLogo.png')}
