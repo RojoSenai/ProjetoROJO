@@ -50,7 +50,7 @@ export default function Eventos() {
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('TelaUsuario')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Usuario')}>
                     <Image
                         source={require('../../assets/imagem_perfil.png')}
                         style={{ width: 60, height: 50, }}
@@ -63,7 +63,7 @@ export default function Eventos() {
             <View style={styles.MenuCont}>
                 <View style={styles.BolinhaAlinhada}>
                     <View style={styles.cobrindoima}>
-                        <TouchableOpacity onPress={() => navigation.navigate('ListarEvt')}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Evento')}>
                             <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
                         </TouchableOpacity>
 
@@ -77,7 +77,7 @@ export default function Eventos() {
                     </View>
                     <View style={styles.Nomes}>
 
-                        <TouchableOpacity style={styles.Navigate1} onPress={() => navigation.navigate('ListarEvt')}>
+                        <TouchableOpacity style={styles.Navigate1} onPress={() => navigation.navigate('Evento')}>
                             <Text style={styles.Texto1} >Evento</Text>
                         </TouchableOpacity>
 
@@ -198,5 +198,5 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
-    },
+    }, 
 })

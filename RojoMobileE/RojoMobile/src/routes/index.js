@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -14,7 +13,7 @@ import telaUsuario from '../screens/telaUsuario';
 import { StatusBar } from 'expo-status-bar';
 
 const Drawer = createDrawerNavigator();
-const AuthStack = createStackNavigator();
+//const AuthStack = createStackNavigator();
 
 const Routes = () => (
   <NavigationContainer>
@@ -23,6 +22,17 @@ const Routes = () => (
     <Drawer.Navigator 
     initialRouteName="Home"
     screenOptions={{
+        drawerStyle:{
+            backgroundColor: "#C10D0D",
+            width: 240,
+        },
+        drawerContentStyle:{
+            alignContent: "center"
+        },
+        drawerLabelStyle:{
+            textAlign: 'center',
+            color: '#FFF'
+        },
         headerShown: false,
     }}>
 
@@ -30,8 +40,8 @@ const Routes = () => (
       <Drawer.Screen name="Main" component={Main} />
       <Drawer.Screen name="Calendario" component={Calendario} />
       <Drawer.Screen name="Documento" component={Documento} />
-      <Drawer.Screen name="Listar Evento" component={ListarEvt} />
-      <Drawer.Screen name="tela Usuario" component={telaUsuario} />
+      <Drawer.Screen name="Evento" component={ListarEvt} />
+      <Drawer.Screen name="Usuario" component={telaUsuario} />
     </Drawer.Navigator>
   </NavigationContainer>
 );

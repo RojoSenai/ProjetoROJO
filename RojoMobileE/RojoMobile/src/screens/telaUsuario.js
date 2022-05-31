@@ -13,8 +13,6 @@ export default function TelaUsuario(){
     const [IdUsu, setIdUsu] = useState(0)
     const navigation = useNavigation()
 
-
-
     async function BuscarUsuario() {
         const token = await AsyncStorage.getItem('userToken');
         setIdUsu(jwtDecode(token).role)
@@ -24,14 +22,11 @@ export default function TelaUsuario(){
             }
         })
         .then((resposta) => {
-            console.log(resposta.data)
+            console.warn(resposta.data)
+            const dadosDaApi = resposta.data;
+            setUsuario(dadosDaApi)
         })
-
-        const dadosDaApi = resposta.data;
-
         
-        console.warn(resposta.data)
-        setUsuario(dadosDaApi)
     }
 
     useEffect(() => {
@@ -59,27 +54,24 @@ export default function TelaUsuario(){
                     resizeMode="contain"
                 />
             </View>
-            <FlatList
-                data={Usuario}
-                keyExtractor={item => item.idusuario}
-                renderItem={({ item }) => (
+     
                     <View style={styles.Todos}>
                         <Image
                             source={require('../../assets/imagem_perfil.png')}
                             style={styles.ImgUsu}
                             resizeMode="contain" />
                         <View style={styles.Nome} >
-                            <Text style={styles.NomeEmail}>{"Nome: " + (item.nomeUsu)}</Text>
+                            <Text style={styles.NomeEmail}>{"Nome: " + (Usuario.nomeUsu)}</Text>
                         </View>
                         <View style={styles.Email} >
-                            <Text style={styles.NomeEmail}>{"Email: " + (item.email)}</Text>
+                            <Text style={styles.NomeEmail}>{"Email: " + (Usuario.email)}</Text>
                         </View>
                         {/* <View style={styles.btnEditar}>
                             <Text>EDITAR</Text>
                         </View> */}
                         <View style={styles.Sair}>
                             <TouchableOpacity
-                                onPress={Deslogar}
+                               // onPress={Deslogar}
                                 style={styles.btnSair}>
                                 <Text
                                     style={styles.btnSairText}>{"SIM"}
@@ -87,9 +79,6 @@ export default function TelaUsuario(){
                             </TouchableOpacity>
                         </View>
                     </View>
-
-                )}
-            />
         </View>
     )
 }
