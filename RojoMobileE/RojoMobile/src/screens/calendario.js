@@ -59,7 +59,7 @@ export default function Calendario() {
             </View>
             <Agenda
                 items={{
-                    '2022-05-22': [{ name: 'item 1 - any js object' }],
+                    '2022-06-01': [{ name: 'item 1 - any js object' }],
                     '2022-05-23': [{ name: 'item 2 - any js object' }],
                     '2022-05-24': [],
                     '2022-05-25': [{ name: 'item 3 - any js object' }, { name: 'any js object' }]

@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     bottom:90,
     fontSize: 18,
-    color: '#000',
+    color: '#fff',
     borderBottomColor: '#FFF',
     borderBottomWidth: 2,
     backgroundColor: '#232323'
