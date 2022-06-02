@@ -357,3 +357,210 @@
         color: red;
     }
 }
+
+@media (max-width: 870px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+
+    }
+
+    /* PARTE DO HEADER */
+
+    .ContainerRojoDiv {
+        display: flex;
+        justify-content: space-evenly;
+        height: 134px;
+        align-items: center;
+    }
+
+    .ContainerLetras {
+        width: 57%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Rojinho {
+        height: 68px;
+    }
+
+    .Names_a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    /* PARTE COMPOPNENTES LOGO */
+    .mano {
+        background-color: #232323;
+        height: 1000px;
+        overflow: hidden
+    }
+
+    .Cima {
+        height: auto
+    }
+
+    .ContainerLogo {
+        background-color: #232323;
+        display: flex;
+        justify-content: center;
+        height: 20vw;
+    }
+
+    .Rojo {
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 1px;
+        height: 76px;
+    }
+
+    .Letra-logo {
+        height: 24vw;
+        width: 18vw;
+        pointer-events: none;
+        /* animation-duration: 50s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: Letra-logo; */
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .Letra-logo {
+            animation: Letra-logo infinite 50s linear;
+        }
+    }
+
+    @keyframes Letra-logo {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Parte components Pirulas */
+    .Pirula {
+        display: flex;
+        justify-content: space-between;
+        width: 102vw;
+        height: 20vw;
+    }
+
+    .lnr-eye {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+
+    /* PARTE DO LOGIN */
+
+    .usu_login {
+        text-transform: uppercase;
+        font-family: Sarabun;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 109px;
+        margin-top: 20px;
+        color: #232323;
+
+    }
+
+
+    .LOGIN_log {
+        border: none;
+        height: 16%;
+        width: 45%;
+        border-bottom: 1px solid #ffffff;
+        background: transparent;
+        font-size: 1em;
+        /* cursor: pointer; */
+        color: #ffffff;
+        transition: background, 0.75s;
+    }
+
+    .LOGIN_log:hover,
+    .LOGIN_log:focus {
+        border: none;
+        height: 18%;
+        width: 48%;
+        border-bottom: 1px solid #ff0000;
+        background-color: rgba(255, 255, 255, 0.137);
+        font-size: 1em;
+        /* cursor: pointer; */
+        color: #ffffff;
+    }
+
+    .LOGIN_log::placeholder {
+        color: #ffffff;
+    }
+
+    .login {
+        display: flex;
+        height: 40%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .CorAzul {
+        color: #1C8FD0;
+    }
+
+    .CorVermelha {
+        color: #C00000;
+    }
+
+    .Div_Matrix {
+        display: flex;
+        justify-content: center;
+    }
+
+    .BotãoLogin {
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 13px;
+        width: 20%;
+        height: 20%;
+        background: transparent;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        cursor: pointer;
+        transition: border, 1s;
+    }
+
+    .BotãoLogin:hover,
+    .BotãoLogin:focus {
+        border: 1px solid #FF1B00;
+        box-sizing: border-box;
+        border-radius: 13px;
+        width: 20%;
+        height: 20%;;
+        background: transparent;
+        color: #FF1B00;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    .contperm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .permissao {
+        color: red;
+    }
+
+}

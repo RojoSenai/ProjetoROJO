@@ -206,4 +206,182 @@
     }
 }
 
-/* .imput[type="file"] */
+@media (max-width: 870px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", "Open Sans", Arial, Helvetica, sans-serif;
+        
+    }
+    
+    /* PARTE COMPOPNENTES LOGO */
+    .mano{
+        background-color: #232323;
+        height: 100vh;
+        overflow: hidden
+    }
+    
+    .Cima{
+        height: auto
+    }
+    
+    /* Parte components Pirulas */
+    .Pirula{
+        display: flex;
+        justify-content: space-between;
+        width: 101vw;
+        height: 10vw;
+    }
+    
+    
+    /* PARTE DO LOGIN */
+    
+    /* .usu_login{
+        text-transform: uppercase;
+        font-family: Sarabun;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 109px;
+        margin-top: 20px;
+        color: #232323;
+    
+    } */
+    
+    
+    .Name_Event{
+        border: none;
+        width: 38%;
+        border-bottom: 2px solid #ffffff;
+        background: transparent;
+        font-size: 1em;
+        cursor: pointer;
+        height: 12%;
+        color: #ffffff;
+        transition: background, 0.75s;
+        margin-top: 15px;
+
+    }
+
+    .Name_Event option{
+        background-color: #000000;
+        color: #ffffff;
+    }
+    
+    .Name_Event:hover,
+    .Name_Event:focus{
+        border: none;
+        width: 38%;
+        border-bottom: 2px solid #ff0000;
+        background-color: rgba(255, 255, 255, 0.137);
+        font-size: 1em;
+        height: 12%;
+        cursor: pointer;
+        color: #ffffff;
+        
+    }
+    
+    .Name_Event_img{
+        border: none;
+        width: 38%;
+        border-bottom: 2px solid #ffffff;
+        background: transparent;
+        font-size: 1em;
+        cursor: pointer;
+        color: #ffffff;
+        display: none;
+    }
+
+
+    .event_file{
+        color: #ffffff;
+        border: none;
+        width: 100%;
+        border-bottom: 3px solid #ffffff;
+        background: transparent;
+        font-size: 2em;
+        cursor: pointer;
+        transition: background 0.75s;
+    }
+
+    .event{
+        width: 38vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .event_file:hover,
+    .event_file:focus{
+        color: #ffffff;
+        border: none;
+        width: 100%;
+        border-bottom: 3px solid #ffffff;
+        background-color: rgba(255, 255, 255, 0.137);
+        font-size: 2em;
+        cursor: pointer;
+    }
+    
+
+
+
+
+    .Name_Event::placeholder {
+        color: #ffffff;
+    }
+    
+    .cadastrar_evt{
+        display: flex;
+        height: 62%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .CorAzul{
+          color: #1C8FD0;
+    }
+    
+    .CorVermelha{
+        color: #C00000;
+    }
+    
+    .Div_Matrix{
+    display: flex;
+    justify-content: center;
+    }
+    
+    .BotãoCadastrarUsu{
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 13px;
+        width: 12%;
+        height: 12%;
+        background: transparent;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 400;
+        margin-top: 35px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: border, 1s;
+    }
+
+    .BotãoCadastrarUsu:hover,
+    .BotãoCadastrarUsu:focus {
+        border: 2px solid #FF1B00;
+        box-sizing: border-box;
+        border-radius: 13px;
+        width: 12%;
+        height: 12%;
+        background-color: #FF1B00;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 400;
+        margin-top: 35px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+}
