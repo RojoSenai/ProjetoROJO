@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { StyleSheet, Text, Image, View, ImageBackground, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, View, ImageBackground, TouchableOpacity, ScrollView } from 'react-native';
 
 import api from '../services/api'
 
@@ -43,12 +43,12 @@ export default function Eventos() {
     return (
         <View style={styles.main}>
             <View style={styles.Headermain}>
-            <TouchableOpacity onPress={() => navigation.openDrawer() }>
-                <Image
-                    source={require('../../assets/Menu_De_Hamburger.png')}
-                    style={{ width: 50, height: 30, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Image
+                        source={require('../../assets/Menu_De_Hamburger.png')}
+                        style={{ width: 50, height: 30, }}
+                        resizeMode="contain"
+                    />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Image
@@ -68,46 +68,32 @@ export default function Eventos() {
             <View style={styles.mainBanner}>
             </View>
             <View style={styles.MenuCont}>
-                <View style={styles.BolinhaAlinhada}>
-                    <View style={styles.cobrindoima}>
+                <ScrollView style={styles.BolinhaAlinhada}>
+                    <View style={styles.cobrindoimaEvt}>
                         <TouchableOpacity onPress={() => navigation.navigate('Evento')}>
-                            <ImageBackground style={styles.Bolinha} source={require('../../assets/Evento1.png')} />
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
-                            <Image style={styles.Bolinha} source={require('../../assets/Evento2.png')} />
-                        </TouchableOpacity>
-
-                        <TouchableOpacity  onPress={() => navigation.navigate('Documento')}>
-                            <Image style={styles.Bolinha} source={require('../../assets/Evento3.png')} />
+                            <View style={styles.con}>
+                                <View style={styles.contTxt}>
+                                    <Text style={styles.Txt}>EVENTOS</Text>
+                                </View>
+                                <View>
+                                    <ImageBackground style={styles.BolinhaEvt} source={require('../../assets/eventosimg.png')} />
+                                </View>
+                            </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.Nomes}>
-
-                        <TouchableOpacity style={styles.Navigate1} onPress={() => navigation.navigate('Evento')}>
-                            <Text style={styles.Texto1} >Evento</Text>
-                        </TouchableOpacity>
-
+                    <View style={styles.cobrindoimaCal}>
                         <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
-                            <Text style={styles.Texto2}>Agenda</Text>
+                            <Text style={styles.Txt}>CALENDARIO</Text>
+                            <Image style={styles.BolinhaAgd} source={require('../../assets/agendaimg.png')} />
                         </TouchableOpacity>
-
-
-                        <Text style={styles.Texto3}>Documentos</Text>
                     </View>
-                </View>
-
-
-                {/* <View style={styles.BolinhaAlinhada}>
-                    <View style={styles.Bolinha}></View>
-                    <View style={styles.Bolinha}></View>
-                    <View style={styles.Bolinha}></View>
-                </View> */}
-                {/* <View style={styles.BolinhaAlinhada}>
-                    <View style={styles.Bolinha}></View>
-                    <View style={styles.Bolinha}></View>
-                    <View style={styles.Bolinha}></View>
-                </View> */}
+                    <View style={styles.cobrindoimaDoc}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Documento')}>
+                            <Text style={styles.Txt}>DOCUMENTO</Text>
+                            <Image style={styles.BolinhaDoc} source={require('../../assets/documentoimg.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
             </View>
         </View>
     )
@@ -143,67 +129,80 @@ const styles = StyleSheet.create({
     },
     BolinhaAlinhada: {
         display: "flex",
-        width: "100%",
-        height: "93%",
-        flexDirection: "column",
-        marginTop: 40,
-        // alignItems: "center",
-        // justifyContent: "space-around",
-        //backgroundColor: "green"
+        marginTop: 30,
     },
-    Bolinha: {
-        width: 70,
-        height: 70,
+    BolinhaEvt: {
+        width: 120,
+        height: 80,
+        shadowOffset: { height: 1, width: 1 },
+        // flexDirection: "column"
+        // borderRadius: 50,
+        //backgroundColor: "#D0CFCF",
+    },
+    BolinhaAgd: {
+        width: 120,
+        height: 80,
+        shadowOffset: { height: 1, width: 1 },
+        // flexDirection: "column"
+        // borderRadius: 50,
+        //backgroundColor: "#D0CFCF",
+    },
+    BolinhaDoc: {
+        width: 90,
+        height: 90,
         shadowOffset: { height: 1, width: 1 },
         // flexDirection: "column"
         // borderRadius: 50,
         //backgroundColor: "#D0CFCF",
     },
 
-    Nomes: {
-        width: "98%",
+
+    cobrindoimaEvt: {
+        borderRadius: 13,
         display: "flex",
+        justifyContent: "space-between",
         flexDirection: "row",
-        justifyContent: "space-evenly"
-    },
-
-    Navigate1: {
-        width: "17%",
-        marginLeft: 39,
-        //backgroundColor: "#DF1A30"
-
-    },
-
-    Navigate3: {
-        width: "17%",
-        marginLeft: 39,
-        //backgroundColor: "#DF1A30"
-
-    },
-
-    Texto1: {
-        textAlignVertical: "auto",
-        textTransform: 'uppercase',
-        color: "white",
-    },
-
-    Texto2: {
-        marginLeft: 24,
-        textTransform: 'uppercase',
-        color: "white"
-    },
-
-
-    Texto3: {
+        backgroundColor: '#fff',
+        marginBottom: 40,
         marginLeft: 30,
-        textTransform: 'uppercase',
-        color: "white"
+        width: 300,
+        height: 150,
+        paddingLeft: 100,
+        paddingRight: 30,
+        backgroundColor: "#710B0B"
     },
-
-    cobrindoima: {
-        width: "100%",
+    cobrindoimaCal: {
+        borderRadius: 13,
+        backgroundColor: '#fff',
+        marginBottom: 40,
+        marginLeft: 30,
+        width: 300,
+        height: 150,
+        paddingLeft: 100,
+        paddingRight: 30,
+        backgroundColor: '#A13D3D'
+    },
+    cobrindoimaDoc: {
+        borderRadius: 13,
+        backgroundColor: '#fff',
+        marginBottom: 40,
+        marginLeft: 30,
+        width: 300,
+        height: 150,
+        paddingLeft: 100,
+        paddingRight: 30,
+        backgroundColor: '#075668'
+    },
+    Txt: {
+        color: '#FFF',
+        marginTop: 30
+    },
+    contTxt: {
+        backgroundColor: "blue",
+        width: 90
+    },
+    con: {
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-    }, 
+        justifyContent: "space-between"
+    }
 })

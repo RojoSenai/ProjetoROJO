@@ -35,7 +35,7 @@ export default function TelaUsuario() {
 
     useEffect(() => {
         BuscarUsuario();
-    }, {})
+    }, [])
 
     return (
         <View style={styles.main}>

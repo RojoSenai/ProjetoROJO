@@ -12,8 +12,11 @@ export default function Login() {
     const [senha, setSenha] = useState('');
     const navigation = useNavigation()
     
+    // 123456789
+    // matheusmarthis@drogasil.com
+
     realizarLogin = async() => {
-      const resposta = await api.post('/login', {
+      const resposta = await api.post('/Login', {
             email: email,
             senha: senha,
         });
@@ -46,7 +49,6 @@ export default function Login() {
               placeholder="E-mail"
               placeholderTextColor="#fff"
               keyboardType="email-address"
-              value={email}
               onChangeText={(email) => setEmail(email)}
             />
 
@@ -56,7 +58,6 @@ export default function Login() {
               placeholderTextColor="#fff"
               keyboardType="default"
               secureTextEntry={true}
-              value={senha}
               onChangeText={(senha) => setSenha(senha)}
             />
 
