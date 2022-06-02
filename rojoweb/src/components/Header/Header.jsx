@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import Rojologo from '../../assets/img/Rojo_imagem.png';
-import '../../assets/css/CadastrarEmpresa.css';
-import '../../assets/css/CadastroUsuarioEmpresa.css';
+import '../../assets/css/header.css';
 import { Link } from 'react-router-dom';
 import { parseJwt } from '../../Services/auth';
+import burger from '../../assets/img/menu.svg';
 
 
 
@@ -31,6 +31,16 @@ export const Cabeca = ({ Cor }) => {
 
     // }
 
+    function Visivel() {
+        console.log("clique")
+        let V = document.getElementById("Visivel")
+        if(V.style.display === "none"){
+            V.style.display = "flex" 
+        }else{
+            V.style.display = "none" 
+        }
+    }
+
 
     useEffect(() => {
         console.log(Cor)
@@ -41,10 +51,10 @@ export const Cabeca = ({ Cor }) => {
         <div>
             {parseJwt().role == 1 ?
                 <div className="ContainerRojo">
-                    <div>
+                    <div className="cLogo">
                         <Link to="/" onClick={logout}><img className="Rojinho" src={Rojologo} alt="Logo da empresa" /></Link>
                     </div>
-                    <div className='ContainerLetras1'>
+                    <div id="Visivel" className='ContainerLetras1'>
                         {Cor == 'Cadastro Cor' ? <Link to="/EmpresaCor" className="Names_b">Cadastrar Cor</Link> : <Link to="/EmpresaCor" className="Names_a">Cadastrar Cor</Link>}
                         {Cor == 'Cadastrar User' ? <Link to="/CadastrarUserAdm" className="Names_b">Cadastrar  Usuario</Link> : <Link to="/CadastrarUserAdm" className="Names_a">Cadastrar  Usuario</Link>}
                         {Cor == 'Cadastrar Empresa' ? <Link to="/CadastrarEmpresa" className="Names_b">Cadastrar empresa</Link> : <Link to="/CadastrarEmpresa" className="Names_a">Cadastrar empresa</Link>}
@@ -52,6 +62,7 @@ export const Cabeca = ({ Cor }) => {
                         {Cor == 'Evento' ? <Link to="/Evento" className="Names_b">Eventos</Link> : <Link to="/Evento" className="Names_a">Evento</Link>}
                         <Link to="/" className="Names_a" onClick={logout}>Sair</Link>
                     </div>
+                        <img className="menu" onClick={Visivel} src={burger} alt="menu de barras" />
                 </div>
                 : parseJwt().role == 3 ?
                     <div className="ContainerRojo">

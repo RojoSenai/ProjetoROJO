@@ -24,31 +24,6 @@
     height: 10vw;
 }
 
-/* PARTE DO HEADER */
-
-.ContainerRojo{
-    display: flex;
-    justify-content: space-evenly;
-    height: 90px;
-    width: 100vw;
-    padding: 0px 0px 0px 30px;
-    align-items: center;
-}
-
-.ContainerLetras{
-    width: 46%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.Rojinho{
-    height: 68px;
-}
-.Names_a{
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-}
 
 /* -----------------------------------------------1920----------------------------------------------------- */
 
@@ -100,7 +75,7 @@
         width: 38%;
         border-bottom: 3px solid #ffffff;
         background: transparent;
-        font-size: 2em;
+        font-size: 1em;
         cursor: pointer;
         color: #ffffff;
     }
@@ -111,7 +86,7 @@
     
     .cadastrar_usu{
         display: flex;
-        height: 35%;
+        height: 66%;
         align-items: center;
         flex-direction: column;
         justify-content: space-evenly;
