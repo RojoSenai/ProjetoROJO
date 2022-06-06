@@ -38,12 +38,13 @@ export default function Calendario() {
     return (
         <View style={styles.main}>
             <View style={styles.Headermain}>
-
-                <Image
-                    source={require('../../assets/Menu_De_Hamburger.png')}
-                    style={{ width: 50, height: 30, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Image
+                        source={require('../../assets/Menu_De_Hamburger.png')}
+                        style={{ width: 50, height: 30, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <Image
                         source={require('../../assets/RojoLogo.png')}
@@ -51,18 +52,20 @@ export default function Calendario() {
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <Image
-                    source={require('../../assets/imagem_perfil.png')}
-                    style={{ width: 60, height: 50, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('Usuario')} >
+                    <Image
+                        source={require('../../assets/imagem_perfil.png')}
+                        style={{ width: 60, height: 50, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
             </View>
             <Agenda
                 items={{
-                    '2022-05-22': [{ name: 'item 1 - any js object' }],
-                    '2022-05-23': [{ name: 'item 2 - any js object' }],
-                    '2022-05-24': [],
-                    '2022-05-25': [{ name: 'item 3 - any js object' }, { name: 'any js object' }]
+                    //'2022-06-01': [{ name: 'item 1 - any js object' }],
+                    //'2022-05-23': [{ name: 'item 2 - any js object' }],
+                    //'2022-05-24': [],
+                    '2022-06-07': [{ name: 'item 3 - any js object' }, { name: 'any js object' }]
                 }}
 
                 // markedDates={{
@@ -132,18 +135,17 @@ const styles = StyleSheet.create({
     },
     Headermain: {
         // display: "flex",
-        backgroundColor: '#fff',
-        borderBottomColor: '#FFF',
+        backgroundColor: '#2E2829',
+        // backgroundColor: '#fff',
+        borderBottomColor: '#2E2829',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingRight: 10,
         paddingLeft: 10,
         borderBottomWidth: 6,
-        // width: '100%',
-        // height: '30%',
-        // bottom: 70
     },
+
     agenda: {
         //width: 230,
         //height: 40,

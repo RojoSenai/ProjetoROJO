@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Button, Text, View, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
 import * as WebBrowser from 'expo-web-browser';
 import Constants from 'expo-constants';
 import { useNavigation } from "@react-navigation/native";
@@ -19,11 +19,13 @@ export default function App() {
 
             <View style={styles.Headermain}>
 
-                <Image
-                    source={require('../../assets/Menu_De_Hamburger.png')}
-                    style={{ width: 50, height: 30, }}
-                    resizeMode="contain"
-                />
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Image
+                        source={require('../../assets/Menu_De_Hamburger.png')}
+                        style={{ width: 50, height: 30, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <Image
                         source={require('../../assets/RojoLogo.png')}
@@ -31,11 +33,13 @@ export default function App() {
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <Image
-                    source={require('../../assets/imagem_perfil.png')}
-                    style={{ width: 60, height: 50, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('Usuario')} >
+                    <Image
+                        source={require('../../assets/imagem_perfil.png')}
+                        style={{ width: 60, height: 50, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
             </View>
 
             <View style={styles.container}>
@@ -50,76 +54,151 @@ export default function App() {
     );
 }
 
-const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        backgroundColor: '#9E0000'
-    },
-    mainHeader: {
-        //flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        top: 10,
-    },
-    Headermain: {
-        // display: "flex",
-        backgroundColor: '#fff',
-        borderBottomColor: '#FFF',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingRight: 10,
-        paddingLeft: 10,
-        borderBottomWidth: 6,
-        // width: '100%',
-        // height: '30%',
-        // bottom: 70
-    },
-    mainHeaderText: {
-        //fontFamily: 'TitilliumWeb-Regular',
-        fontSize: 16,
-        color: '#fff',
-        letterSpacing: 5
-    },
-    mainHeaderLine: {
-        width: 220,
-        paddingTop: 10,
-        borderBottomColor: '#fff',
-        borderBottomWidth: 1,
-    },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#B01425',
-    },
-    btnLogin: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 50,
-        width: 130,
-        backgroundColor: '#B01425',
-        borderColor: '#fff',
-        borderWidth: 2,
-        borderRadius: 10,
-        bottom: 80,
-        marginTop: 90,
-        shadowOffset: { height: 1, width: 1 },
-    },
-    btnLoginText: {
-        fontSize: 12,
-        fontStyle: 'normal',
-        color: '#fff',
-        letterSpacing: 1,
-        textTransform: 'uppercase',
-    },
-    btnLoginText2: {
-        marginBottom: 90,
-        fontSize: 12,
-        fontStyle: 'normal',
-        color: '#fff',
-        letterSpacing: 1,
-        textTransform: 'uppercase',
-    }
-});
+if (Dimensions.get('window').width > 700) {
+    var styles = StyleSheet.create({
+        main: {
+            flex: 1,
+            backgroundColor: '#9E0000'
+        },
+        mainHeader: {
+            //flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            top: 10,
+        },
+        Headermain: {
+            // display: "flex",
+            backgroundColor: '#2E2829',
+           // backgroundColor: '#fff',
+            borderBottomColor: '#2E2829',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingRight: 10,
+            paddingLeft: 10,
+            borderBottomWidth: 6,
+        },
+    
+        mainHeaderText: {
+            //fontFamily: 'TitilliumWeb-Regular',
+            fontSize: 16,
+            color: '#fff',
+            letterSpacing: 5
+        },
+        mainHeaderLine: {
+            width: 220,
+            paddingTop: 10,
+            borderBottomColor: '#fff',
+            borderBottomWidth: 1,
+        },
+        container: {
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: Constants.statusBarHeight,
+            backgroundColor: '#B01425',
+        },
+        btnLogin: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 50,
+            width: 130,
+            backgroundColor: '#B01425',
+            borderColor: '#fff',
+            borderWidth: 2,
+            borderRadius: 10,
+            bottom: 80,
+            marginTop: 90,
+            shadowOffset: { height: 1, width: 1 },
+        },
+        btnLoginText: {
+            fontSize: 12,
+            fontStyle: 'normal',
+            color: '#fff',
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+        },
+        btnLoginText2: {
+            marginBottom: 90,
+            fontSize: 12,
+            fontStyle: 'normal',
+            color: '#fff',
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+        }
+    });
+  } else {
+    var styles = StyleSheet.create({
+        main: {
+            flex: 1,
+            backgroundColor: '#9E0000'
+        },
+        mainHeader: {
+            //flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            top: 10,
+        },
+        Headermain: {
+            // display: "flex",
+            backgroundColor: '#2E2829',
+           // backgroundColor: '#fff',
+            borderBottomColor: '#2E2829',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingRight: 10,
+            paddingLeft: 10,
+            borderBottomWidth: 6,
+        },
+    
+        mainHeaderText: {
+            //fontFamily: 'TitilliumWeb-Regular',
+            fontSize: 16,
+            color: '#fff',
+            letterSpacing: 5
+        },
+        mainHeaderLine: {
+            width: 220,
+            paddingTop: 10,
+            borderBottomColor: '#fff',
+            borderBottomWidth: 1,
+        },
+        container: {
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            paddingTop: Constants.statusBarHeight,
+            backgroundColor: '#B01425',
+        },
+        btnLogin: {
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 50,
+            width: 130,
+            backgroundColor: '#B01425',
+            borderColor: '#fff',
+            borderWidth: 2,
+            borderRadius: 10,
+            bottom: 80,
+            marginTop: 90,
+            shadowOffset: { height: 1, width: 1 },
+        },
+        btnLoginText: {
+            fontSize: 12,
+            fontStyle: 'normal',
+            color: '#fff',
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+        },
+        btnLoginText2: {
+            marginBottom: 90,
+            fontSize: 12,
+            fontStyle: 'normal',
+            color: '#fff',
+            letterSpacing: 1,
+            textTransform: 'uppercase',
+        }
+    });
+  }
+
