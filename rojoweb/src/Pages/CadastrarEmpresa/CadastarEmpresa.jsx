@@ -93,7 +93,8 @@ export default function Empresa() {
                 onChange={(event) => setCnpj(event.target.value)}
                 name="nome"
                 id="cadastar__Nome"
-                required="required" />
+                required="required" 
+                maxlength="14"/>
 
 
               <input
@@ -103,7 +104,8 @@ export default function Empresa() {
                 onChange={(event) => setNome(event.target.value)}
                 name="nome"
                 id="cadastar__Nome"
-                required="required" />
+                required="required" 
+                maxlength="50"/>
 
 
               <input
@@ -113,7 +115,8 @@ export default function Empresa() {
                 onChange={(event) => setEmail(event.target.value)}
                 name="Cnpj"
                 id="cadastar__Cnpj"
-                required="required" />
+                required="required" 
+                maxlength="256"/>
 
               <input
                 className="Name_AdmE"
@@ -162,7 +165,8 @@ export default function Empresa() {
                 onChange={(event) => setTelefone(event.target.value)}
                 name="Senha"
                 id="cadastar__Senha"
-                required="required" />
+                required="required" 
+                maxlength="11"/>
 
               <input
                 className="Name_AdmE"

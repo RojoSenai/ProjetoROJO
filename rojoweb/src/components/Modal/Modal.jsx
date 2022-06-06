@@ -155,8 +155,8 @@ export const Modall = ({ showModal, setShow, evento, EventoID, setList, BuscarEv
                                             <img src={Palestra} alt="" />
                                         </div>
                                         <div className="DataCont">
-                                            <p>{"Data de inicio: " + moment(event.dataEventoIncio).format('LLL') }</p>
-                                            <p>{"Termino do evento: " + event.dataEventoFim}</p>
+                                            <p>{"Data de inicio: " + moment(event.dataEventoIncio).format('lll') }</p>
+                                            <p>{"Termino do evento: " + moment(event.dataEventoFim).format('lll')}</p>
                                         </div>
                                     </div>
                                     {Atualizando == false ? <div className="contLetra">
