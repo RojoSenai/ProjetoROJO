@@ -66,6 +66,7 @@ export default function Eventos() {
                 </TouchableOpacity>
             </View>
             <View style={styles.mainBanner}>
+            <Image source={require('../../assets/banner.png')} style={styles.imgbanner} resizeMode="contain"/>
             </View>
             <View style={styles.MenuCont}>
                 <ScrollView style={styles.BolinhaAlinhada}>
@@ -74,7 +75,7 @@ export default function Eventos() {
                             <View style={styles.conEvt}>
                                 <View style={styles.contEvtXt}>
                                     <Text style={styles.Txt}>EVENTOS</Text>
-                                    <Text style={styles.TxtName}>TODOS SEUS EVENTOS </Text>
+                                    <Text style={styles.TxtName}>TODOS SEUS EVENTOS PARA NÃO SE PERDER </Text>
                                 </View>
                                 <View>
                                     <ImageBackground style={styles.BolinhaEvt} source={require('../../assets/eventosimg.png')} />
@@ -84,13 +85,19 @@ export default function Eventos() {
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Calendario')}>
                         <View style={styles.cobrindoimaCal}>
-                            <Text style={styles.Txt}>CALENDARIO</Text>
+                            <View style={styles.contCLAtXt}>
+                                <Text style={styles.Txt2}>CALENDARIO</Text>
+                                <Text style={styles.TxtName2}>SEU CALENDARIO COM EVENTOS DIARIOS</Text>
+                            </View>
                             <Image style={styles.BolinhaAgd} source={require('../../assets/agendaimg.png')} />
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Documento')}>
                         <View style={styles.cobrindoimaDoc}>
-                            <Text style={styles.Txt}>DOCUMENTO</Text>
+                            <View style={styles.contDOCtXt}>
+                                <Text style={styles.Txt3}>DOCUMENTO</Text>
+                                <Text style={styles.TxtName3}>DOCUMENTOS DOS EVENTOS E DA EMPRESA</Text>
+                            </View>
                             <Image style={styles.BolinhaDoc} source={require('../../assets/documentoimg.png')} />
                         </View>
                     </TouchableOpacity>
@@ -99,6 +106,8 @@ export default function Eventos() {
         </View>
     )
 }
+
+
 
 
 if (Dimensions.get('window').width > 700) {
@@ -120,16 +129,23 @@ if (Dimensions.get('window').width > 700) {
             paddingLeft: 10,
             borderBottomWidth: 6,
         },
+        imgbanner:{
+            width: 900,
+            height: 300,
+           // backgroundColor: "green"
+        },
     
         mainBanner: {
             width: '100%',
             height: '22%',
-            backgroundColor: '#D0CFCF',
+            backgroundColor: '#2e2829',
         },
         MenuCont: {
             height: '73%',
             display: "flex",
-            flexDirection: 'column'
+            width: "92%",
+            flexDirection: 'column',
+            alignItems: "center"
         },
         BolinhaAlinhada: {
             display: "flex",
@@ -169,14 +185,27 @@ if (Dimensions.get('window').width > 700) {
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
-            height: 150,
+            width: 500,
+            height: 160,
             // paddingLeft: 100,
             // paddingRight: 30,
             backgroundColor: "#AA1200",
         },
+        Txt: {
+            color: '#FFF',
+            marginTop: 10,
+            fontSize: 20,
+           lineHeight: 23,
+        },
+        TxtName: {
+            color: '#FFF',
+            fontSize: 10,
+            //backgroundColor: "green",
+            width: 240,
+            alignItems: "center",
+        },
         conEvt: {
-            width: 300,
+            width: 380,
             height: 150,
             display: "flex",
             flexDirection: "row",
@@ -194,13 +223,32 @@ if (Dimensions.get('window').width > 700) {
             marginLeft: 30,
             marginBottom: 40
         },
+        conEvt: {
+            width: 454,
+            height: 150,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            //backgroundColor: "blue"
+        },
+        contEvtXt: {
+            //backgroundColor: "blue",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 99,
+            height: 50,
+            marginLeft: 90,
+            marginBottom: 40
+        },
         cobrindoimaCal: {
             borderRadius: 13,
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
-            height: 150,
+            width: 500,
+            height: 160,
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
@@ -209,13 +257,38 @@ if (Dimensions.get('window').width > 700) {
             // paddingRight: 30,
             backgroundColor: "#AA1200",
         },
+        contCLAtXt:{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 150,
+            height: 37,
+            marginLeft: 10,
+            marginBottom: 40,
+           // backgroundColor: "green"
+        },
+        Txt2: {
+            color: '#FFF',
+            marginTop: 10,
+            fontSize: 20,
+           lineHeight: 23,
+           
+        },
+        TxtName2: {
+            color: '#FFF',
+            fontSize: 9,
+            textAlign: 'center',
+            //backgroundColor: "green",
+            width: 240,
+        },
+    
         cobrindoimaDoc: {
             borderRadius: 13,
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
-            height: 150,
+            width: 500,
+            height: 160,
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
@@ -224,17 +297,29 @@ if (Dimensions.get('window').width > 700) {
             // paddingRight: 30,
             backgroundColor: "#AA1200",
         },
-        Txt: {
+        contDOCtXt:{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 150,
+            height: 37,
+            marginLeft: 10,
+            marginBottom: 40,
+           // backgroundColor: "green"
+        },
+        Txt3: {
             color: '#FFF',
             marginTop: 10,
             fontSize: 20,
            lineHeight: 23,
+           
         },
-        TxtName: {
+        TxtName3: {
             color: '#FFF',
-            fontSize: 10,
-           // backgroundColor: "green",
-            width: 110,
+            fontSize: 9,
+            textAlign: 'center',
+            //backgroundColor: "green",
+            width: 240,
         },
         
     });
@@ -261,12 +346,17 @@ if (Dimensions.get('window').width > 700) {
         mainBanner: {
             width: '100%',
             height: '22%',
-            backgroundColor: '#D0CFCF',
+            backgroundColor: '#2e2829',
+        },
+        imgbanner:{
+            width: 395
         },
         MenuCont: {
             height: '73%',
             display: "flex",
-            flexDirection: 'column'
+            width: "92%",
+            flexDirection: 'column',
+            alignItems: "center"
         },
         BolinhaAlinhada: {
             display: "flex",
@@ -306,11 +396,42 @@ if (Dimensions.get('window').width > 700) {
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
+            width: 320,
             height: 150,
             // paddingLeft: 100,
             // paddingRight: 30,
             backgroundColor: "#AA1200",
+        },
+        Txt: {
+            color: '#FFF',
+            marginTop: 10,
+            fontSize: 20,
+           lineHeight: 23,
+        },
+        TxtName: {
+            color: '#FFF',
+            fontSize: 10,
+           // backgroundColor: "green",
+            width: 110,
+        },
+        conEvt: {
+            width: 300,
+            height: 150,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            // backgroundColor: "blue"
+        },
+        contEvtXt: {
+            //backgroundColor: "blue",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 90,
+            height: 50,
+            marginLeft: 30,
+            marginBottom: 40
         },
         conEvt: {
             width: 300,
@@ -336,7 +457,7 @@ if (Dimensions.get('window').width > 700) {
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
+            width: 320,
             height: 150,
             display: "flex",
             flexDirection: "row",
@@ -346,12 +467,37 @@ if (Dimensions.get('window').width > 700) {
             // paddingRight: 30,
             backgroundColor: "#AA1200",
         },
+        contCLAtXt:{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 150,
+            height: 37,
+            marginLeft: 10,
+            marginBottom: 40,
+           // backgroundColor: "green"
+        },
+        Txt2: {
+            color: '#FFF',
+            marginTop: 10,
+            fontSize: 20,
+           lineHeight: 23,
+           
+        },
+        TxtName2: {
+            color: '#FFF',
+            fontSize: 9,
+            textAlign: 'center',
+            //backgroundColor: "green",
+            width: 178,
+        },
+    
         cobrindoimaDoc: {
             borderRadius: 13,
             backgroundColor: '#fff',
             marginBottom: 40,
             marginLeft: 30,
-            width: 300,
+            width: 320,
             height: 150,
             display: "flex",
             flexDirection: "row",
@@ -361,17 +507,29 @@ if (Dimensions.get('window').width > 700) {
             // paddingRight: 30,
             backgroundColor: "#AA1200",
         },
-        Txt: {
+        contDOCtXt:{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: 150,
+            height: 37,
+            marginLeft: 10,
+            marginBottom: 40,
+           // backgroundColor: "green"
+        },
+        Txt3: {
             color: '#FFF',
             marginTop: 10,
             fontSize: 20,
            lineHeight: 23,
+           
         },
-        TxtName: {
+        TxtName3: {
             color: '#FFF',
-            fontSize: 10,
-           // backgroundColor: "green",
-            width: 110,
+            fontSize: 9,
+            textAlign: 'center',
+            //backgroundColor: "green",
+            width: 189,
         },
     });
   }
@@ -413,12 +571,14 @@ if (Dimensions.get('window').width > 700) {
 //     mainBanner: {
 //         width: '100%',
 //         height: '22%',
-//         backgroundColor: '#D0CFCF',
+//         backgroundColor: '#2e2829',
 //     },
 //     MenuCont: {
 //         height: '73%',
 //         display: "flex",
-//         flexDirection: 'column'
+//         width: "92%",
+//         flexDirection: 'column',
+//         alignItems: "center"
 //     },
 //     BolinhaAlinhada: {
 //         display: "flex",
@@ -458,11 +618,42 @@ if (Dimensions.get('window').width > 700) {
 //         backgroundColor: '#fff',
 //         marginBottom: 40,
 //         marginLeft: 30,
-//         width: 300,
+//         width: 320,
 //         height: 150,
 //         // paddingLeft: 100,
 //         // paddingRight: 30,
 //         backgroundColor: "#AA1200",
+//     },
+//     Txt: {
+//         color: '#FFF',
+//         marginTop: 10,
+//         fontSize: 20,
+//        lineHeight: 23,
+//     },
+//     TxtName: {
+//         color: '#FFF',
+//         fontSize: 10,
+//        // backgroundColor: "green",
+//         width: 110,
+//     },
+//     conEvt: {
+//         width: 300,
+//         height: 150,
+//         display: "flex",
+//         flexDirection: "row",
+//         justifyContent: "space-between",
+//         alignItems: "center",
+//         // backgroundColor: "blue"
+//     },
+//     contEvtXt: {
+//         //backgroundColor: "blue",
+//         display: "flex",
+//         flexDirection: "column",
+//         alignItems: "center",
+//         width: 90,
+//         height: 50,
+//         marginLeft: 30,
+//         marginBottom: 40
 //     },
 //     conEvt: {
 //         width: 300,
@@ -488,7 +679,7 @@ if (Dimensions.get('window').width > 700) {
 //         backgroundColor: '#fff',
 //         marginBottom: 40,
 //         marginLeft: 30,
-//         width: 300,
+//         width: 320,
 //         height: 150,
 //         display: "flex",
 //         flexDirection: "row",
@@ -498,12 +689,37 @@ if (Dimensions.get('window').width > 700) {
 //         // paddingRight: 30,
 //         backgroundColor: "#AA1200",
 //     },
+//     contCLAtXt:{
+//         display: "flex",
+//         flexDirection: "column",
+//         alignItems: "center",
+//         width: 150,
+//         height: 37,
+//         marginLeft: 10,
+//         marginBottom: 40,
+//        // backgroundColor: "green"
+//     },
+//     Txt2: {
+//         color: '#FFF',
+//         marginTop: 10,
+//         fontSize: 20,
+//        lineHeight: 23,
+       
+//     },
+//     TxtName2: {
+//         color: '#FFF',
+//         fontSize: 9,
+//         textAlign: 'center',
+//         //backgroundColor: "green",
+//         width: 178,
+//     },
+
 //     cobrindoimaDoc: {
 //         borderRadius: 13,
 //         backgroundColor: '#fff',
 //         marginBottom: 40,
 //         marginLeft: 30,
-//         width: 300,
+//         width: 320,
 //         height: 150,
 //         display: "flex",
 //         flexDirection: "row",
@@ -513,18 +729,31 @@ if (Dimensions.get('window').width > 700) {
 //         // paddingRight: 30,
 //         backgroundColor: "#AA1200",
 //     },
-//     Txt: {
+//     contDOCtXt:{
+//         display: "flex",
+//         flexDirection: "column",
+//         alignItems: "center",
+//         width: 150,
+//         height: 37,
+//         marginLeft: 10,
+//         marginBottom: 40,
+//        // backgroundColor: "green"
+//     },
+//     Txt3: {
 //         color: '#FFF',
 //         marginTop: 10,
 //         fontSize: 20,
 //        lineHeight: 23,
+       
 //     },
-//     TxtName: {
+//     TxtName3: {
 //         color: '#FFF',
-//         fontSize: 10,
-//        // backgroundColor: "green",
-//         width: 110,
+//         fontSize: 9,
+//         textAlign: 'center',
+//         //backgroundColor: "green",
+//         width: 189,
 //     },
-    
+       
  
 // })
+
