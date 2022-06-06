@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { StyleSheet, Text, Image, View, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, View, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 
 import api from '../services/api'
 import jwtDecode from 'jwt-decode';
@@ -40,23 +40,27 @@ export default function TelaUsuario() {
     return (
         <View style={styles.main}>
             <View style={styles.Headermain}>
-                <Image
-                    source={require('../../assets/Menu_De_Hamburger.png')}
-                    style={{ width: 50, height: 30, }}
-                    resizeMode="contain"
-                />
-                <TouchableOpacity onPress={() => navigation.navigate('Main')}>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                    <Image
+                        source={require('../../assets/Menu_De_Hamburger.png')}
+                        style={{ width: 50, height: 30, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
                     <Image
                         source={require('../../assets/RojoLogo.png')}
                         style={{ width: 60, height: 40, }}
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                <Image
-                    source={require('../../assets/imagem_perfil.png')}
-                    style={{ width: 60, height: 50, }}
-                    resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('Usuario')}>
+                    <Image
+                        source={require('../../assets/imagem_perfil.png')}
+                        style={{ width: 60, height: 50, }}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
             </View>
 
             <View style={styles.Todos}>
@@ -89,71 +93,207 @@ export default function TelaUsuario() {
     )
 }
 
+if (Dimensions.get('window').width > 700) {
+    var styles = StyleSheet.create({
+        main: {
+            flex: 1,
+            // flexDirection:"column",
+            backgroundColor: '#B01425'
+        },
+        Headermain: {
+            // display: "flex",
+            backgroundColor: '#2E2829',
+           // backgroundColor: '#fff',
+            borderBottomColor: '#2E2829',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingRight: 10,
+            paddingLeft: 10,
+            borderBottomWidth: 6,
+        },
+    
+        Todos: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+           // backgroundColor: 'blue',
+            height: 570,
+            //flexDirection: 'row',
+        },
+        ImageNome:{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+        },
+        ImgUsu: {
+            height: 90,
+            width: 100,
+    
+        },
+        Nome: {
+            display: "flex",
+        },
+        NomeEmail: {
+            color: "#fff",
+            marginLeft: 10
+        },
+        btnSair:{
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 40,
+            width: 110,
+            marginTop: 30,
+            backgroundColor: '#B01425',
+            borderColor: '#fff',
+            borderWidth: 2,
+            borderRadius: 9,
+            shadowOffset: { height: 1, width: 1 },
+        },
+        btnSairText: {
+            fontSize: 17,
+            //fontFamily: 'Sarabun',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+            color: '#fff',
+            letterSpacing: 1, //espacamento entre as letras
+            textTransform: "uppercase"
+        }
+    });
+  } else {
+    var styles = StyleSheet.create({
+        main: {
+            flex: 1,
+            // flexDirection:"column",
+            backgroundColor: '#B01425'
+        },
+        Headermain: {
+            // display: "flex",
+            backgroundColor: '#2E2829',
+           // backgroundColor: '#fff',
+            borderBottomColor: '#2E2829',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingRight: 10,
+            paddingLeft: 10,
+            borderBottomWidth: 6,
+        },
+    
+        Todos: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+           // backgroundColor: 'blue',
+            height: 570,
+            //flexDirection: 'row',
+        },
+        ImageNome:{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+        },
+        ImgUsu: {
+            height: 90,
+            width: 100,
+    
+        },
+        Nome: {
+            display: "flex",
+        },
+        NomeEmail: {
+            color: "#fff",
+            marginLeft: 10
+        },
+        btnSair:{
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: 40,
+            width: 110,
+            marginTop: 30,
+            backgroundColor: '#B01425',
+            borderColor: '#fff',
+            borderWidth: 2,
+            borderRadius: 9,
+            shadowOffset: { height: 1, width: 1 },
+        },
+        btnSairText: {
+            fontSize: 17,
+            //fontFamily: 'Sarabun',
+            fontStyle: 'normal',
+            fontWeight: 'bold',
+            color: '#fff',
+            letterSpacing: 1, //espacamento entre as letras
+            textTransform: "uppercase"
+        }
+    });
+  }
 
 
 
+// const styles = StyleSheet.create({
+//     main: {
+//         flex: 1,
+//         // flexDirection:"column",
+//         backgroundColor: '#B01425'
+//     },
+//     Headermain: {
+//         // display: "flex",
+//         backgroundColor: '#2E2829',
+//        // backgroundColor: '#fff',
+//         borderBottomColor: '#2E2829',
+//         flexDirection: 'row',
+//         alignItems: 'center',
+//         justifyContent: 'space-between',
+//         paddingRight: 10,
+//         paddingLeft: 10,
+//         borderBottomWidth: 6,
+//     },
 
-const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        // flexDirection:"column",
-        backgroundColor: '#B01425'
-    },
-    Headermain: {
-        // display: "flex",
-        backgroundColor: '#fff',
-        borderBottomColor: '#FFF',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingRight: 10,
-        paddingLeft: 10,
-        borderBottomWidth: 6,
-    },
-    Todos: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-       // backgroundColor: 'blue',
-        height: 570,
-        //flexDirection: 'row',
-    },
-    ImageNome:{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-    ImgUsu: {
-        height: 90,
-        width: 100,
+//     Todos: {
+//         display: 'flex',
+//         justifyContent: 'center',
+//         alignItems: 'center',
+//        // backgroundColor: 'blue',
+//         height: 570,
+//         //flexDirection: 'row',
+//     },
+//     ImageNome:{
+//         display: 'flex',
+//         alignItems: 'center',
+//         flexDirection: 'row',
+//     },
+//     ImgUsu: {
+//         height: 90,
+//         width: 100,
 
-    },
-    Nome: {
-        display: "flex",
-    },
-    NomeEmail: {
-        color: "#fff",
-        marginLeft: 10
-    },
-    btnSair:{
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 40,
-        width: 110,
-        marginTop: 30,
-        backgroundColor: '#B01425',
-        borderColor: '#fff',
-        borderWidth: 2,
-        borderRadius: 9,
-        shadowOffset: { height: 1, width: 1 },
-    },
-    btnSairText: {
-        fontSize: 17,
-        //fontFamily: 'Sarabun',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        color: '#fff',
-        letterSpacing: 1, //espacamento entre as letras
-        textTransform: "uppercase"
-    }
-})
+//     },
+//     Nome: {
+//         display: "flex",
+//     },
+//     NomeEmail: {
+//         color: "#fff",
+//         marginLeft: 10
+//     },
+//     btnSair:{
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         height: 40,
+//         width: 110,
+//         marginTop: 30,
+//         backgroundColor: '#B01425',
+//         borderColor: '#fff',
+//         borderWidth: 2,
+//         borderRadius: 9,
+//         shadowOffset: { height: 1, width: 1 },
+//     },
+//     btnSairText: {
+//         fontSize: 17,
+//         //fontFamily: 'Sarabun',
+//         fontStyle: 'normal',
+//         fontWeight: 'bold',
+//         color: '#fff',
+//         letterSpacing: 1, //espacamento entre as letras
+//         textTransform: "uppercase"
+//     }
+// })
