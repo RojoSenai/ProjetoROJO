@@ -125,7 +125,7 @@ if (Dimensions.get('window').width > 700) {
             letterSpacing: 5
         },
         mainHeaderLine: {
-            width: 220,
+            width: 290,
             paddingTop: 10,
             borderBottomColor: '#fff',
             borderBottomWidth: 1,
@@ -136,18 +136,21 @@ if (Dimensions.get('window').width > 700) {
         mainBodyContent: {
             paddingTop: 5,
             paddingRight: 80,
+            alignItems: "center",
             paddingLeft: 20,
+            //backgroundColor: "green"
         },
         flatItem: {
             borderRadius: 13,
             backgroundColor: '#fff',
             marginTop: 10,
             marginBottom: 40,
-            width: 350,
+            width: 500,
             height: 240,
             flexDirection: "column",
-            paddingLeft: 10,
-            paddingRight: 10,
+            alignItems: "center",
+            marginLeft: 20,
+            //backgroundColor: "green"
         },
     
         Nome_Imagem: {
@@ -170,8 +173,7 @@ if (Dimensions.get('window').width > 700) {
     
         LogoRojo: {
             marginRight: 90,
-    
-    
+            marginLeft: 50
         },
     
         Informa_Nome: {
@@ -189,15 +191,18 @@ if (Dimensions.get('window').width > 700) {
         Informa_Palest: {
             fontSize: 14,
             color: '#000',
-            lineHeight: 24,
-            top: 38
+            lineHeight: 28,
+            top: 38,
+            //backgroundColor: "green"
             // fontFamily: 'TitilliumWeb-Regular',
         },
         Informa_Descr: {
-            fontSize: 14,
+            fontSize: 16,
             color: '#000',
             lineHeight: 24,
-            top: 28
+            top: 28,
+            marginRight: 35,
+           // backgroundColor: "green"
             // fontFamily: 'TitilliumWeb-Regular',
         },
         sotext: {
@@ -270,6 +275,7 @@ if (Dimensions.get('window').width > 700) {
             height: 240,
             flexDirection: "column",
             paddingLeft: 10,
+            alignItems: "center",
             paddingRight: 10,
         },
     
