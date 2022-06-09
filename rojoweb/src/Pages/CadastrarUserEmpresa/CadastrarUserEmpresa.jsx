@@ -63,7 +63,7 @@ export default function Empresa() {
 
   useEffect(() => {
     setIdEmpresa(parseJwt().emp);
-    setIdTipoUsuario(parseJwt().role);
+    setIdTipoUsuario(2);
   })
 
   return (
