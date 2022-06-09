@@ -130,7 +130,7 @@ if (Dimensions.get('window').width > 700) {
             borderBottomWidth: 6,
         },
         imgbanner:{
-            width: 900,
+            width: 790,
             height: 300,
            // backgroundColor: "green"
         },
@@ -149,7 +149,8 @@ if (Dimensions.get('window').width > 700) {
         },
         BolinhaAlinhada: {
             display: "flex",
-            marginTop: 30,
+            marginTop: 200,
+
         },
         BolinhaEvt: {
             width: 120,

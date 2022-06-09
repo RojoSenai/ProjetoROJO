@@ -65,7 +65,7 @@ export default function Calendario() {
                     //'2022-06-01': [{ name: 'item 1 - any js object' }],
                     //'2022-05-23': [{ name: 'item 2 - any js object' }],
                     //'2022-05-24': [],
-                    '2022-06-07': [{ name: 'item 3 - any js object' }, { name: 'any js object' }]
+                    '2022-06-08': [{ name: 'item 3 - any js object' }, { name: 'any js object' }]
                 }}
 
                 // markedDates={{

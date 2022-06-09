@@ -22,7 +22,7 @@ export default function TelaUsuario() {
             }
         })
             .then((resposta) => {
-                console.warn(resposta.data)
+                // console.warn(resposta.data)
                 const dadosDaApi = resposta.data;
                 setUsuario(dadosDaApi)
             })
